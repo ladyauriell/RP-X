@@ -431,31 +431,49 @@ function(t){t.__bidiEngine__=t.prototype.__bidiEngine__=function(t){var r,n,i,a,
   --sat: env(safe-area-inset-top, 0px);
 }
 
-body { font-family: var(--font); background: var(--bg); min-height: 100vh; color: var(--text); font-size: 15px; }
-#app { display: flex; height: 100vh; height: 100dvh; overflow: hidden; justify-content: center; padding-top: env(safe-area-inset-top, 0px); box-sizing: border-box; }
+body { font-family: var(--font); background: var(--sidebar-bg); min-height: 100vh; color: var(--text); font-size: 15px; }
+#app { display: flex; flex-direction: column; align-items: center; min-height: 100vh; min-height: 100dvh; padding-top: env(safe-area-inset-top, 0px); box-sizing: border-box; }
+
+/* ── STICKY TOP (header + tabs) ─────────────────── */
+#sticky-top {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  width: 100%;
+  align-self: stretch;
+}
+#tab-nav-outer {
+  background: #002a6e;
+  border-bottom: 1px solid rgba(255,255,255,0.12);
+}
 
 /* ── SIDEBAR ─────────────────────────────────── */
 #sidebar {
   width: 100%; min-width: 0;
-  max-width: 860px;
+  max-width: 1100px;
   background: var(--sidebar-bg);
-  border-left: 1px solid var(--border);
-  border-right: 1px solid var(--border);
-  box-shadow: 0 0 24px rgba(0,0,0,0.07);
+  border: none;
+  box-shadow: none;
   display: flex; flex-direction: column;
-  height: 100vh; height: 100dvh; overflow: hidden;
+  flex: 1;
 }
 
 #sidebar-scroll {
-  flex: 1; overflow-y: auto;
+  flex: 1;
 }
 
 #sidebar-header {
   background: linear-gradient(135deg, #002060 0%, #003580 60%, #1a5fad 100%);
-  padding: 18px 20px 16px;
   position: relative;
   overflow: visible;
   flex-shrink: 0;
+  width: 100%;
+  align-self: stretch;
+}
+.header-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 18px 20px 16px;
 }
 #sidebar-header::after {
   content: '';
@@ -491,7 +509,7 @@ body { font-family: var(--font); background: var(--bg); min-height: 100vh; color
 #sidebar-header p { font-size: 12px; color: rgba(255,255,255,0.7); margin-top: 2px; }
 
 @media (max-width: 400px) {
-  #sidebar-header { padding: 12px 14px 10px; }
+  .header-inner { padding: 12px 14px 10px; }
   #sidebar-header h1 { font-size: 22px; }
   #sidebar-header p { font-size: 11px; }
   #sidebar-header button[title="Mula di sini"] { padding: 6px 9px !important; font-size: 11px !important; }
@@ -500,20 +518,21 @@ body { font-family: var(--font); background: var(--bg); min-height: 100vh; color
 
 /* Tab navigation */
 #tab-nav {
-  display: flex; border-bottom: 1px solid var(--border);
-  background: #f5faf7;
-  flex-shrink: 0;
+  display: flex;
+  max-width: 1100px;
+  margin: 0 auto;
+  width: 100%;
 }
 .tab-btn {
   flex: 1; padding: 11px 6px;
   font-size: 11px; font-weight: 600; font-family: var(--font);
   background: none; border: none; cursor: pointer;
-  color: var(--text-muted); border-bottom: 2px solid transparent;
+  color: rgba(255,255,255,0.65); border-bottom: 2px solid transparent;
   transition: all 0.15s; text-transform: uppercase; letter-spacing: 0.5px;
   text-align: center;
 }
-.tab-btn:hover { color: var(--teal); background: rgba(13,122,107,0.04); }
-.tab-btn.active { color: var(--teal); border-bottom-color: var(--teal); background: var(--sidebar-bg); }
+.tab-btn:hover { color: #fff; background: rgba(255,255,255,0.08); }
+.tab-btn.active { color: #fff; border-bottom-color: var(--gold-light); background: rgba(255,255,255,0.1); }
 
 /* Tab panels */
 .tab-panel { display: none; padding: 18px 16px; }
@@ -1060,11 +1079,10 @@ body { font-family: var(--font); background: var(--bg); min-height: 100vh; color
     width: 100%;
     min-width: 100%;
     max-width: 100%;
-    height: 100vh; height: 100dvh;
-    max-height: 100dvh;
+    flex: 1;
+    min-height: 0;
     border-right: none;
     border-left: none;
-    flex-shrink: 0;
   }
   /* Desktop preview panel: completely gone on mobile too */
 
@@ -1205,6 +1223,21 @@ body { font-family: var(--font); background: var(--bg); min-height: 100vh; color
     display: flex !important;
     flex-direction: column;
     position: relative;
+    height: 100%;
+  }
+}
+
+/* ── DESKTOP: inner scroll (same architecture as mobile) ── */
+@media (min-width: 769px) {
+  html, body { overflow: hidden; height: 100%; }
+  #app {
+    height: 100vh; height: 100dvh;
+    overflow: hidden;
+  }
+  #sidebar {
+    flex: 1;
+    min-height: 0;
+    max-width: 1100px;
   }
 }
 
@@ -1226,29 +1259,35 @@ body { font-family: var(--font); background: var(--bg); min-height: 100vh; color
 <body>
 <div id="app">
 
-  <!-- ─── SIDEBAR ─────────────────────────────── -->
-  <div id="sidebar">
+  <!-- ─── STICKY TOP (header + tabs) ─────────────── -->
+  <div id="sticky-top">
     <div id="sidebar-header">
-      <div style="display:flex;align-items:center;justify-content:space-between;gap:10px;min-width:0">
-        <div style="min-width:0;flex:1">
-          <h1>RP-X</h1>
-          <p>RP-Execute ~ Penjana RPH anda.</p>
-          <div id="buyer-name" style="font-size:11px;color:rgba(255,255,255,0.6);margin-top:4px;font-style:italic;min-height:14px;"></div>
-        </div>
+      <div class="header-inner">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:10px;min-width:0">
+          <div style="min-width:0;flex:1">
+            <h1>RP-X</h1>
+            <p>RP-Execute ~ Penjana RPH anda.</p>
+            <div id="buyer-name" style="font-size:11px;color:rgba(255,255,255,0.6);margin-top:4px;font-style:italic;min-height:14px;"></div>
+          </div>
 <!-- @@PRICING_START@@ -->
-        <button onclick="openHargaModal()" title="Harga & Beli" style="background:rgba(255,255,255,0.18);border:1.5px solid rgba(255,255,255,0.45);color:#fff;border-radius:20px;font-size:12px;font-weight:700;cursor:pointer;padding:6px 14px;flex-shrink:0;transition:all 0.15s;font-family:var(--font);letter-spacing:0.3px;white-space:nowrap;backdrop-filter:blur(4px)" onmouseover="this.style.background='rgba(255,255,255,0.3)'" onmouseout="this.style.background='rgba(255,255,255,0.18)'">🏷️ Harga</button>
+          <button onclick="openHargaModal()" title="Harga & Beli" style="background:rgba(255,255,255,0.18);border:1.5px solid rgba(255,255,255,0.45);color:#fff;border-radius:20px;font-size:12px;font-weight:700;cursor:pointer;padding:6px 14px;flex-shrink:0;transition:all 0.15s;font-family:var(--font);letter-spacing:0.3px;white-space:nowrap;backdrop-filter:blur(4px)" onmouseover="this.style.background='rgba(255,255,255,0.3)'" onmouseout="this.style.background='rgba(255,255,255,0.18)'">Harga</button>
 <!-- @@PRICING_END@@ -->
-        <button onclick="openAboutModal()" title="Mula di sini" style="background:rgba(255,255,255,0.18);border:1.5px solid rgba(255,255,255,0.45);color:#fff;border-radius:20px;font-size:12px;font-weight:700;cursor:pointer;padding:6px 14px;flex-shrink:0;transition:all 0.15s;font-family:var(--font);letter-spacing:0.3px;white-space:nowrap;backdrop-filter:blur(4px)" onmouseover="this.style.background='rgba(255,255,255,0.3)'" onmouseout="this.style.background='rgba(255,255,255,0.18)'">Mula di sini</button>
+          <button onclick="openAboutModal()" title="Mula di sini" style="background:rgba(255,255,255,0.18);border:1.5px solid rgba(255,255,255,0.45);color:#fff;border-radius:20px;font-size:12px;font-weight:700;cursor:pointer;padding:6px 14px;flex-shrink:0;transition:all 0.15s;font-family:var(--font);letter-spacing:0.3px;white-space:nowrap;backdrop-filter:blur(4px)" onmouseover="this.style.background='rgba(255,255,255,0.3)'" onmouseout="this.style.background='rgba(255,255,255,0.18)'">Mula di sini</button>
+        </div>
       </div>
     </div>
-
-    <!-- Tab navigation -->
-    <div id="tab-nav">
-      <button class="tab-btn active" onclick="switchTab('rph')">RPH</button>
-      <button class="tab-btn" onclick="switchTab('tetapan')">Tetapan</button>
-      <button class="tab-btn mobile-only" onclick="switchTab('preview')">Pratonton</button>
-      <button class="tab-btn" onclick="switchTab('nook')">Nook</button>
+    <div id="tab-nav-outer">
+      <div id="tab-nav">
+        <button class="tab-btn active" onclick="switchTab('rph')">RPH</button>
+        <button class="tab-btn" onclick="switchTab('tetapan')">Tetapan</button>
+        <button class="tab-btn mobile-only" onclick="switchTab('preview')">Pratonton</button>
+        <button class="tab-btn" onclick="switchTab('nook')">Nook</button>
+      </div>
     </div>
+  </div>
+
+  <!-- ─── SIDEBAR ─────────────────────────────── -->
+  <div id="sidebar">
 
     <div id="sidebar-scroll">
     <div id="tab-track">
@@ -1256,7 +1295,7 @@ body { font-family: var(--font); background: var(--bg); min-height: 100vh; color
     <div id="tab-rph" class="tab-panel active">
 
       <!-- Padam + Load JSON buttons -->
-      <div style="display:flex;justify-content:flex-end;gap:8px;margin-bottom:10px">
+      <div style="display:flex;justify-content:center;gap:8px;margin-bottom:10px">
         <button onclick="padamKandungan()" style="
           padding:8px 20px;
           background:rgba(229,62,62,0.08); border:1.5px solid rgba(229,62,62,0.35);
@@ -1299,35 +1338,6 @@ body { font-family: var(--font); background: var(--bg); min-height: 100vh; color
       </div>
 
       
-      <!-- Tema auto row 2/3 width -->
-      <div class="row-two-thirds"><div class="form-row-2" id="tema-minggu-row">
-        <div class="form-row">
-          <label>Tema</label>
-          <div id="week-stepper">
-            <span id="week-stepper-label" class="week-stepper-label muted">— Tiada Tema —</span>
-            <button class="font-stepper-btn" id="week-step-prev" onclick="stepWeek(-1)" disabled>−</button>
-            <button class="font-stepper-btn" id="week-step-next" onclick="stepWeek(1)" disabled>+</button>
-          </div>
-          <div id="tema-display"></div>
-        </div>
-      </div></div>
-
-      <!-- Tema edit + Minggu edit, same total width as Tema stepper (row-two-thirds) -->
-      <div class="row-two-thirds">
-        <div style="display:flex;gap:8px">
-          <div class="form-row" style="flex:1;min-width:0;margin-bottom:0">
-            <label>Tema (edit)</label>
-            <input type="text" id="inp-tema" placeholder="Tema minggu ini" />
-          </div>
-          <div class="form-row" style="flex:0 0 100px;min-width:0;margin-bottom:0">
-            <label>Minggu (edit)</label>
-            <input type="number" id="inp-minggu" min="1" max="52" placeholder="—" />
-          </div>
-        </div>
-      </div>
-
-      <div style="height:11px"></div>
-
       <!-- Tarikh + Hari at 2/3 width -->
       <div class="row-two-thirds">
         <div class="form-row-2">
@@ -1356,6 +1366,35 @@ body { font-family: var(--font); background: var(--bg); min-height: 100vh; color
               </span>
             </label>
             <input type="text" id="inp-hari" readonly placeholder="—" style="height:40px" />
+          </div>
+        </div>
+      </div>
+
+      <div style="height:11px"></div>
+
+      <!-- Tema auto row 2/3 width -->
+      <div class="row-two-thirds"><div class="form-row-2" id="tema-minggu-row">
+        <div class="form-row">
+          <label>Tema</label>
+          <div id="week-stepper">
+            <span id="week-stepper-label" class="week-stepper-label muted">— Tiada Tema —</span>
+            <button class="font-stepper-btn" id="week-step-prev" onclick="stepWeek(-1)" disabled>−</button>
+            <button class="font-stepper-btn" id="week-step-next" onclick="stepWeek(1)" disabled>+</button>
+          </div>
+          <div id="tema-display"></div>
+        </div>
+      </div></div>
+
+      <!-- Tema edit + Minggu edit, same total width as Tema stepper (row-two-thirds) -->
+      <div class="row-two-thirds">
+        <div style="display:flex;gap:8px">
+          <div class="form-row" style="flex:1;min-width:0;margin-bottom:0">
+            <label>Tema (edit)</label>
+            <input type="text" id="inp-tema" placeholder="Tema minggu ini" />
+          </div>
+          <div class="form-row" style="flex:0 0 100px;min-width:0;margin-bottom:0">
+            <label>Minggu (edit)</label>
+            <input type="number" id="inp-minggu" min="1" max="52" placeholder="—" />
           </div>
         </div>
       </div>
@@ -1801,8 +1840,8 @@ body { font-family: var(--font); background: var(--bg); min-height: 100vh; color
           <span style="font-size:15px;line-height:1">‹</span>
         </button>
       </div>
-      <iframe src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjYZVm0xKCZnYUFxsi4xnN-t83C4fkFAo-rilcNkKvNfpJFfccZnZ5sYkB63eSGe6SA-7EqXV9OCKZeoda2iHtDEqsrsJPXbQ3CsZ0mMBJb9cBINp6bJMp3gGrd5XsG6vtcH1vC82B5NkAPD-rz-wWyMUTDA85FMCF4q78J2oBK0A7jz-udZh_S7uBB/w453-h640/not%20available%20image.png"
-        style="width:100%;flex:1;border:none;display:block;"
+      <iframe src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhYPmNFZj6LFSWdL0CXof0EpE_zqmp3kxABOUcFLGcg5jUUWEsJpI_Kj5f84PEFnMhwg6H-Aj3qp2uSOWYBBTZDZMrJAIcivBJAM8YkP1XTexAVP9ouZ_L3TRXcBcOaYwUwHjNIVi2WBWwC0923Pv8UvHzr_6eiwgCwoH5ESktnlQbWDMSg6UOy_LEa/w414-h640/Sorry,%20not%20available%20on%20this%20tool.png"
+        style="width:100%;flex:1;min-height:0;height:100%;border:none;display:block;"
         allow="clipboard-write"
         id="nook-iframe"></iframe>
     </div><!-- end tab-nook -->
@@ -1845,24 +1884,74 @@ body { font-family: var(--font); background: var(--bg); min-height: 100vh; color
       <button id="about-tab-btn-privasi" onclick="switchAboutTab('privasi')" style="flex:1;padding:10px 6px;font-size:11px;font-weight:700;font-family:var(--font);background:none;border:none;border-bottom:2px solid transparent;color:var(--text-muted);cursor:pointer;text-transform:uppercase;letter-spacing:0.5px;transition:all 0.15s">🛡️ Privasi</button>
     </div>
 
-    <!-- Tab: Lesen -->
-    <div id="about-tab-lesen" style="overflow-y:auto;padding:20px;font-size:13px;color:var(--text);line-height:1.8;flex:1">
-      <div style="margin-bottom:6px;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--teal)">🔒 Lesen Peribadi</div>
-      <p style="margin-bottom:12px">Aplikasi ini adalah khas untuk kegunaan individu bernama</p>
-	<p style="margin-bottom:12px"> <strong>Nama Pengguna</strong></p>
-	<p style="margin-bottom:45px"> dengan menggunakan <em>Lesen Peribadi</em> dan <em>Lesen Persendirian</em>.</p>
-	
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- @@MULA_DI_SINI_START@@ -->
+<!-- @@MULA_DI_SINI_DEMO@@ -->
+
+<div id="about-tab-lesen" style="overflow-y:auto;padding:20px;font-size:13px;color:var(--text);line-height:1.8;flex:1">
+      <div style="margin-bottom:6px;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--teal)">Hak Cipta</div>
+     
+        
 
       <div style="border-left:3px solid #c0392b;padding:10px 14px;margin-bottom:45px;font-size:12px;color:#555;line-height:1.9;background:rgba(229,62,62,0.03);border-radius:0 8px 8px 0">
-        <p>Aplikasi ini dilindungi di bawah Akta Hak Cipta 1987. Ia adalah untuk kegunaan peribadi sahaja dan tidak boleh dikongsi, diedarkan atau dijual dalam apa jua bentuk termasuklah (tetapi tidak terhad kepada) simpanan ke rangkaian hos, siaran media sosial atau kepada mana-mana pihak.</p>
-<p>Setiap salinan aplikasi ini mempunyai penanda tersembunyi yang unik yang membolehkan pengesanan terhadap ID pengguna khusus yang berkongsi secara haram.
-   </p></div>
+        <p>Aplikasi ini dilindungi di bawah Akta Hak Cipta 1987.</p>
+<p>Aplikasi ini adalah versi demo yang disediakan dalam bentuk laman web dan dihoskan secara dalam talian. Sebarang penyalinan, pengubahsuaian atau pengedaran tanpa kebenaran adalah dilarang dan boleh dikenakan tindakan undang-undang. </p>
+</div>
 
-      <p style="font-size:13px;margin-bottom:12px">Ingin berkongsi secara <strong>sah</strong> dan jana pendapatan? Kami ada program komisen rujukan.</p>
-      <a href="https://example.com/referral" target="_blank" style="display:block;text-align:center;background:linear-gradient(135deg,#002060,#003580);color:#fff;text-decoration:none;padding:11px;border-radius:10px;font-size:13px;font-weight:700;margin-bottom:20px;letter-spacing:0.3px">🔗 Program Komisen Rujukan</a>
+    
+      <p style="display:block;text-align:center;background:linear-gradient(135deg,#002060,#003580);color:#fff;text-decoration:none;padding:11px;border-radius:10px;font-size:13px;font-weight:700;margin-bottom:20px;letter-spacing:0.3px">Program Komisen Rujukan</p>
+  <p style="font-size:13px;margin-bottom:12px">Ingin berkongsi secara <strong>sah</strong> dan jana pendapatan? Kami ada program komisen rujukan.</p>
+<p>Pembeli <strong>Pelan Penuh RP-X</strong> secara automatik akan dimasukkan ke dalam Program Komisen Rujukan. Kongsikan diskaun kod dengan rakan anda dan berpeluang mendapat komisen dari kami.</p>
+<p>Komisen adalah RM10 dengan setiap penjualan RP-X yang berjaya.</p></br>
+
 
       <div style="font-size:11px;color:var(--text-muted);text-align:center">Hak cipta terpelihara © 2026</div>
     </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--
+
+<p>Aplikasi ini dilindungi di bawah Akta Hak Cipta 1987.</p>
+<p>Ingin berkongsi secara sah dan jana pendapatan? Kami ada program komisen rujukan.</p>
+<p>Sesiapa yang membeli Pelan Penuh secara automatik akan dimasukkan ke dalam Program Komisen Rujukan. Kongsikan diskaun kod dengan rakan anda dan berpeluang mendapat komisen dari kami.</p>
+<p>Komisen adalah RM10 dengan setiap penjualan RP-X yang berjaya.</p> -->
+<!-- @@MULA_DI_SINI_END@@ -->
+
+
+
+
+
+
+
 
     <!-- Tab: Privasi -->
     <div id="about-tab-privasi" style="display:none;overflow-y:auto;padding:20px;font-size:13px;color:var(--text);line-height:1.8;flex:1">
@@ -1872,10 +1961,10 @@ body { font-family: var(--font); background: var(--bg); min-height: 100vh; color
         Semua maklumat yang anda masukkan seperti nama kelas, murid, kandungan RPH disimpan dalam peranti anda sahaja dan tidak dihantar ke mana-mana pelayan. Tiada sesiapa, termasuk pembangun aplikasi ini, yang boleh melihat data anda.
       </div>
 
-      <div style="background:rgba(0,53,128,0.05);border:1px solid rgba(0,53,128,0.15);border-radius:10px;padding:14px;margin-bottom:12px;font-size:12px;line-height:1.8">
+   <!--   <div style="background:rgba(0,53,128,0.05);border:1px solid rgba(0,53,128,0.15);border-radius:10px;padding:14px;margin-bottom:12px;font-size:12px;line-height:1.8">
         <strong style="color:#003580;display:block;margin-bottom:6px">📚 Tentang Tab Nook</strong>
         Tab Nook memuatkan laman web luaran (blog penulis) dan memerlukan sambungan internet. Ia adalah sehala sepenuhnya - tiada data dari aplikasi RPH ini dikongsi dengan laman tersebut.
-      </div>
+      </div> -->
 
       <div style="background:rgba(0,53,128,0.05);border:1px solid rgba(0,53,128,0.15);border-radius:10px;padding:14px;margin-bottom:12px;font-size:12px;line-height:1.8">
         <strong style="color:#003580;display:block;margin-bottom:6px">⚙️ Tentang Tetapan Aplikasi</strong>
@@ -1928,8 +2017,8 @@ body { font-family: var(--font); background: var(--bg); min-height: 100vh; color
           <div style="display:flex;flex-direction:column;gap:8px">
 <div style="font-size:12px;color:var(--text);display:flex;align-items:center;justify-content:center;gap:8px"><span style="color:#003580">✓</span> Standard Kandungan Fasa 1 dan 2</div>
 <div style="font-size:12px;color:var(--text);display:flex;align-items:center;justify-content:center;gap:8px"><span style="color:#003580">✓</span> Standard Pembelajaran Fasa 1 dan 2</div>
-<div style="font-size:12px;color:var(--text);display:flex;align-items:center;justify-content:center;gap:8px"><span style="color:#003580">✓</span> Cadangan BBM dan BBB</div>
-<div style="font-size:12px;color:var(--text);display:flex;align-items:center;justify-content:center;gap:8px"><span style="color:#003580">✓</span> Cadangan Nilai-nilai murni</div>
+<div style="font-size:12px;color:var(--text);display:flex;align-items:center;justify-content:center;gap:8px"><span style="color:#003580">✓</span> Senarai contoh BBM dan BBB</div>
+<div style="font-size:12px;color:var(--text);display:flex;align-items:center;justify-content:center;gap:8px"><span style="color:#003580">✓</span> Senarai contoh Nilai-nilai murni</div>
             <!-- Hidden items kept in DOM -->
             <div style="display:none"><span>✓</span> Tanpa daftar akaun</div>
             <div style="display:none"><span>✓</span> Tanpa login</div>
@@ -1951,7 +2040,8 @@ body { font-family: var(--font); background: var(--bg); min-height: 100vh; color
         <div style="background:rgba(0,53,128,0.08);padding:16px 16px 14px;border-radius:13px 13px 0 0">
           <div style="font-size:25px;font-weight:800;color:#003580;line-height:1">Pelan Penuh</div>
           <div style="font-size:48px;font-weight:800;color:#003580;line-height:1">RM40</div>
-          <div style="font-size:14px;color:var(--text-muted);margin-top:4px">/ 2026</div>
+          <div style="font-size:14px;color:var(--text-muted);margin-top:4px">/ untuk tahun 2026</div>
+ <div style="font-size:14px;color:var(--text-muted);margin-top:4px">(bukan langganan bulanan)</div>
           <div style="font-size:11px;color:var(--text-muted);margin-top:6px">Bermula Julai 2026 → <span style="color:var(--text);font-weight:600">RM45</span></div>
         </div>
         <hr style="border:none;border-top:1px solid rgba(0,42,112,0.2);margin:0">
@@ -1966,8 +2056,10 @@ body { font-family: var(--font); background: var(--bg); min-height: 100vh; color
             <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--text-muted);margin-top:4px;margin-bottom:4px">Apa yang anda dapat</div>
 <div style="font-size:12px;color:var(--text);display:flex;align-items:center;justify-content:center;gap:8px"><span style="color:#003580">✓</span> Standard Kandungan Fasa 1 hingga 4</div>
 <div style="font-size:12px;color:var(--text);display:flex;align-items:center;justify-content:center;gap:8px"><span style="color:#003580">✓</span> Standard Pembelajaran Fasa 1 hingga 4</div>
-<div style="font-size:12px;color:var(--text);display:flex;align-items:center;justify-content:center;gap:8px"><span style="color:#003580">✓</span> Cadangan BBM dan BBB</div>
-<div style="font-size:12px;color:var(--text);display:flex;align-items:center;justify-content:center;gap:8px"><span style="color:#003580">✓</span> Cadangan Nilai-nilai murni</div>
+<div style="font-size:12px;color:var(--text);display:flex;align-items:center;justify-content:center;gap:8px"><span style="color:#003580">✓</span> Senarai contoh BBM dan BBB</div>
+<div style="font-size:12px;color:var(--text);display:flex;align-items:center;justify-content:center;gap:8px"><span style="color:#003580">✓</span> Senarai contoh Nilai-nilai murni</div>
+<div style="font-size:12px;color:var(--text);display:flex;align-items:center;justify-content:center;gap:8px"><span style="color:#003580">✓</span> Menjadi Rakan Perujuk RP-X (referral)</div>
+
             <!-- Hidden items kept in DOM -->
             <div style="display:none"><span>✓</span> Tanpa daftar akaun</div>
             <div style="display:none"><span>✓</span> Tanpa login</div>
@@ -2013,8 +2105,9 @@ body { font-family: var(--font); background: var(--bg); min-height: 100vh; color
           <div style="display:flex;flex-direction:column;gap:8px">
 <div style="font-size:12px;color:var(--text);display:flex;align-items:center;justify-content:center;gap:8px"><span style="color:#003580">✓</span> Standard Kandungan Fasa 1 hingga 4</div>
 <div style="font-size:12px;color:var(--text);display:flex;align-items:center;justify-content:center;gap:8px"><span style="color:#003580">✓</span> Standard Pembelajaran Fasa 1 hingga 4</div>
-<div style="font-size:12px;color:var(--text);display:flex;align-items:center;justify-content:center;gap:8px"><span style="color:#003580">✓</span> Cadangan BBM dan BBB</div>
-<div style="font-size:12px;color:var(--text);display:flex;align-items:center;justify-content:center;gap:8px"><span style="color:#003580">✓</span> Cadangan Nilai-nilai murni</div>
+<div style="font-size:12px;color:var(--text);display:flex;align-items:center;justify-content:center;gap:8px"><span style="color:#003580">✓</span> Senarai contoh BBM dan BBB</div>
+<div style="font-size:12px;color:var(--text);display:flex;align-items:center;justify-content:center;gap:8px"><span style="color:#003580">✓</span> Senarai contoh Nilai-nilai murni</div>
+<div style="font-size:12px;color:var(--text);display:flex;align-items:center;justify-content:center;gap:8px"><span style="color:#003580">✓</span> Menjadi Rakan Perujuk RP-X (referral)</div>
 <div style="font-size:12px;color:var(--text);display:flex;align-items:center;justify-content:center;gap:8px"><span style="color:#003580">✓</span> Cadangan <strong>Tajuk</strong></div>
 <div style="font-size:12px;color:var(--text);display:flex;align-items:center;justify-content:center;gap:8px"><span style="color:#003580">✓</span> Cadangan <strong>Objektif</strong></div>
 <div style="font-size:12px;color:var(--text);display:flex;align-items:center;justify-content:center;gap:8px"><span style="color:#003580">✓</span> Cadangan <strong>Induksi</strong></div>
@@ -2049,12 +2142,14 @@ body { font-family: var(--font); background: var(--bg); min-height: 100vh; color
 
       <!-- CTA buttons -->
       <div style="display:flex;gap:10px;width:100%">
-        <a href="https://wa.me/PLACEHOLDER_WHATSAPP" target="_blank" style="flex:1;display:flex;align-items:center;justify-content:center;gap:8px;background:linear-gradient(135deg,#1ebe6e,#25d366);color:#fff;text-decoration:none;padding:12px;border-radius:12px;font-size:13px;font-weight:700;font-family:var(--font);letter-spacing:0.3px">
+        <a href="https://wa.me/60146701157" target="_blank" style="flex:1;display:flex;align-items:center;justify-content:center;gap:8px;background:linear-gradient(135deg,#1ebe6e,#25d366);color:#fff;text-decoration:none;padding:12px;border-radius:12px;font-size:13px;font-weight:700;font-family:var(--font);letter-spacing:0.3px">
           <span style="font-size:18px">💬</span> WhatsApp
         </a>
-        <a href="https://t.me/PLACEHOLDER_TELEGRAM" target="_blank" style="flex:1;display:flex;align-items:center;justify-content:center;gap:8px;background:linear-gradient(135deg,#0088cc,#29b5e8);color:#fff;text-decoration:none;padding:12px;border-radius:12px;font-size:13px;font-weight:700;font-family:var(--font);letter-spacing:0.3px">
+      
+<!--
+  <a href="https://t.me/PLACEHOLDER_TELEGRAM" target="_blank" style="flex:1;display:flex;align-items:center;justify-content:center;gap:8px;background:linear-gradient(135deg,#0088cc,#29b5e8);color:#fff;text-decoration:none;padding:12px;border-radius:12px;font-size:13px;font-weight:700;font-family:var(--font);letter-spacing:0.3px">
           <span style="font-size:18px">✈️</span> Telegram
-        </a>
+        </a> -->
       </div>
 
     </div>
@@ -2371,44 +2466,42 @@ function normaliseDay(raw) {
 }
 
 // @@RPT_START@@
-// @@RPT_DEMO@@
 // ── EMBEDDED RPT DATA (DEMO) ─────────────────────────────────────────────
 // RPT 2026 – Fasa 1 & 2 sahaja · semua subjek · umur 5 & 6 tahun
-// Format: {age:'5'or'6', subject:'...', fasa:'FASA 1', bulan:'...', sk:`...`, sp:`...`}
 const EMBEDDED_RPT = [
 {age:'5',subject:'Muqadam',fasa:'FASA 1',bulan:'JAN – MAC',
-	sk:`PAQ 1.1 Mengenal huruf hijaiyah`,
-		sp:`PAQ 1.1.1 Menyebut huruf hijaiyah dengan bimbingan`},
+        sk:`PAQ 1.1 Mengenal huruf hijaiyah`,
+                sp:`PAQ 1.1.1 Menyebut huruf hijaiyah dengan bimbingan`},
   {age:'5',subject:'Muqadam',fasa:'FASA 2',bulan:'APRIL – JUN',
-	sk:`PAQ 1.1 Mengenal huruf hijaiyah`,
-		sp:`PAQ 1.1.2 Membanding beza huruf hijaiyah dengan bimbingan`},
+        sk:`PAQ 1.1 Mengenal huruf hijaiyah`,
+                sp:`PAQ 1.1.2 Membanding beza huruf hijaiyah dengan bimbingan`},
 
 
 
 
   {age:'5',subject:'Pendidikan Jasmani dan Kesihatan',fasa:'FASA 1',bulan:'JAN – MAC',
-	sk:`KF 1.1 Meneroka pelbagai aktiviti yang melibatkan motor halus`,
-		sp:`KF 1.1.1 Menjalankan pelbagai aktiviti yang melibatkan penggunaan motor halus`},
+        sk:`KF 1.1 Meneroka pelbagai aktiviti yang melibatkan motor halus`,
+                sp:`KF 1.1.1 Menjalankan pelbagai aktiviti yang melibatkan penggunaan motor halus`},
   {age:'5',subject:'Pendidikan Jasmani dan Kesihatan',fasa:'FASA 1',bulan:'JAN – MAC',
-	sk:`KF 1.1 Meneroka pelbagai aktiviti yang melibatkan motor halus`,
-		sp:`KF 1.1.2 Menunjukkan koordinasi mata dan tangan dan kemahiran motor halus melalui pelbagai aktiviti`},
+        sk:`KF 1.1 Meneroka pelbagai aktiviti yang melibatkan motor halus`,
+                sp:`KF 1.1.2 Menunjukkan koordinasi mata dan tangan dan kemahiran motor halus melalui pelbagai aktiviti`},
   {age:'5',subject:'Pendidikan Jasmani dan Kesihatan',fasa:'FASA 1',bulan:'JAN – MAC',
-	sk:`KF 2.1 Meneroka pelbagai pergerakan (kesedaran ruang)`,
-		sp:`KF 2.1.1 Melakukan pergerakan dalam : 
+        sk:`KF 2.1 Meneroka pelbagai pergerakan (kesedaran ruang)`,
+                sp:`KF 2.1.1 Melakukan pergerakan dalam : 
 Ruang diri
 Ruang am`},
   {age:'5',subject:'Pendidikan Jasmani dan Kesihatan',fasa:'FASA 2',bulan:'APRIL – JUN',
-	sk:`KF 2.1 Meneroka pelbagai pergerakan (kesedaran ruang)`,
-	sp:`KF 2.1.2 Melakukan pergerakan pada pelbagai aras :
+        sk:`KF 2.1 Meneroka pelbagai pergerakan (kesedaran ruang)`,
+        sp:`KF 2.1.2 Melakukan pergerakan pada pelbagai aras :
 Tinggi 
 Sederhana
 Rendah`},
   {age:'5',subject:'Pendidikan Jasmani dan Kesihatan',fasa:'FASA 2',bulan:'APRIL – JUN',
-	sk:`KF 2.1 Meneroka pelbagai pergerakan (kesedaran ruang)`,
-		sp:`KF 2.1.3 Melakukan pergerakan mengikut arah`},
+        sk:`KF 2.1 Meneroka pelbagai pergerakan (kesedaran ruang)`,
+                sp:`KF 2.1.3 Melakukan pergerakan mengikut arah`},
   {age:'5',subject:'Pendidikan Jasmani dan Kesihatan',fasa:'FASA 2',bulan:'APRIL – JUN',
-	sk:`KF 2.2 Melakukan pergerakan lokomotor yang pelbagai`,
-		sp:`KF 2.2.1 Melakukan pergerakan :
+        sk:`KF 2.2 Melakukan pergerakan lokomotor yang pelbagai`,
+                sp:`KF 2.2.1 Melakukan pergerakan :
 Berjalan
 Berlari
 Melompat
@@ -2417,138 +2510,138 @@ Mengcongklang (galloping)
 Menggelongsor (sliding)
 Berskip`},
   {age:'5',subject:'Pendidikan Jasmani dan Kesihatan',fasa:'FASA 2',bulan:'APRIL – JUN',
-	sk:`KF 2.2 Melakukan pergerakan lokomotor yang pelbagai`,
-		sp:`KF 2.2.2 Melakukan gabungan pergerakan lokomotor`},
+        sk:`KF 2.2 Melakukan pergerakan lokomotor yang pelbagai`,
+                sp:`KF 2.2.2 Melakukan gabungan pergerakan lokomotor`},
   {age:'5',subject:'Pendidikan Jasmani dan Kesihatan',fasa:'FASA 2',bulan:'APRIL – JUN',
-	sk:`KF 2.3 Melakukan pergerakan bukan lokomotor`,
-		sp:`KF 2.3.1 Melakukan pergerakan :
+        sk:`KF 2.3 Melakukan pergerakan bukan lokomotor`,
+                sp:`KF 2.3.1 Melakukan pergerakan :
 Membongkok
 Mengayun
 Memusing
 Mengilas`},
   {age:'5',subject:'Bahasa Arab',fasa:'FASA 1',bulan:'JAN – MAC',
-	sk:`KEMAHIRAN MENDENGAR DAN BERTUTUR
+        sk:`KEMAHIRAN MENDENGAR DAN BERTUTUR
 BA1.1 Mendengar,memahami dan memberi respons secara tindak balas dan lisan`,
-		sp:`BA 1.1.1 Mendengar dan memberi respons terhadap persekitaran`},
+                sp:`BA 1.1.1 Mendengar dan memberi respons terhadap persekitaran`},
   {age:'5',subject:'Bahasa Arab',fasa:'FASA 1',bulan:'JAN – MAC',
-	sk:`BA 1.2 Menyebut Bahasa Arab mudah`,
-		sp:`BA1.2.1 Menyebut perkataan mudah dalam Bahasa Arab`},
+        sk:`BA 1.2 Menyebut Bahasa Arab mudah`,
+                sp:`BA1.2.1 Menyebut perkataan mudah dalam Bahasa Arab`},
   {age:'5',subject:'Bahasa Arab',fasa:'FASA 1',bulan:'JAN – MAC',
-	sk:`KEMAHIRAN MENULIS
+        sk:`KEMAHIRAN MENULIS
 BA 2.1 Menulis huruf hijaiyah`,
-		sp:`BA 1.2.2 Menyatakan maksud perkataan Bahasa Arab`},
+                sp:`BA 1.2.2 Menyatakan maksud perkataan Bahasa Arab`},
   {age:'5',subject:'Bahasa Arab',fasa:'FASA 1',bulan:'JAN – MAC',
-	sk:`KEMAHIRAN MENULIS
+        sk:`KEMAHIRAN MENULIS
 BA 2.1 Menulis huruf hijaiyah`,
-		sp:`BA 2.1.1 Menulis huruf hijaiyah tunggal dengan teknik yang betul
+                sp:`BA 2.1.1 Menulis huruf hijaiyah tunggal dengan teknik yang betul
 Kanan ke kiri
 Kedudukan titik
 Kedudukan baris`},
   {age:'5',subject:'Bahasa Arab',fasa:'FASA 2',bulan:'APRIL – JUN',
-	sk:`KEMAHIRAN BERTUTUR
+        sk:`KEMAHIRAN BERTUTUR
 BA 1.3 Memberi maklum balas menggunakan ayat mudah`,
-		sp:`BA 1.3.1 Mendengar dan menyebut ayat mudah secara bertatasusila`},
+                sp:`BA 1.3.1 Mendengar dan menyebut ayat mudah secara bertatasusila`},
   {age:'5',subject:'Bahasa Arab',fasa:'FASA 2',bulan:'APRIL – JUN',
-	sk:`KEMAHIRAN BERTUTUR
+        sk:`KEMAHIRAN BERTUTUR
 BA 1.3 Memberi maklum balas menggunakan ayat mudah`,
-		sp:`BA 1.3.2 Memberi maklum balas kepada ayat mudah`},
+                sp:`BA 1.3.2 Memberi maklum balas kepada ayat mudah`},
   {age:'5',subject:'Bahasa Arab',fasa:'FASA 2',bulan:'APRIL – JUN',
-	sk:`KEMAHIRAN : MENULIS
+        sk:`KEMAHIRAN : MENULIS
 BA 2.1 Menulis huruf hijaiyah`,
-		sp:`BA 2.1.1 Menulis huruf hijaiyah tunggal dengan teknik yang betul
+                sp:`BA 2.1.1 Menulis huruf hijaiyah tunggal dengan teknik yang betul
 Kanan ke kiri
 Kedudukan titik
 Kedudukan baris`},
   {age:'5',subject:'Bahasa Melayu',fasa:'FASA 1',bulan:'JAN – MAC',
-	sk:`KEMAHIRAN MENDENGAR DAN BERTUTUR
+        sk:`KEMAHIRAN MENDENGAR DAN BERTUTUR
 BM 1.1 Menguasai kemahiran mendengar dan memberi respons terhadap pelbagai bunyi di sekeliling`,
-		sp:`BM 1.1.1 Mengenal pasti pelbagai bunyi di persekitaran`},
+                sp:`BM 1.1.1 Mengenal pasti pelbagai bunyi di persekitaran`},
   {age:'5',subject:'Bahasa Melayu',fasa:'FASA 1',bulan:'JAN – MAC',
-	sk:`BM 1.2 Menguasai kemahiran mendengar dan memberi respons`,
-		sp:`BM 1.2.1 Mendengar dan memberi respons terhadap cerita yang didengar`},
+        sk:`BM 1.2 Menguasai kemahiran mendengar dan memberi respons`,
+                sp:`BM 1.2.1 Mendengar dan memberi respons terhadap cerita yang didengar`},
   {age:'5',subject:'Bahasa Melayu',fasa:'FASA 1',bulan:'JAN – MAC',
-	sk:`BM 1.2 Menguasai kemahiran mendengar dan memberi respons`,
-		sp:`BM 1.2.2 Mendengar dan menyanyi lagu`},
+        sk:`BM 1.2 Menguasai kemahiran mendengar dan memberi respons`,
+                sp:`BM 1.2.2 Mendengar dan menyanyi lagu`},
   {age:'5',subject:'Bahasa Melayu',fasa:'FASA 1',bulan:'JAN – MAC',
-	sk:`BM 1.2 Menguasai kemahiran mendengar dan memberi respons`,
-		sp:`BM 1.2.3 Mendengar, memahami dan memberi respons secara bertatasusila terhadap:
+        sk:`BM 1.2 Menguasai kemahiran mendengar dan memberi respons`,
+                sp:`BM 1.2.3 Mendengar, memahami dan memberi respons secara bertatasusila terhadap:
 Ucap selamat
 Arahan yang mudah`},
   {age:'5',subject:'Bahasa Melayu',fasa:'FASA 1',bulan:'JAN – MAC',
-	sk:`KEMAHIRAN MEMBACA
+        sk:`KEMAHIRAN MEMBACA
 BM 2.1 Menguasai kemahiran prabaca`,
-		sp:`BM 2.1.1 Mengenal pasti ciri-ciri fizikal buku`},
+                sp:`BM 2.1.1 Mengenal pasti ciri-ciri fizikal buku`},
   {age:'5',subject:'Bahasa Melayu',fasa:'FASA 1',bulan:'JAN – MAC',
-	sk:`KEMAHIRAN MEMBACA
+        sk:`KEMAHIRAN MEMBACA
 BM 2.1 Menguasai kemahiran prabaca`,
-		sp:`BM 2.1.2 Membaca secara olok-olok`},
+                sp:`BM 2.1.2 Membaca secara olok-olok`},
   {age:'5',subject:'Bahasa Melayu',fasa:'FASA 1',bulan:'JAN – MAC',
-	sk:`BM 2.2 Menguasai kemahiran mengenal huruf abjad`,sp:`BM 2.2.1 Mengenal abjad`},
+        sk:`BM 2.2 Menguasai kemahiran mengenal huruf abjad`,sp:`BM 2.2.1 Mengenal abjad`},
   {age:'5',subject:'Bahasa Melayu',fasa:'FASA 1',bulan:'JAN – MAC',
-	sk:`BM 2.2 Menguasai kemahiran mengenal huruf abjad`,sp:`BM 2.2.2 Mengaitkan huruf abjad dengan bentuk objek di persekitaran`},
+        sk:`BM 2.2 Menguasai kemahiran mengenal huruf abjad`,sp:`BM 2.2.2 Mengaitkan huruf abjad dengan bentuk objek di persekitaran`},
   {age:'5',subject:'Bahasa Melayu',fasa:'FASA 1',bulan:'JAN – MAC',
-	sk:`BM 2.2 Menguasai kemahiran mengenal huruf abjad`,sp:`BM 2.2.3 Menyebut dan membunyikan huruf vokal`},
+        sk:`BM 2.2 Menguasai kemahiran mengenal huruf abjad`,sp:`BM 2.2.3 Menyebut dan membunyikan huruf vokal`},
   {age:'5',subject:'Bahasa Melayu',fasa:'FASA 1',bulan:'JAN – MAC',
-	sk:`KEMAHIRAN MENULIS
+        sk:`KEMAHIRAN MENULIS
 BM 3.1 Menguasai kemahiran Pratulis`,sp:`BM 3.1.1 Memegang alat tulis dengan cara yang betul`},
   {age:'5',subject:'Bahasa Melayu',fasa:'FASA 1',bulan:'JAN – MAC',
-	sk:`KEMAHIRAN MENULIS
+        sk:`KEMAHIRAN MENULIS
 BM 3.1 Menguasai kemahiran Pratulis`,sp:`BM 3.1.2 Duduk dengan posisi yang betul semasa menulis`},
   {age:'5',subject:'Bahasa Melayu',fasa:'FASA 1',bulan:'JAN – MAC',
-	sk:`KEMAHIRAN MENULIS
+        sk:`KEMAHIRAN MENULIS
 BM 3.1 Menguasai kemahiran Pratulis`,sp:`BM 3.1.3 Membuat contengan dan lakaran menggunakan pelbagai alat tulis`},
   {age:'5',subject:'Bahasa Melayu',fasa:'FASA 2',bulan:'APRIL – JUN',
-	sk:`KEMAHIRAN MENDENGAR DAN BERTUTUR
+        sk:`KEMAHIRAN MENDENGAR DAN BERTUTUR
 BM 1.3 Menguasai kemahiran mendengar dan bertutur`,sp:`BM 1.3.1 Mendengar dan menyebut abjad`},
   {age:'5',subject:'Bahasa Melayu',fasa:'FASA 2',bulan:'APRIL – JUN',
-	sk:`KEMAHIRAN MENDENGAR DAN BERTUTUR
+        sk:`KEMAHIRAN MENDENGAR DAN BERTUTUR
 BM 1.3 Menguasai kemahiran mendengar dan bertutur`,sp:`BM 1.3.2 Menyebut dan memberi respons terhadap perkataan yang didengar`},
   {age:'5',subject:'Bahasa Melayu',fasa:'FASA 2',bulan:'APRIL – JUN',
-	sk:`KEMAHIRAN MEMBACA
+        sk:`KEMAHIRAN MEMBACA
 BM 2.3 Menguasai kemahiran membina dan membaca suku kata serta perkataan`,sp:`BM 2.3.1 Membunyikan suku kata terbuka`},
   {age:'5',subject:'Bahasa Melayu',fasa:'FASA 2',bulan:'APRIL – JUN',
-	sk:`KEMAHIRAN MEMBACA
+        sk:`KEMAHIRAN MEMBACA
 BM 2.3 Menguasai kemahiran membina dan membaca suku kata serta perkataan`,sp:`BM 2.3.2 Membunyikan suku kata tertutup`},
   {age:'5',subject:'Bahasa Melayu',fasa:'FASA 2',bulan:'APRIL – JUN',
-	sk:`KEMAHIRAN MENULIS
+        sk:`KEMAHIRAN MENULIS
 BM 3.1 Menguasai kemahiran Pratulis`,sp:`BM 3.1.4 Mengkoordinasikan pergerakan mata dengan tangan melalui lakaran, bentuk, corak dan garisan secara bebas`},
   {age:'5',subject:'Bahasa Melayu',fasa:'FASA 2',bulan:'APRIL – JUN',
-	sk:`KEMAHIRAN MENULIS
+        sk:`KEMAHIRAN MENULIS
 BM 3.1 Menguasai kemahiran Pratulis`,
-		sp:`BM 3.1.5 Mengkoordinasikan pergerakan mata dengan tangan mengikut arah yang betul`},
+                sp:`BM 3.1.5 Mengkoordinasikan pergerakan mata dengan tangan mengikut arah yang betul`},
   {age:'5',subject:'Doa',fasa:'FASA 1',bulan:'JAN – MAC',
-	sk:`PD 3.1 Melafazkan doa`,sp:`PD 3.1.1 Membaca doa dengan bimbingan`},
+        sk:`PD 3.1 Melafazkan doa`,sp:`PD 3.1.1 Membaca doa dengan bimbingan`},
   {age:'5',subject:'Doa',fasa:'FASA 1',bulan:'JAN – MAC',
-	sk:`PD 3.1 Melafazkan doa`,sp:`PD 3.1.2 Menghafaz doa dengan bimbingan`},
+        sk:`PD 3.1 Melafazkan doa`,sp:`PD 3.1.2 Menghafaz doa dengan bimbingan`},
   {age:'5',subject:'Doa',fasa:'FASA 1',bulan:'JAN – MAC',
-	sk:`PD 3.1 Melafazkan doa`,sp:`PD 3.1.3 Menyatakan maksud doa dengan bimbingan;`},
+        sk:`PD 3.1 Melafazkan doa`,sp:`PD 3.1.3 Menyatakan maksud doa dengan bimbingan;`},
   {age:'5',subject:'Doa',fasa:'FASA 1',bulan:'JAN – MAC',
-	sk:`PD 3.1 Melafazkan doa`,sp:`PD 3.1.4 Melafazkan doa dalam kehidupan seharian dengan bimbingan`},
+        sk:`PD 3.1 Melafazkan doa`,sp:`PD 3.1.4 Melafazkan doa dalam kehidupan seharian dengan bimbingan`},
   {age:'5',subject:'Doa',fasa:'FASA 2',bulan:'APRIL – JUN',
-	sk:`PD 3.1 Melafazkan doa`,sp:`PD 3.1.1 Membaca doa dengan bimbingan`},
+        sk:`PD 3.1 Melafazkan doa`,sp:`PD 3.1.1 Membaca doa dengan bimbingan`},
   {age:'5',subject:'Doa',fasa:'FASA 2',bulan:'APRIL – JUN',
-	sk:`PD 3.1 Melafazkan doa`,sp:`PD 3.1.2 Menghafaz doa dengan bimbingan`},
+        sk:`PD 3.1 Melafazkan doa`,sp:`PD 3.1.2 Menghafaz doa dengan bimbingan`},
   {age:'5',subject:'Doa',fasa:'FASA 2',bulan:'APRIL – JUN',
-	sk:`PD 3.1 Melafazkan doa`,sp:`PD 3.1.3 Menyatakan maksud doa dengan bimbingan;`},
+        sk:`PD 3.1 Melafazkan doa`,sp:`PD 3.1.3 Menyatakan maksud doa dengan bimbingan;`},
   {age:'5',subject:'Doa',fasa:'FASA 2',bulan:'APRIL – JUN',
-	sk:`PD 3.1 Melafazkan doa`,sp:`PD 3.1.4 Melafazkan doa dalam kehidupan seharian dengan bimbingan`},
+        sk:`PD 3.1 Melafazkan doa`,sp:`PD 3.1.4 Melafazkan doa dalam kehidupan seharian dengan bimbingan`},
   {age:'5',subject:'Bahasa Inggeris',fasa:'PHASE 1',bulan:'JAN – MARCH',
-	sk:`LISTENING AND SPEAKING SKILL
+        sk:`LISTENING AND SPEAKING SKILL
 BI 1.1 Listen to identify sounds`,
-		sp:`BI 1.1.1 Listen to and identify common sounds in the surroundings`},
+                sp:`BI 1.1.1 Listen to and identify common sounds in the surroundings`},
   {age:'5',subject:'Bahasa Inggeris',fasa:'PHASE 1',bulan:'JAN – MARCH',sk:`BI 1.2 Listen to and respond appropriately`,sp:`BI 1.2.1 Listen, repeat and recite nursery rhymes`},
   {age:'5',subject:'Bahasa Inggeris',fasa:'PHASE 1',bulan:'JAN – MARCH',sk:`BI 1.2 Listen to and respond appropriately`,sp:`BI 1.2.2 Listen and sing songs accordingly`},
   {age:'5',subject:'Bahasa Inggeris',fasa:'PHASE 1',bulan:'JAN – MARCH',sk:`BI 1.2 Listen to and respond appropriately`,sp:`BI 1.2.3 Listen and repeat greetings`},
   {age:'5',subject:'Bahasa Inggeris',fasa:'PHASE 1',bulan:'JAN – MARCH',sk:`BI 1.2 Listen to and respond appropriately`,sp:`BI 1.2.4 Listen and follow simple instruction`},
   {age:'5',subject:'Bahasa Inggeris',fasa:'PHASE 1',bulan:'JAN – MARCH',sk:`BI 1.2 Listen to and respond appropriately`,sp:`BI 1.2.5 Listen to and appreciate simple stories`},
   {age:'5',subject:'Bahasa Inggeris',fasa:'PHASE 1',bulan:'JAN – MARCH',
-	sk:`READING SKILL
+        sk:`READING SKILL
 BI 2.1 Demonstrate the appropriate method for book handling`,sp:`BI 2.1.1 Handling books with care`},
   {age:'5',subject:'Bahasa Inggeris',fasa:'PHASE 1',bulan:'JAN – MARCH',
-	sk:`READING SKILL
+        sk:`READING SKILL
 BI 2.1 Demonstrate the appropriate method for book handling`,sp:`BI 2.1.2 Recognise the basic future of the book`},
   {age:'5',subject:'Bahasa Inggeris',fasa:'PHASE 1',bulan:'JAN – MARCH',
-	sk:`READING SKILL
+        sk:`READING SKILL
 BI 2.1 Demonstrate the appropriate method for book handling`,
 sp:`BI 2.1.3 Read printed materials correctly:
 Left to right
@@ -2956,7 +3049,7 @@ Berat`},
 sp:`SA 3.2.2  Membanding dan membezakan objek berdasarkan dua ciri yang sama `},
   {age:'6',subject:'Sains',fasa:'FASA 2',bulan:'APRIL – JUN',sk:`SA 3.2 Mengenal ciptaan Allah melalui objek di persekitaran`,
 sp:`SA 3.2.3 Mengumpul objek mengikut ciri yang dikenalpasti 
- `},
+ `}
 ];
 // @@RPT_END@@
 // ── STATE ─────────────────────────────────────────────────
@@ -3100,7 +3193,10 @@ function loadState() {
     if (state.skList) { skList = state.skList; renderSkSpList(); }
     if (state.spList) { spList = state.spList; renderSkSpList(); }
     if (state.temaData) {
-      temaData = state.temaData;
+      temaData = state.temaData.map(item => ({
+        ...item,
+        startDate: item.startDate ? new Date(item.startDate) : null
+      }));
       rebuildTemaDropdown();
       if (temaData.length > 0) {
         const st = document.getElementById('tema-status');
@@ -3161,11 +3257,16 @@ function setFormValues(v) {
   if (v.objektif) document.getElementById('inp-objektif').value = v.objektif;
   if (v.setInduksi) document.getElementById('inp-set-induksi').value = v.setInduksi;
   if (v.aktiviti) document.getElementById('inp-aktiviti').value = v.aktiviti;
-  // Restore stepper position last — so it doesn't overwrite minggu/tema above
+  // Restore stepper position — stepper is the source of truth for tema/minggu
   if (typeof v.weekPickerIdx === 'number' && v.weekPickerIdx >= 0 && v.weekPickerIdx < temaData.length) {
     currentWeekIdx = v.weekPickerIdx;
     updateWeekStepper();
-    // Don't call onWeekSelect() here — minggu and tema already restored above
+    // Always sync form fields from temaData so they're never blank on reload
+    const savedItem = temaData[currentWeekIdx];
+    if (savedItem) {
+      document.getElementById('inp-minggu').value = savedItem.minggu;
+      document.getElementById('inp-tema').value = savedItem.tema;
+    }
   }
 }
 
@@ -3462,6 +3563,20 @@ function onDateChange() {
   if (['Isnin','Selasa','Rabu','Khamis','Jumaat'].includes(dayName)) {
     selectDay(dayName);
   }
+  // Auto-set tema stepper by matching startDate
+  if (temaData.length > 0) {
+    let bestIdx = -1;
+    const dTime = d.getTime();
+    for (let i = 0; i < temaData.length; i++) {
+      const sd = temaData[i].startDate;
+      if (sd && sd.getTime() <= dTime) bestIdx = i;
+    }
+    if (bestIdx !== -1 && bestIdx !== currentWeekIdx) {
+      currentWeekIdx = bestIdx;
+      updateWeekStepper();
+      onWeekSelect();
+    }
+  }
   saveState();
 }
 
@@ -3546,18 +3661,50 @@ function updateClassJumlah(name, val) {
 }
 
 // ── TEMA EXCEL ────────────────────────────────────────────
+// Parse a start date value from Excel column 0.
+// Accepts: Excel date serial (number), or plain text "DD MMM YYYY" in Malay e.g. "30 Mac 2026"
+const MALAY_MONTH_MAP = {
+  // Malay
+  'jan':0,'feb':1,'mac':2,'apr':3,'mei':4,'jun':5,
+  'jul':6,'ogos':7,'sep':8,'okt':9,'nov':10,'dis':11,
+  // English
+  'mar':2,'may':4,'aug':7,'oct':9,'dec':11
+};
+function parseStartDate(val) {
+  if (val === '' || val === null || val === undefined) return null;
+  // Excel date serial number
+  if (typeof val === 'number') {
+    const d = XLSX.SSF.parse_date_code(val);
+    if (d) return new Date(d.y, d.m - 1, d.d);
+  }
+  // Plain text "DD MMM YYYY" in Malay e.g. "30 Mac 2026"
+  if (typeof val === 'string' && val.trim() !== '') {
+    const parts = val.trim().split(/\s+/);
+    if (parts.length === 3) {
+      const day = parseInt(parts[0], 10);
+      const month = MALAY_MONTH_MAP[parts[1].toLowerCase()];
+      const year = parseInt(parts[2], 10);
+      if (!isNaN(day) && month !== undefined && !isNaN(year)) {
+        return new Date(year, month, day);
+      }
+    }
+  }
+  return null;
+}
+
 function loadTemaExcel(input) {
   const file = input.files[0]; if (!file) return;
   const reader = new FileReader();
   reader.onload = e => {
-    const wb = XLSX.read(e.target.result, { type: 'array' });
+    const wb = XLSX.read(e.target.result, { type: 'array', cellDates: false });
     const ws = wb.Sheets[wb.SheetNames[0]];
     const rows = XLSX.utils.sheet_to_json(ws, { header: 1, defval: '' });
     temaData = [];
     rows.forEach((row, i) => {
-      if (i === 0 && isNaN(Number(row[1]))) return; // skip header
-      const picker = row[0]; const minggu = row[1]; const tema = row[2];
-      if (picker !== '' && tema !== '') temaData.push({ picker, minggu, tema });
+      if (i === 0 && isNaN(Number(row[2]))) return; // skip header
+      const startDate = parseStartDate(row[0]);
+      const picker = row[1]; const minggu = row[2]; const tema = row[3];
+      if (picker !== '' && tema !== '') temaData.push({ picker, minggu, tema, startDate });
     });
     rebuildTemaDropdown();
     const n = temaData.length;
@@ -4648,7 +4795,6 @@ function setupTemplateUpload() {
     printCanvas.width  = 2828;
     printCanvas.height = 4000;
     resizeDisplayCanvas();
-    loadState();
     pCtx.drawImage(templateImg, 0, 0, printCanvas.width, printCanvas.height);
     drawStaticLabels();
     syncDisplayCanvas();
@@ -4770,7 +4916,7 @@ let pilihanState = {
   'emk':     new Set(),
   'kbat':    new Set(),
   'penilaian': new Set(),
-  'pnp':     new Set(),	
+  'pnp':     new Set(), 
   'bbm':     new Set(),
   'nilai':   new Set(),
 };
@@ -4969,25 +5115,25 @@ function drawStaticLabels() {
 
   // ── Left column row labels ────────────────────────────────────
   dc.font = 'bold ' + f + 'px ' + FONT_FAMILY;
-  dc.fillText('Minggu:',          lx,   FIELDS.minggu.y); 		// Statik Minggu:
-  dc.fillText('Hari:',            900,  FIELDS.hari.y); 		// Statik Hari:
-  dc.fillText('Tarikh:',          1416, FIELDS.tarikh.y); 		// Statik Tarikh:
-  dc.fillText('Masa',             lx,   FIELDS.masa.y); 		// Statik Masa
-  dc.fillText('Kelas',            1084, FIELDS.kelas.y); 		// Statik Kelas 
-  dc.fillText('Tema',             lx,   FIELDS.tema.y);			// Statik Tema
-  dc.fillText('Kehadiran',        1084, KEHADIRAN_LABEL_Y);		// Statik Kehadiran
-  dc.fillText('Mata Pelajaran',   lx,   FIELDS.mata_pelajaran.y);	// Statik Mata Pelajaran
-  dc.fillText('Fokus / Tajuk',    lx,   FIELDS.fokus_tajuk.y);		// Statik Fokus / Tajuk
+  dc.fillText('Minggu:',          lx,   FIELDS.minggu.y);               // Statik Minggu:
+  dc.fillText('Hari:',            900,  FIELDS.hari.y);                 // Statik Hari:
+  dc.fillText('Tarikh:',          1416, FIELDS.tarikh.y);               // Statik Tarikh:
+  dc.fillText('Masa',             lx,   FIELDS.masa.y);                 // Statik Masa
+  dc.fillText('Kelas',            1084, FIELDS.kelas.y);                // Statik Kelas 
+  dc.fillText('Tema',             lx,   FIELDS.tema.y);                 // Statik Tema
+  dc.fillText('Kehadiran',        1084, KEHADIRAN_LABEL_Y);             // Statik Kehadiran
+  dc.fillText('Mata Pelajaran',   lx,   FIELDS.mata_pelajaran.y);       // Statik Mata Pelajaran
+  dc.fillText('Fokus / Tajuk',    lx,   FIELDS.fokus_tajuk.y);          // Statik Fokus / Tajuk
 
   dc.font = 'bold ' + f + 'px ' + FONT_FAMILY;
-  dc.fillText('Standard',          lx, FIELDS.f18.y);			// Statik sK cari y di generated sK
-  dc.fillText('Kandungan',        lx, FIELDS.f18.y + LINE_HEIGHT);	// Statik 
-  dc.fillText('Standard',          lx, FIELDS.f20.y);			// Statik sP cari y di generated sP
-  dc.fillText('Pembelajaran',     lx, FIELDS.f20.y + LINE_HEIGHT);	// Statik 
-  dc.fillText('Objektif',          lx, FIELDS.f21.y);			// Statik Objektif cari y di generated Obj 
-  dc.fillText('Pembelajaran',     lx, FIELDS.f21.y + LINE_HEIGHT);	// Statik 
-  dc.fillText('Set Induksi',      lx, FIELDS.set_induksi.y);		// Statik Set Induksi Statik induksi cari y di generated Set Induksi Generated Induksi 
-  dc.fillText('Aktiviti',         lx, FIELDS.aktiviti.y);		// Statik Aktiviti cari y di generated Aktivit
+  dc.fillText('Standard',          lx, FIELDS.f18.y);                   // Statik sK cari y di generated sK
+  dc.fillText('Kandungan',        lx, FIELDS.f18.y + LINE_HEIGHT);      // Statik 
+  dc.fillText('Standard',          lx, FIELDS.f20.y);                   // Statik sP cari y di generated sP
+  dc.fillText('Pembelajaran',     lx, FIELDS.f20.y + LINE_HEIGHT);      // Statik 
+  dc.fillText('Objektif',          lx, FIELDS.f21.y);                   // Statik Objektif cari y di generated Obj 
+  dc.fillText('Pembelajaran',     lx, FIELDS.f21.y + LINE_HEIGHT);      // Statik 
+  dc.fillText('Set Induksi',      lx, FIELDS.set_induksi.y);            // Statik Set Induksi Statik induksi cari y di generated Set Induksi Generated Induksi 
+  dc.fillText('Aktiviti',         lx, FIELDS.aktiviti.y);               // Statik Aktiviti cari y di generated Aktivit
 
   const refleksiY = 3050;
   const catatanY  = 3540;
@@ -5278,6 +5424,10 @@ function initAutoSave() {
 
 // ── INIT ──────────────────────────────────────────────────
 document.addEventListener('DOMContentLoaded', () => {
+  // Restore saved state immediately — never wait on image loading for this
+  loadState();
+  rebuildRptFilterDropdowns();
+
   // Wait for web fonts (Plus Jakarta Sans) to load before any canvas drawing
   document.fonts.ready.then(() => {
     setupTemplateUpload();
