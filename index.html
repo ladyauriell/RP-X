@@ -3746,7 +3746,7 @@ function loadTemaExcel(input) {
     rows.forEach((row, i) => {
       if (i === 0 && isNaN(Number(row[2]))) return; // skip header
       const startDate = parseStartDate(row[0]);
-      const picker = row[1]; const minggu = row[2]; const tema = row[3];
+      const picker = row[1]; const minggu = typeof row[2] === 'number' ? Math.round(row[2]) : parseInt(row[2], 10) || row[2]; const tema = row[3];
       if (picker !== '' && tema !== '') temaData.push({ picker, minggu, tema, startDate });
     });
     rebuildTemaDropdown();
@@ -3887,23 +3887,36 @@ function rebuildRptFilterDropdowns() {
 }
 
 // ── JADUAL EXCEL ──────────────────────────────────────────
+// Convert Excel time serial (fractional day) to "H:MM AM/PM" string
+// using pure integer arithmetic — no Date object, immune to Brave fingerprint noise.
+function excelTimeToString(val) {
+  if (typeof val === 'string' && val.trim() !== '') return val.trim();
+  if (typeof val !== 'number') return '';
+  const totalMins = Math.round(val * 1440); // 1440 = minutes in a day
+  const h = Math.floor(totalMins / 60) % 24;
+  const m = totalMins % 60;
+  const ampm = h >= 12 ? 'PM' : 'AM';
+  const h12 = h % 12 || 12;
+  return h12 + ':' + String(m).padStart(2, '0') + ' ' + ampm;
+}
+
 function loadJadualExcel(input) {
   const file = input.files[0]; if (!file) return;
   const reader = new FileReader();
   reader.onload = e => {
-    const wb = XLSX.read(e.target.result, { type: 'array', cellDates: true });
+    const wb = XLSX.read(e.target.result, { type: 'array', cellDates: false });
     const ws = wb.Sheets[wb.SheetNames[0]];
-    const rows = XLSX.utils.sheet_to_json(ws, { header: 1, defval: '', raw: false });
+    const rows = XLSX.utils.sheet_to_json(ws, { header: 1, defval: '', raw: true });
     jadualData = {};
     rows.forEach((row, i) => {
       if (i === 0) return;
       let [day, masaMula, masaTamat, subject, kelas, jumlah] = row;
       day = normaliseDay(day);
-      masaMula = String(masaMula || '').trim();
-      masaTamat = String(masaTamat || '').trim();
+      masaMula = excelTimeToString(masaMula);
+      masaTamat = excelTimeToString(masaTamat);
       subject = String(subject || '').trim();
       kelas = String(kelas || '').trim();
-      jumlah = String(jumlah || '').trim();
+      jumlah = typeof jumlah === 'number' ? String(Math.round(jumlah)) : String(jumlah || '').trim();
       if (!day || !subject) return;
       const masa = masaTamat ? masaMula + ' - ' + masaTamat : masaMula;
       if (!jadualData[day]) jadualData[day] = [];
