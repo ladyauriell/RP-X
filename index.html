@@ -1272,9 +1272,7 @@ body { font-family: var(--font); background: var(--sidebar-bg); min-height: 100v
             <!-- RP-Execute ~ Penjana RPH anda. -->
           </div>
           <button onclick="openAboutModal()" title="Mula di sini" style="background:rgba(255,255,255,0.18);border:1.5px solid rgba(255,255,255,0.45);color:#fff;border-radius:20px;font-size:12px;font-weight:700;cursor:pointer;padding:6px 14px;flex-shrink:0;transition:all 0.15s;font-family:var(--font);letter-spacing:0.3px;white-space:nowrap;backdrop-filter:blur(4px)" onmouseover="this.style.background='rgba(255,255,255,0.3)'" onmouseout="this.style.background='rgba(255,255,255,0.18)'">Mula di sini</button>
-<!-- @@PRICING_START@@ -->
-          <button onclick="openHargaModal()" title="Harga & Beli" style="background:rgba(255,255,255,0.18);border:1.5px solid rgba(255,255,255,0.45);color:#fff;border-radius:20px;font-size:12px;font-weight:700;cursor:pointer;padding:6px 14px;flex-shrink:0;transition:all 0.15s;font-family:var(--font);letter-spacing:0.3px;white-space:nowrap;backdrop-filter:blur(4px)" onmouseover="this.style.background='rgba(255,255,255,0.3)'" onmouseout="this.style.background='rgba(255,255,255,0.18)'">Harga</button>
-<!-- @@PRICING_END@@ -->
+
         </div>
       </div>
     </div>
@@ -2011,7 +2009,7 @@ body { font-family: var(--font); background: var(--sidebar-bg); min-height: 100v
           Terima kasih kerana mengambil berat! Jika anda terjumpa sebarang masalah atau pepijat semasa menggunakan RP-X, sila hubungi kami melalui WhatsApp. Nyatakan butiran bug dengan jelas supaya kami dapat membuat penambahbaikan dengan segera.
         </p>
       </div>
-      <a href="https://wa.me/60123456789?text=Salam%2C%20saya%20ingin%20melaporkan%20bug%20pada%20RP-X%3A%20" target="_blank" style="
+      <a href="https://wa.me/60146701157?text=Salam%2C%20saya%20ingin%20melaporkan%20bug%20pada%20RP-X%3A%20" target="_blank" style="
         display:flex;align-items:center;justify-content:center;gap:8px;
         background:#25D366;color:#fff;
         padding:12px;border-radius:10px;
@@ -2512,42 +2510,48 @@ function normaliseDay(raw) {
 }
 
 // @@RPT_START@@
-// ── EMBEDDED RPT DATA (DEMO) ─────────────────────────────────────────────
-// RPT 2026 – Fasa 1 & 2 sahaja · semua subjek · umur 5 & 6 tahun
+// ── EMBEDDED RPT DATA (FULL) ─────────────────────────────────────────────────
+// RPT 2026 – Semua fasa · semua subjek · umur 5 & 6 tahun
 const EMBEDDED_RPT = [
-{age:'5',subject:'Muqadam',fasa:'FASA 1',bulan:'JAN – MAC',
-        sk:`PAQ 1.1 Mengenal huruf hijaiyah`,
-                sp:`PAQ 1.1.1 Menyebut huruf hijaiyah dengan bimbingan`},
+ {age:'5',subject:'Muqadam',fasa:'FASA 1',bulan:'JAN – MAC',
+	sk:`PAQ 1.1 Mengenal huruf hijaiyah`,
+		sp:`PAQ 1.1.1 Menyebut huruf hijaiyah dengan bimbingan`},
   {age:'5',subject:'Muqadam',fasa:'FASA 2',bulan:'APRIL – JUN',
-        sk:`PAQ 1.1 Mengenal huruf hijaiyah`,
-                sp:`PAQ 1.1.2 Membanding beza huruf hijaiyah dengan bimbingan`},
+	sk:`PAQ 1.1 Mengenal huruf hijaiyah`,
+		sp:`PAQ 1.1.2 Membanding beza huruf hijaiyah dengan bimbingan`},
+  {age:'5',subject:'Muqadam',fasa:'FASA 3',bulan:'JULAI – SEPT',
+	sk:`PAQ 1.2 Mendengar dan mengecam bunyi huruf hijaiyah`,
+		sp:`PAQ 1.2.1 Mendengar dan menyebut huruf hijaiyah dengan bimbingan`},
+  {age:'5',subject:'Muqadam',fasa:'FASA 4',bulan:'OKT - NOV',
+	sk:`PAQ 1.2 Mendengar dan mengecam bunyi huruf hijaiyah`,
+		sp:`PAQ 1.2.2 Membunyikan huruf hijaiyah dengan bimbingan`},
 
 
 
 
   {age:'5',subject:'Pendidikan Jasmani dan Kesihatan',fasa:'FASA 1',bulan:'JAN – MAC',
-        sk:`KF 1.1 Meneroka pelbagai aktiviti yang melibatkan motor halus`,
-                sp:`KF 1.1.1 Menjalankan pelbagai aktiviti yang melibatkan penggunaan motor halus`},
+	sk:`KF 1.1 Meneroka pelbagai aktiviti yang melibatkan motor halus`,
+		sp:`KF 1.1.1 Menjalankan pelbagai aktiviti yang melibatkan penggunaan motor halus`},
   {age:'5',subject:'Pendidikan Jasmani dan Kesihatan',fasa:'FASA 1',bulan:'JAN – MAC',
-        sk:`KF 1.1 Meneroka pelbagai aktiviti yang melibatkan motor halus`,
-                sp:`KF 1.1.2 Menunjukkan koordinasi mata dan tangan dan kemahiran motor halus melalui pelbagai aktiviti`},
+	sk:`KF 1.1 Meneroka pelbagai aktiviti yang melibatkan motor halus`,
+		sp:`KF 1.1.2 Menunjukkan koordinasi mata dan tangan dan kemahiran motor halus melalui pelbagai aktiviti`},
   {age:'5',subject:'Pendidikan Jasmani dan Kesihatan',fasa:'FASA 1',bulan:'JAN – MAC',
-        sk:`KF 2.1 Meneroka pelbagai pergerakan (kesedaran ruang)`,
-                sp:`KF 2.1.1 Melakukan pergerakan dalam : 
+	sk:`KF 2.1 Meneroka pelbagai pergerakan (kesedaran ruang)`,
+		sp:`KF 2.1.1 Melakukan pergerakan dalam : 
 Ruang diri
 Ruang am`},
   {age:'5',subject:'Pendidikan Jasmani dan Kesihatan',fasa:'FASA 2',bulan:'APRIL – JUN',
-        sk:`KF 2.1 Meneroka pelbagai pergerakan (kesedaran ruang)`,
-        sp:`KF 2.1.2 Melakukan pergerakan pada pelbagai aras :
+	sk:`KF 2.1 Meneroka pelbagai pergerakan (kesedaran ruang)`,
+	sp:`KF 2.1.2 Melakukan pergerakan pada pelbagai aras :
 Tinggi 
 Sederhana
 Rendah`},
   {age:'5',subject:'Pendidikan Jasmani dan Kesihatan',fasa:'FASA 2',bulan:'APRIL – JUN',
-        sk:`KF 2.1 Meneroka pelbagai pergerakan (kesedaran ruang)`,
-                sp:`KF 2.1.3 Melakukan pergerakan mengikut arah`},
+	sk:`KF 2.1 Meneroka pelbagai pergerakan (kesedaran ruang)`,
+		sp:`KF 2.1.3 Melakukan pergerakan mengikut arah`},
   {age:'5',subject:'Pendidikan Jasmani dan Kesihatan',fasa:'FASA 2',bulan:'APRIL – JUN',
-        sk:`KF 2.2 Melakukan pergerakan lokomotor yang pelbagai`,
-                sp:`KF 2.2.1 Melakukan pergerakan :
+	sk:`KF 2.2 Melakukan pergerakan lokomotor yang pelbagai`,
+		sp:`KF 2.2.1 Melakukan pergerakan :
 Berjalan
 Berlari
 Melompat
@@ -2556,138 +2560,553 @@ Mengcongklang (galloping)
 Menggelongsor (sliding)
 Berskip`},
   {age:'5',subject:'Pendidikan Jasmani dan Kesihatan',fasa:'FASA 2',bulan:'APRIL – JUN',
-        sk:`KF 2.2 Melakukan pergerakan lokomotor yang pelbagai`,
-                sp:`KF 2.2.2 Melakukan gabungan pergerakan lokomotor`},
+	sk:`KF 2.2 Melakukan pergerakan lokomotor yang pelbagai`,
+		sp:`KF 2.2.2 Melakukan gabungan pergerakan lokomotor`},
   {age:'5',subject:'Pendidikan Jasmani dan Kesihatan',fasa:'FASA 2',bulan:'APRIL – JUN',
-        sk:`KF 2.3 Melakukan pergerakan bukan lokomotor`,
-                sp:`KF 2.3.1 Melakukan pergerakan :
+	sk:`KF 2.3 Melakukan pergerakan bukan lokomotor`,
+		sp:`KF 2.3.1 Melakukan pergerakan :
 Membongkok
 Mengayun
 Memusing
 Mengilas`},
+  {age:'5',subject:'Pendidikan Jasmani dan Kesihatan',fasa:'FASA 3',bulan:'JULAI – SEPT',
+	sk:`KF 3.1 Mengaplikasikan pelbagai pergerakan mengikut irama`,
+		sp:`KF 3.1.1 Melakukan pergerakan lokomotor mengikut muzik.`},
+  {age:'5',subject:'Pendidikan Jasmani dan Kesihatan',fasa:'FASA 3',bulan:'JULAI – SEPT',
+	sk:`KF 3.1 Mengaplikasikan pelbagai pergerakan mengikut irama`,
+		sp:`KF 3.1.2 Melakukan pergerakan bukan lokomotor mengikut muzik`},
+  {age:'5',subject:'Pendidikan Jasmani dan Kesihatan',fasa:'FASA 3',bulan:'JULAI – SEPT',
+	sk:`KF 3.1 Mengaplikasikan pelbagai pergerakan mengikut irama`,
+		sp:`KF 3.1.3 Melakukan pergerakan bebas mengikut muzik`},
+  {age:'5',subject:'Pendidikan Jasmani dan Kesihatan',fasa:'FASA 3',bulan:'JULAI – SEPT',
+	sk:`KF 4.1 Mengaplikasikan kemahiran dalam menjaga kesihatan diri`,
+		sp:`KF 4.1.1 Menyatakan cara menjaga kebersihan anggota tubuh dengan betul.`},
+  {age:'5',subject:'Pendidikan Jasmani dan Kesihatan',fasa:'FASA 3',bulan:'JULAI – SEPT',
+	sk:`KF 4.1 Mengaplikasikan kemahiran dalam menjaga kesihatan diri`,
+		sp:`KF 4.1.2 Bercerita tentang kepentingan menjaga kebersihan : Diri Pakaian Peralatan peribadi`},
+  {age:'5',subject:'Pendidikan Jasmani dan Kesihatan',fasa:'FASA 3',bulan:'JULAI – SEPT',
+	sk:`KF 4.1 Mengaplikasikan kemahiran dalam menjaga kesihatan diri`,
+		sp:`KF 4.1.3 Mengetahui anggota tubuh lelaki dan perempuan : Kepala (rambut, mata, telinga, hidung, mulut, bibir dan gigi) Badan (payudara, dada, bahu dan punggung) Tangan Kaki Organ genital (zakar dan faraj) Dubur`},
+  {age:'5',subject:'Pendidikan Jasmani dan Kesihatan',fasa:'FASA 3',bulan:'JULAI – SEPT',
+	sk:`KF 4.1 Mengaplikasikan kemahiran dalam menjaga kesihatan diri`,
+		sp:`KF 4.1.4 Mengetahui sentuhan selamat, sentuhan tidak selamat dan sentuhan tidak selesa`},
+  {age:'5',subject:'Pendidikan Jasmani dan Kesihatan',fasa:'FASA 3',bulan:'JULAI – SEPT',
+	sk:`KF 4.1 Mengaplikasikan kemahiran dalam menjaga kesihatan diri`,
+		sp:`KF 4.1.5 Mengaplikasikan kemahiran berkata Tidak kepada sentuhan yang tidak selesa dan tidak selamat`},
+  {age:'5',subject:'Pendidikan Jasmani dan Kesihatan',fasa:'FASA 4',bulan:'OKT - NOV',
+	sk:`KF 4.2 Memahami jenis penyakit dan cara pencegahan penyakit`,
+		sp:`KF 4.2.1 Menunjukkan contoh cara untk mengelakkan penyakit`},
+  {age:'5',subject:'Pendidikan Jasmani dan Kesihatan',fasa:'FASA 4',bulan:'OKT - NOV',
+	sk:`KF 4.3 Menjaga keselamatan diri sendiri`,
+		sp:`KF 4.3.1 Memerihalkan sumber, tempat dan situasi yang berbahaya`},
+  {age:'5',subject:'Pendidikan Jasmani dan Kesihatan',fasa:'FASA 4',bulan:'OKT - NOV',
+	sk:`KF 4.3 Menjaga keselamatan diri sendiri`,
+		sp:`KF 4.3.2 Menyatakan tingkah laku yang betul untuk menjamin keselamatan diri dan orang lain`},
+  {age:'5',subject:'Pendidikan Jasmani dan Kesihatan',fasa:'FASA 4',bulan:'OKT - NOV',
+	sk:`KF 4.3 Menjaga keselamatan diri sendiri`,
+		sp:`KF 4.3.3 Memahami cara untuk mendapatkan bantuan kecemasan`},
+  {age:'5',subject:'Pendidikan Jasmani dan Kesihatan',fasa:'FASA 4',bulan:'OKT - NOV',
+	sk:`KF 4.4 Menjaga kesejahteraan diri dalam kehidupan harian`,
+		sp:`KF 4.4.1 Mengenal pasti makanan dan minuman yang selamat`},
+  {age:'5',subject:'Pendidikan Jasmani dan Kesihatan',fasa:'FASA 4',bulan:'OKT - NOV',
+	sk:`KF 4.4 Menjaga kesejahteraan diri dalam kehidupan harian`,
+		sp:`KF 4.4.2 Menceritakan kepentingan pemakanan yang sihat`},
+
+
   {age:'5',subject:'Bahasa Arab',fasa:'FASA 1',bulan:'JAN – MAC',
-        sk:`KEMAHIRAN MENDENGAR DAN BERTUTUR
+	sk:`KEMAHIRAN MENDENGAR DAN BERTUTUR
 BA1.1 Mendengar,memahami dan memberi respons secara tindak balas dan lisan`,
-                sp:`BA 1.1.1 Mendengar dan memberi respons terhadap persekitaran`},
+		sp:`BA 1.1.1 Mendengar dan memberi respons terhadap persekitaran`},
   {age:'5',subject:'Bahasa Arab',fasa:'FASA 1',bulan:'JAN – MAC',
-        sk:`BA 1.2 Menyebut Bahasa Arab mudah`,
-                sp:`BA1.2.1 Menyebut perkataan mudah dalam Bahasa Arab`},
+	sk:`BA 1.2 Menyebut Bahasa Arab mudah`,
+		sp:`BA1.2.1 Menyebut perkataan mudah dalam Bahasa Arab`},
   {age:'5',subject:'Bahasa Arab',fasa:'FASA 1',bulan:'JAN – MAC',
-        sk:`KEMAHIRAN MENULIS
+	sk:`KEMAHIRAN MENULIS
 BA 2.1 Menulis huruf hijaiyah`,
-                sp:`BA 1.2.2 Menyatakan maksud perkataan Bahasa Arab`},
+		sp:`BA 1.2.2 Menyatakan maksud perkataan Bahasa Arab`},
   {age:'5',subject:'Bahasa Arab',fasa:'FASA 1',bulan:'JAN – MAC',
-        sk:`KEMAHIRAN MENULIS
+	sk:`KEMAHIRAN MENULIS
 BA 2.1 Menulis huruf hijaiyah`,
-                sp:`BA 2.1.1 Menulis huruf hijaiyah tunggal dengan teknik yang betul
+		sp:`BA 2.1.1 Menulis huruf hijaiyah tunggal dengan teknik yang betul
 Kanan ke kiri
 Kedudukan titik
 Kedudukan baris`},
   {age:'5',subject:'Bahasa Arab',fasa:'FASA 2',bulan:'APRIL – JUN',
-        sk:`KEMAHIRAN BERTUTUR
+	sk:`KEMAHIRAN BERTUTUR
 BA 1.3 Memberi maklum balas menggunakan ayat mudah`,
-                sp:`BA 1.3.1 Mendengar dan menyebut ayat mudah secara bertatasusila`},
+		sp:`BA 1.3.1 Mendengar dan menyebut ayat mudah secara bertatasusila`},
   {age:'5',subject:'Bahasa Arab',fasa:'FASA 2',bulan:'APRIL – JUN',
-        sk:`KEMAHIRAN BERTUTUR
+	sk:`KEMAHIRAN BERTUTUR
 BA 1.3 Memberi maklum balas menggunakan ayat mudah`,
-                sp:`BA 1.3.2 Memberi maklum balas kepada ayat mudah`},
+		sp:`BA 1.3.2 Memberi maklum balas kepada ayat mudah`},
   {age:'5',subject:'Bahasa Arab',fasa:'FASA 2',bulan:'APRIL – JUN',
-        sk:`KEMAHIRAN : MENULIS
+	sk:`KEMAHIRAN : MENULIS
 BA 2.1 Menulis huruf hijaiyah`,
-                sp:`BA 2.1.1 Menulis huruf hijaiyah tunggal dengan teknik yang betul
+		sp:`BA 2.1.1 Menulis huruf hijaiyah tunggal dengan teknik yang betul
 Kanan ke kiri
 Kedudukan titik
 Kedudukan baris`},
+  {age:'5',subject:'Bahasa Arab',fasa:'FASA 3',bulan:'JULAI – SEPT',
+	sk:`KEMAHIRAN  MENULIS BA 2.2 Menulis perkataan mudah`,
+		sp:`BA 2.2.1 Menulis perkataan mudah dalam Bahasa Arab`},
+  {age:'5',subject:'Bahasa Arab',fasa:'FASA 3',bulan:'JULAI – SEPT',
+	sk:`KEMAHIRAN : MEMBACA BA 3.1 Membaca perkataan mudah`,
+		sp:`BA 3.1 Membaca perkataan mudah`},
+  {age:'5',subject:'Bahasa Arab',fasa:'FASA 4',bulan:'OKT – NOV',
+	sk:`KEMAHIRAN  MENULIS BA 2.2 Menulis perkataan mudah`,
+		sp:`BA 2.2.1 Menulis perkataan mudah dalam Bahasa Arab`},
+  {age:'5',subject:'Bahasa Arab',fasa:'FASA 4',bulan:'OKT – NOV',
+	sk:`KEMAHIRAN : MEMBACA BA 3.1 Membaca perkataan mudah`,
+		sp:`BA 3.1 Membaca perkataan mudah`},
   {age:'5',subject:'Bahasa Melayu',fasa:'FASA 1',bulan:'JAN – MAC',
-        sk:`KEMAHIRAN MENDENGAR DAN BERTUTUR
+	sk:`KEMAHIRAN MENDENGAR DAN BERTUTUR
 BM 1.1 Menguasai kemahiran mendengar dan memberi respons terhadap pelbagai bunyi di sekeliling`,
-                sp:`BM 1.1.1 Mengenal pasti pelbagai bunyi di persekitaran`},
+		sp:`BM 1.1.1 Mengenal pasti pelbagai bunyi di persekitaran`},
   {age:'5',subject:'Bahasa Melayu',fasa:'FASA 1',bulan:'JAN – MAC',
-        sk:`BM 1.2 Menguasai kemahiran mendengar dan memberi respons`,
-                sp:`BM 1.2.1 Mendengar dan memberi respons terhadap cerita yang didengar`},
+	sk:`BM 1.2 Menguasai kemahiran mendengar dan memberi respons`,
+		sp:`BM 1.2.1 Mendengar dan memberi respons terhadap cerita yang didengar`},
   {age:'5',subject:'Bahasa Melayu',fasa:'FASA 1',bulan:'JAN – MAC',
-        sk:`BM 1.2 Menguasai kemahiran mendengar dan memberi respons`,
-                sp:`BM 1.2.2 Mendengar dan menyanyi lagu`},
+	sk:`BM 1.2 Menguasai kemahiran mendengar dan memberi respons`,
+		sp:`BM 1.2.2 Mendengar dan menyanyi lagu`},
   {age:'5',subject:'Bahasa Melayu',fasa:'FASA 1',bulan:'JAN – MAC',
-        sk:`BM 1.2 Menguasai kemahiran mendengar dan memberi respons`,
-                sp:`BM 1.2.3 Mendengar, memahami dan memberi respons secara bertatasusila terhadap:
+	sk:`BM 1.2 Menguasai kemahiran mendengar dan memberi respons`,
+		sp:`BM 1.2.3 Mendengar, memahami dan memberi respons secara bertatasusila terhadap:
 Ucap selamat
 Arahan yang mudah`},
   {age:'5',subject:'Bahasa Melayu',fasa:'FASA 1',bulan:'JAN – MAC',
-        sk:`KEMAHIRAN MEMBACA
+	sk:`KEMAHIRAN MEMBACA
 BM 2.1 Menguasai kemahiran prabaca`,
-                sp:`BM 2.1.1 Mengenal pasti ciri-ciri fizikal buku`},
+		sp:`BM 2.1.1 Mengenal pasti ciri-ciri fizikal buku`},
   {age:'5',subject:'Bahasa Melayu',fasa:'FASA 1',bulan:'JAN – MAC',
-        sk:`KEMAHIRAN MEMBACA
+	sk:`KEMAHIRAN MEMBACA
 BM 2.1 Menguasai kemahiran prabaca`,
-                sp:`BM 2.1.2 Membaca secara olok-olok`},
+		sp:`BM 2.1.2 Membaca secara olok-olok`},
   {age:'5',subject:'Bahasa Melayu',fasa:'FASA 1',bulan:'JAN – MAC',
-        sk:`BM 2.2 Menguasai kemahiran mengenal huruf abjad`,sp:`BM 2.2.1 Mengenal abjad`},
+	sk:`BM 2.2 Menguasai kemahiran mengenal huruf abjad`,sp:`BM 2.2.1 Mengenal abjad`},
   {age:'5',subject:'Bahasa Melayu',fasa:'FASA 1',bulan:'JAN – MAC',
-        sk:`BM 2.2 Menguasai kemahiran mengenal huruf abjad`,sp:`BM 2.2.2 Mengaitkan huruf abjad dengan bentuk objek di persekitaran`},
+	sk:`BM 2.2 Menguasai kemahiran mengenal huruf abjad`,sp:`BM 2.2.2 Mengaitkan huruf abjad dengan bentuk objek di persekitaran`},
   {age:'5',subject:'Bahasa Melayu',fasa:'FASA 1',bulan:'JAN – MAC',
-        sk:`BM 2.2 Menguasai kemahiran mengenal huruf abjad`,sp:`BM 2.2.3 Menyebut dan membunyikan huruf vokal`},
+	sk:`BM 2.2 Menguasai kemahiran mengenal huruf abjad`,sp:`BM 2.2.3 Menyebut dan membunyikan huruf vokal`},
   {age:'5',subject:'Bahasa Melayu',fasa:'FASA 1',bulan:'JAN – MAC',
-        sk:`KEMAHIRAN MENULIS
+	sk:`KEMAHIRAN MENULIS
 BM 3.1 Menguasai kemahiran Pratulis`,sp:`BM 3.1.1 Memegang alat tulis dengan cara yang betul`},
   {age:'5',subject:'Bahasa Melayu',fasa:'FASA 1',bulan:'JAN – MAC',
-        sk:`KEMAHIRAN MENULIS
+	sk:`KEMAHIRAN MENULIS
 BM 3.1 Menguasai kemahiran Pratulis`,sp:`BM 3.1.2 Duduk dengan posisi yang betul semasa menulis`},
   {age:'5',subject:'Bahasa Melayu',fasa:'FASA 1',bulan:'JAN – MAC',
-        sk:`KEMAHIRAN MENULIS
+	sk:`KEMAHIRAN MENULIS
 BM 3.1 Menguasai kemahiran Pratulis`,sp:`BM 3.1.3 Membuat contengan dan lakaran menggunakan pelbagai alat tulis`},
   {age:'5',subject:'Bahasa Melayu',fasa:'FASA 2',bulan:'APRIL – JUN',
-        sk:`KEMAHIRAN MENDENGAR DAN BERTUTUR
+	sk:`KEMAHIRAN MENDENGAR DAN BERTUTUR
 BM 1.3 Menguasai kemahiran mendengar dan bertutur`,sp:`BM 1.3.1 Mendengar dan menyebut abjad`},
   {age:'5',subject:'Bahasa Melayu',fasa:'FASA 2',bulan:'APRIL – JUN',
-        sk:`KEMAHIRAN MENDENGAR DAN BERTUTUR
+	sk:`KEMAHIRAN MENDENGAR DAN BERTUTUR
 BM 1.3 Menguasai kemahiran mendengar dan bertutur`,sp:`BM 1.3.2 Menyebut dan memberi respons terhadap perkataan yang didengar`},
   {age:'5',subject:'Bahasa Melayu',fasa:'FASA 2',bulan:'APRIL – JUN',
-        sk:`KEMAHIRAN MEMBACA
+	sk:`KEMAHIRAN MEMBACA
 BM 2.3 Menguasai kemahiran membina dan membaca suku kata serta perkataan`,sp:`BM 2.3.1 Membunyikan suku kata terbuka`},
   {age:'5',subject:'Bahasa Melayu',fasa:'FASA 2',bulan:'APRIL – JUN',
-        sk:`KEMAHIRAN MEMBACA
+	sk:`KEMAHIRAN MEMBACA
 BM 2.3 Menguasai kemahiran membina dan membaca suku kata serta perkataan`,sp:`BM 2.3.2 Membunyikan suku kata tertutup`},
   {age:'5',subject:'Bahasa Melayu',fasa:'FASA 2',bulan:'APRIL – JUN',
-        sk:`KEMAHIRAN MENULIS
+	sk:`KEMAHIRAN MENULIS
 BM 3.1 Menguasai kemahiran Pratulis`,sp:`BM 3.1.4 Mengkoordinasikan pergerakan mata dengan tangan melalui lakaran, bentuk, corak dan garisan secara bebas`},
   {age:'5',subject:'Bahasa Melayu',fasa:'FASA 2',bulan:'APRIL – JUN',
-        sk:`KEMAHIRAN MENULIS
+	sk:`KEMAHIRAN MENULIS
 BM 3.1 Menguasai kemahiran Pratulis`,
-                sp:`BM 3.1.5 Mengkoordinasikan pergerakan mata dengan tangan mengikut arah yang betul`},
+		sp:`BM 3.1.5 Mengkoordinasikan pergerakan mata dengan tangan mengikut arah yang betul`},
+  {age:'5',subject:'Bahasa Melayu',fasa:'FASA 3',bulan:'JULAI – SEPT',
+	sk:`KEMAHIRAN MENDENGAR DAN BERTUTUR
+BM 1.4 Menguasai kemahiran berinteraksi menggunakan ayat mudah`,
+		sp:`BM 1.4.1 Mendengar dan menyebut ayat mudah`},
+  {age:'5',subject:'Bahasa Melayu',fasa:'FASA 3',bulan:'JULAI – SEPT',
+	sk:`KEMAHIRAN MENDENGAR DAN BERTUTUR
+  BM 1.4 Menguasai kemahiran berinteraksi menggunakan ayat mudah`,
+		sp:`BM 1.4.2 Berinteraksi menggunakan ayat mudah`},
+  {age:'5',subject:'Bahasa Melayu',fasa:'FASA 3',bulan:'JULAI – SEPT',
+	sk:`KEMAHIRAN MENDENGAR DAN BERTUTUR
+  BM 1.4 Menguasai kemahiran berinteraksi menggunakan ayat mudah`,
+		sp:`BM 1.4 3 Bersoal jawab menggunakan ayat mudah`},
+  {age:'5',subject:'Bahasa Melayu',fasa:'FASA 3',bulan:'JULAI – SEPT',
+	sk:`KEMAHIRAN MEMBACA  
+BM 2.4 Menguasai kemahiran membaca dan memahami frasa  serta ayat`,
+		sp:`BM 2.4.1 Membaca frasa yang mengandungi perkataan dengan suku kata terbuka`},
+  {age:'5',subject:'Bahasa Melayu',fasa:'FASA 3',bulan:'JULAI – SEPT',
+	sk:`KEMAHIRAN MEMBACA  
+BM 2.4 Menguasai kemahiran membaca dan memahami frasa  serta ayat`,
+		sp:`BM 2.4.2 Membaca ayat mudah yang mengandungi perkataan dengan suku kata terbuka`},
+  {age:'5',subject:'Bahasa Melayu',fasa:'FASA 3',bulan:'JULAI – SEPT',
+	sk:`BM 2.5 Menguasai kemahiran membaca dan memahami bahan bacaan`,
+		sp:`BM 2.5.1 Membaca bahan bacaan mudah`},
+  {age:'5',subject:'Bahasa Melayu',fasa:'FASA 3',bulan:'JULAI – SEPT',
+	sk:`KEMAHIRAN MENULIS 
+BM 3.2 Menguasai kemahiran menulis`,
+		sp:`BM 3.2.1 Menulis huruf kecil dengan cara yang betul`},
+  {age:'5',subject:'Bahasa Melayu',fasa:'FASA 3',bulan:'JULAI – SEPT',
+	sk:`KEMAHIRAN MENULIS 
+BM 3.2 Menguasai kemahiran menulis`,
+		sp:`BM 3.2.2 Menulis huruf besar dengan cara yang betul`},
+  {age:'5',subject:'Bahasa Melayu',fasa:'FASA 4',bulan:'OKT - NOV',
+	sk:`KEMAHIRAN MENDENGAR DAN BERTUTUR  
+BM 1.5 Menguasai kemahiran bertutur`,
+		sp:`BM 1.5.1 Menyampaikan pandangan tentang sesuatu yang didengar, dilihat atau dialami`},
+  {age:'5',subject:'Bahasa Melayu',fasa:'FASA 4',bulan:'OKT - NOV',
+	sk:`KEMAHIRAN MEMBACA  
+BM 2.6 Menguasai kemahiran memupuk sikap minat membaca`,
+		sp:`BM 2.6.1 Memilih bahan bacaan yang digemari`},
+  {age:'5',subject:'Bahasa Melayu',fasa:'FASA 4',bulan:'OKT - NOV',
+	sk:`KEMAHIRAN MEMBACA  
+BM 2.6 Menguasai kemahiran memupuk sikap minat membaca`,
+		sp:`BM 2.6.2 Mengenal dan menamakan gambar dalam buku`},
+  {age:'5',subject:'Bahasa Melayu',fasa:'FASA 4',bulan:'OKT - NOV',
+	sk:`KEMAHIRAN MEMBACA  
+BM 2.6 Menguasai kemahiran memupuk sikap minat membaca`,
+		sp:`BM 2.6.3 Berkongsi bahan bacaan dengan rakan`},
+  {age:'5',subject:'Bahasa Melayu',fasa:'FASA 4',bulan:'OKT - NOV',
+	sk:`KEMAHIRAN MENULIS  
+BM 3.2 Menguasai kemahiran menulis`,
+		sp:`BM 3.2.3 Menyalin perkataan`},
+  {age:'5',subject:'Bahasa Melayu',fasa:'FASA 4',bulan:'OKT - NOV',
+	sk:`KEMAHIRAN MENULIS  
+BM 3.2 Menguasai kemahiran menulis`,
+		sp:`BM 3.2.4 Menyalin Frasa`},
+
+
+
+
   {age:'5',subject:'Doa',fasa:'FASA 1',bulan:'JAN – MAC',
-        sk:`PD 3.1 Melafazkan doa`,sp:`PD 3.1.1 Membaca doa dengan bimbingan`},
+	sk:`PD 3.1 Melafazkan doa
+Doa belajar (penerang hati, kefahaman, kelancaran)`,
+sp:`PD 3.1.1 Membaca doa dengan bimbingan`},
   {age:'5',subject:'Doa',fasa:'FASA 1',bulan:'JAN – MAC',
-        sk:`PD 3.1 Melafazkan doa`,sp:`PD 3.1.2 Menghafaz doa dengan bimbingan`},
+	sk:`PD 3.1 Melafazkan doa
+Doa belajar (penerang hati, kefahaman, kelancaran)`,
+sp:`PD 3.1.2 Menghafaz doa dengan bimbingan`},
   {age:'5',subject:'Doa',fasa:'FASA 1',bulan:'JAN – MAC',
-        sk:`PD 3.1 Melafazkan doa`,sp:`PD 3.1.3 Menyatakan maksud doa dengan bimbingan;`},
+	sk:`PD 3.1 Melafazkan doa
+Doa belajar (penerang hati, kefahaman, kelancaran)`,sp:`PD 3.1.3 Menyatakan maksud doa dengan bimbingan;`},
   {age:'5',subject:'Doa',fasa:'FASA 1',bulan:'JAN – MAC',
-        sk:`PD 3.1 Melafazkan doa`,sp:`PD 3.1.4 Melafazkan doa dalam kehidupan seharian dengan bimbingan`},
+	sk:`PD 3.1 Melafazkan doa
+Doa belajar (penerang hati, kefahaman, kelancaran)`,sp:`PD 3.1.4 Melafazkan doa dalam kehidupan seharian dengan bimbingan`},
+
+
+{age:'5',subject:'Doa',fasa:'FASA 1',bulan:'JAN – MAC',
+	sk:`PD 3.1 Melafazkan doa
+Doa sebelum makan`,sp:`PD 3.1.1 Membaca doa dengan bimbingan`},
+  {age:'5',subject:'Doa',fasa:'FASA 1',bulan:'JAN – MAC',
+	sk:`PD 3.1 Melafazkan doa
+Doa sebelum makan`,sp:`PD 3.1.2 Menghafaz doa dengan bimbingan`},
+  {age:'5',subject:'Doa',fasa:'FASA 1',bulan:'JAN – MAC',
+	sk:`PD 3.1 Melafazkan doa
+Doa sebelum makan`,sp:`PD 3.1.3 Menyatakan maksud doa dengan bimbingan;`},
+  {age:'5',subject:'Doa',fasa:'FASA 1',bulan:'JAN – MAC',
+	sk:`PD 3.1 Melafazkan doa
+Doa sebelum makan`,sp:`PD 3.1.4 Melafazkan doa dalam kehidupan seharian dengan bimbingan`},
+
+
+{age:'5',subject:'Doa',fasa:'FASA 1',bulan:'JAN – MAC',
+	sk:`PD 3.1 Melafazkan doa
+Doa selepas makan`,sp:`PD 3.1.1 Membaca doa dengan bimbingan`},
+  {age:'5',subject:'Doa',fasa:'FASA 1',bulan:'JAN – MAC',
+	sk:`PD 3.1 Melafazkan doa
+Doa selepas makan`,sp:`PD 3.1.2 Menghafaz doa dengan bimbingan`},
+  {age:'5',subject:'Doa',fasa:'FASA 1',bulan:'JAN – MAC',
+	sk:`PD 3.1 Melafazkan doa
+Doa selepas makan`,sp:`PD 3.1.3 Menyatakan maksud doa dengan bimbingan;`},
+  {age:'5',subject:'Doa',fasa:'FASA 1',bulan:'JAN – MAC',
+	sk:`PD 3.1 Melafazkan doa
+Doa selepas makan`,sp:`PD 3.1.4 Melafazkan doa dalam kehidupan seharian dengan bimbingan`},
+
+
+{age:'5',subject:'Doa',fasa:'FASA 1',bulan:'JAN – MAC',
+	sk:`PD 3.1 Melafazkan doa
+Doa ibu bapa`,sp:`PD 3.1.1 Membaca doa dengan bimbingan`},
+  {age:'5',subject:'Doa',fasa:'FASA 1',bulan:'JAN – MAC',
+	sk:`PD 3.1 Melafazkan doa
+Doa ibu bapa`,sp:`PD 3.1.2 Menghafaz doa dengan bimbingan`},
+  {age:'5',subject:'Doa',fasa:'FASA 1',bulan:'JAN – MAC',
+	sk:`PD 3.1 Melafazkan doa
+Doa ibu bapa`,sp:`PD 3.1.3 Menyatakan maksud doa dengan bimbingan;`},
+  {age:'5',subject:'Doa',fasa:'FASA 1',bulan:'JAN – MAC',
+	sk:`PD 3.1 Melafazkan doa
+Doa ibu bapa`,sp:`PD 3.1.4 Melafazkan doa dalam kehidupan seharian dengan bimbingan`},
+
+
   {age:'5',subject:'Doa',fasa:'FASA 2',bulan:'APRIL – JUN',
-        sk:`PD 3.1 Melafazkan doa`,sp:`PD 3.1.1 Membaca doa dengan bimbingan`},
+	sk:`PD 3.1 Melafazkan doa
+Doa sebelum masuk tandas`,sp:`PD 3.1.1 Membaca doa dengan bimbingan`},
   {age:'5',subject:'Doa',fasa:'FASA 2',bulan:'APRIL – JUN',
-        sk:`PD 3.1 Melafazkan doa`,sp:`PD 3.1.2 Menghafaz doa dengan bimbingan`},
+	sk:`PD 3.1 Melafazkan doa
+Doa sebelum masuk tandas`,sp:`PD 3.1.2 Menghafaz doa dengan bimbingan`},
   {age:'5',subject:'Doa',fasa:'FASA 2',bulan:'APRIL – JUN',
-        sk:`PD 3.1 Melafazkan doa`,sp:`PD 3.1.3 Menyatakan maksud doa dengan bimbingan;`},
+	sk:`PD 3.1 Melafazkan doa
+Doa sebelum masuk tandas`,sp:`PD 3.1.3 Menyatakan maksud doa dengan bimbingan;`},
   {age:'5',subject:'Doa',fasa:'FASA 2',bulan:'APRIL – JUN',
-        sk:`PD 3.1 Melafazkan doa`,sp:`PD 3.1.4 Melafazkan doa dalam kehidupan seharian dengan bimbingan`},
+	sk:`PD 3.1 Melafazkan doa
+Doa sebelum masuk tandas`,sp:`PD 3.1.4 Melafazkan doa dalam kehidupan seharian dengan bimbingan`},
+
+
+
+  {age:'5',subject:'Doa',fasa:'FASA 2',bulan:'APRIL – JUN',
+	sk:`PD 3.1 Melafazkan doa
+Doa selepas keluar tandas`,sp:`PD 3.1.1 Membaca doa dengan bimbingan`},
+  {age:'5',subject:'Doa',fasa:'FASA 2',bulan:'APRIL – JUN',
+	sk:`PD 3.1 Melafazkan doa
+Doa selepas keluar tandas`,sp:`PD 3.1.2 Menghafaz doa dengan bimbingan`},
+  {age:'5',subject:'Doa',fasa:'FASA 2',bulan:'APRIL – JUN',
+	sk:`PD 3.1 Melafazkan doa
+Doa selepas keluar tandas`,sp:`PD 3.1.3 Menyatakan maksud doa dengan bimbingan;`},
+  {age:'5',subject:'Doa',fasa:'FASA 2',bulan:'APRIL – JUN',
+	sk:`PD 3.1 Melafazkan doa
+Doa selepas keluar tandas`,sp:`PD 3.1.4 Melafazkan doa dalam kehidupan seharian dengan bimbingan`},
+
+
+
+  {age:'5',subject:'Doa',fasa:'FASA 2',bulan:'APRIL – JUN',
+	sk:`PD 3.1 Melafazkan doa
+Doa menaiki kenderaan`,sp:`PD 3.1.1 Membaca doa dengan bimbingan`},
+  {age:'5',subject:'Doa',fasa:'FASA 2',bulan:'APRIL – JUN',
+	sk:`PD 3.1 Melafazkan doa
+Doa menaiki kenderaan`,sp:`PD 3.1.2 Menghafaz doa dengan bimbingan`},
+  {age:'5',subject:'Doa',fasa:'FASA 2',bulan:'APRIL – JUN',
+	sk:`PD 3.1 Melafazkan doa
+Doa menaiki kenderaan`,sp:`PD 3.1.3 Menyatakan maksud doa dengan bimbingan;`},
+  {age:'5',subject:'Doa',fasa:'FASA 2',bulan:'APRIL – JUN',
+	sk:`PD 3.1 Melafazkan doa
+Doa menaiki kenderaan`,sp:`PD 3.1.4 Melafazkan doa dalam kehidupan seharian dengan bimbingan`},
+
+
+
+  {age:'5',subject:'Doa',fasa:'FASA 2',bulan:'APRIL – JUN',
+	sk:`PD 3.1 Melafazkan doa
+Doa keluar rumah`,sp:`PD 3.1.1 Membaca doa dengan bimbingan`},
+  {age:'5',subject:'Doa',fasa:'FASA 2',bulan:'APRIL – JUN',
+	sk:`PD 3.1 Melafazkan doa
+Doa keluar rumah`,sp:`PD 3.1.2 Menghafaz doa dengan bimbingan`},
+  {age:'5',subject:'Doa',fasa:'FASA 2',bulan:'APRIL – JUN',
+	sk:`PD 3.1 Melafazkan doa
+Doa keluar rumah`,sp:`PD 3.1.3 Menyatakan maksud doa dengan bimbingan;`},
+  {age:'5',subject:'Doa',fasa:'FASA 2',bulan:'APRIL – JUN',
+	sk:`PD 3.1 Melafazkan doa
+Doa keluar rumah`,sp:`PD 3.1.4 Melafazkan doa dalam kehidupan seharian dengan bimbingan`},
+
+
+
+  {age:'5',subject:'Doa',fasa:'FASA 2',bulan:'APRIL – JUN',
+	sk:`PD 3.1 Melafazkan doa
+Doa masuk rumah`,sp:`PD 3.1.1 Membaca doa dengan bimbingan`},
+  {age:'5',subject:'Doa',fasa:'FASA 2',bulan:'APRIL – JUN',
+	sk:`PD 3.1 Melafazkan doa
+Doa masuk rumah`,sp:`PD 3.1.2 Menghafaz doa dengan bimbingan`},
+  {age:'5',subject:'Doa',fasa:'FASA 2',bulan:'APRIL – JUN',
+	sk:`PD 3.1 Melafazkan doa
+Doa masuk rumah`,sp:`PD 3.1.3 Menyatakan maksud doa dengan bimbingan;`},
+  {age:'5',subject:'Doa',fasa:'FASA 2',bulan:'APRIL – JUN',
+	sk:`PD 3.1 Melafazkan doa
+Doa masuk rumah`,sp:`PD 3.1.4 Melafazkan doa dalam kehidupan seharian dengan bimbingan`},
+
+
+
+  {age:'5',subject:'Doa',fasa:'FASA 2',bulan:'APRIL – JUN',
+	sk:`PD 3.1 Melafazkan doa
+Doa taubat`,sp:`PD 3.1.1 Membaca doa dengan bimbingan`},
+  {age:'5',subject:'Doa',fasa:'FASA 2',bulan:'APRIL – JUN',
+	sk:`PD 3.1 Melafazkan doa
+Doa taubat`,sp:`PD 3.1.2 Menghafaz doa dengan bimbingan`},
+  {age:'5',subject:'Doa',fasa:'FASA 2',bulan:'APRIL – JUN',
+	sk:`PD 3.1 Melafazkan doa
+Doa taubat`,sp:`PD 3.1.3 Menyatakan maksud doa dengan bimbingan;`},
+  {age:'5',subject:'Doa',fasa:'FASA 2',bulan:'APRIL – JUN',
+	sk:`PD 3.1 Melafazkan doa
+Doa taubat`,sp:`PD 3.1.4 Melafazkan doa dalam kehidupan seharian dengan bimbingan`},
+
+
+
+
+  {age:'5',subject:'Doa',fasa:'FASA 3',bulan:'JULAI – SEPT',
+	sk:`PD 3.1 Melafazkan doa
+Doa keselamatan dunia akhirat`,
+		sp:`PD 3.1.1 Membaca doa dengan bimbingan`},
+  {age:'5',subject:'Doa',fasa:'FASA 3',bulan:'JULAI – SEPT',
+	sk:`PD 3.1 Melafazkan doa
+Doa keselamatan dunia akhirat`,
+		sp:`PD 3.1.2 Menghafaz doa dengan bimbingan`},
+  {age:'5',subject:'Doa',fasa:'FASA 3',bulan:'JULAI – SEPT',
+	sk:`PD 3.1 Melafazkan doa
+Doa keselamatan dunia akhirat`,
+		sp:`PD 3.1.3 Menyatakan maksud doa dengan bimbingan;`},
+  {age:'5',subject:'Doa',fasa:'FASA 3',bulan:'JULAI – SEPT',
+	sk:`PD 3.1 Melafazkan doa
+Doa keselamatan dunia akhirat`,
+		sp:`PD 3.1.4 Melafazkan doa dalam kehidupan seharian dengan bimbingan`},
+ 
+
+
+
+  {age:'5',subject:'Doa',fasa:'FASA 3',bulan:'JULAI – SEPT',
+	sk:`PD 3.1 Melafazkan doa
+Doa kesejahteraan dunia akhirat `,
+		sp:`PD 3.1.1 Membaca doa dengan bimbingan`},
+  {age:'5',subject:'Doa',fasa:'FASA 3',bulan:'JULAI – SEPT',
+	sk:`PD 3.1 Melafazkan doa
+Doa kesejahteraan dunia akhirat `,
+		sp:`PD 3.1.2 Menghafaz doa dengan bimbingan`},
+  {age:'5',subject:'Doa',fasa:'FASA 3',bulan:'JULAI – SEPT',
+	sk:`PD 3.1 Melafazkan doa
+Doa kesejahteraan dunia akhirat `,
+		sp:`PD 3.1.3 Menyatakan maksud doa dengan bimbingan;`},
+  {age:'5',subject:'Doa',fasa:'FASA 3',bulan:'JULAI – SEPT',
+	sk:`PD 3.1 Melafazkan doa
+Doa kesejahteraan dunia akhirat `,
+		sp:`PD 3.1.4 Melafazkan doa dalam kehidupan seharian dengan bimbingan`},
+
+
+
+
+  {age:'5',subject:'Doa',fasa:'FASA 3',bulan:'JULAI – SEPT',
+	sk:`PD 3.1 Melafazkan doa
+Doa sebelum tidur`,
+		sp:`PD 3.1.1 Membaca doa dengan bimbingan`},
+  {age:'5',subject:'Doa',fasa:'FASA 3',bulan:'JULAI – SEPT',
+	sk:`PD 3.1 Melafazkan doa
+Doa sebelum tidur`,
+		sp:`PD 3.1.2 Menghafaz doa dengan bimbingan`},
+  {age:'5',subject:'Doa',fasa:'FASA 3',bulan:'JULAI – SEPT',
+	sk:`PD 3.1 Melafazkan doa
+Doa sebelum tidur`,
+		sp:`PD 3.1.3 Menyatakan maksud doa dengan bimbingan;`},
+  {age:'5',subject:'Doa',fasa:'FASA 3',bulan:'JULAI – SEPT',
+	sk:`PD 3.1 Melafazkan doa
+Doa sebelum tidur`,
+		sp:`PD 3.1.4 Melafazkan doa dalam kehidupan seharian dengan bimbingan`},
+
+
+
+
+  {age:'5',subject:'Doa',fasa:'FASA 3',bulan:'JULAI – SEPT',
+	sk:`PD 3.1 Melafazkan doa
+Doa selepas bangun tidur`,
+		sp:`PD 3.1.1 Membaca doa dengan bimbingan`},
+  {age:'5',subject:'Doa',fasa:'FASA 3',bulan:'JULAI – SEPT',
+	sk:`PD 3.1 Melafazkan doa
+Doa selepas bangun tidur`,
+		sp:`PD 3.1.2 Menghafaz doa dengan bimbingan`},
+  {age:'5',subject:'Doa',fasa:'FASA 3',bulan:'JULAI – SEPT',
+	sk:`PD 3.1 Melafazkan doa
+Doa selepas bangun tidur`,
+		sp:`PD 3.1.3 Menyatakan maksud doa dengan bimbingan;`},
+  {age:'5',subject:'Doa',fasa:'FASA 3',bulan:'JULAI – SEPT',
+	sk:`PD 3.1 Melafazkan doa
+Doa selepas bangun tidur`,
+		sp:`PD 3.1.4 Melafazkan doa dalam kehidupan seharian dengan bimbingan`},
+
+
+
+
+
+
+
+
+  {age:'5',subject:'Doa',fasa:'FASA 4',bulan:'OKT – NOV',
+	sk:`PD 3.1 Melafazkan doa
+Doa memakai pakaian`,
+		sp:`PD 3.1.1 Membaca doa dengan bimbingan`},
+   {age:'5',subject:'Doa',fasa:'FASA 4',bulan:'OKT – NOV',
+	sk:`PD 3.1 Melafazkan doa
+Doa memakai pakaian`,
+		sp:`PD 3.1.2 Menghafaz doa dengan bimbingan`},
+   {age:'5',subject:'Doa',fasa:'FASA 4',bulan:'OKT – NOV',
+	sk:`PD 3.1 Melafazkan doa
+Doa memakai pakaian`,
+		sp:`PD 3.1.3 Menyatakan maksud doa dengan bimbingan;`},
+    {age:'5',subject:'Doa',fasa:'FASA 4',bulan:'OKT – NOV',
+	sk:`PD 3.1 Melafazkan doa
+Doa memakai pakaian`,
+		sp:`PD 3.1.4 Melafazkan doa dalam kehidupan seharian dengan bimbingan`},
+  
+
+
+
+  {age:'5',subject:'Doa',fasa:'FASA 4',bulan:'OKT – NOV',
+	sk:`PD 3.1 Melafazkan doa
+Doa melihat cermin`,
+		sp:`PD 3.1.1 Membaca doa dengan bimbingan`},
+   {age:'5',subject:'Doa',fasa:'FASA 4',bulan:'OKT – NOV',
+	sk:`PD 3.1 Melafazkan doa
+Doa melihat cermin`,
+		sp:`PD 3.1.2 Menghafaz doa dengan bimbingan`},
+   {age:'5',subject:'Doa',fasa:'FASA 4',bulan:'OKT – NOV',
+	sk:`PD 3.1 Melafazkan doa
+Doa melihat cermin`,
+		sp:`PD 3.1.3 Menyatakan maksud doa dengan bimbingan;`},
+    {age:'5',subject:'Doa',fasa:'FASA 4',bulan:'OKT – NOV',
+	sk:`PD 3.1 Melafazkan doa
+Doa melihat cermin`,
+		sp:`PD 3.1.4 Melafazkan doa dalam kehidupan seharian dengan bimbingan`},
+   
+
+
+
+
+  {age:'5',subject:'Doa',fasa:'FASA 4',bulan:'OKT – NOV',
+	sk:`PD 3.1 Melafazkan doa
+Doa ketika hujan`,
+		sp:`PD 3.1.1 Membaca doa dengan bimbingan`},
+   {age:'5',subject:'Doa',fasa:'FASA 4',bulan:'OKT – NOV',
+	sk:`PD 3.1 Melafazkan doa
+Doa ketika hujan`,
+		sp:`PD 3.1.2 Menghafaz doa dengan bimbingan`},
+   {age:'5',subject:'Doa',fasa:'FASA 4',bulan:'OKT – NOV',
+	sk:`PD 3.1 Melafazkan doa
+Doa ketika hujan`,
+		sp:`PD 3.1.3 Menyatakan maksud doa dengan bimbingan;`},
+    {age:'5',subject:'Doa',fasa:'FASA 4',bulan:'OKT – NOV',
+	sk:`PD 3.1 Melafazkan doa
+Doa ketika hujan`,
+		sp:`PD 3.1.4 Melafazkan doa dalam kehidupan seharian dengan bimbingan`},
+
+
+
+
+  {age:'5',subject:'Doa',fasa:'FASA 4',bulan:'OKT – NOV',
+	sk:`PD 3.1 Melafazkan doa
+Doa ditimpa kesusahan`,
+		sp:`PD 3.1.1 Membaca doa dengan bimbingan`},
+   {age:'5',subject:'Doa',fasa:'FASA 4',bulan:'OKT – NOV',
+	sk:`PD 3.1 Melafazkan doa
+Doa ditimpa kesusahan`,
+		sp:`PD 3.1.2 Menghafaz doa dengan bimbingan`},
+   {age:'5',subject:'Doa',fasa:'FASA 4',bulan:'OKT – NOV',
+	sk:`PD 3.1 Melafazkan doa
+Doa ditimpa kesusahan`,
+		sp:`PD 3.1.3 Menyatakan maksud doa dengan bimbingan;`},
+    {age:'5',subject:'Doa',fasa:'FASA 4',bulan:'OKT – NOV',
+	sk:`PD 3.1 Melafazkan doa
+Doa ditimpa kesusahan`,
+		sp:`PD 3.1.4 Melafazkan doa dalam kehidupan seharian dengan bimbingan`},
+  
+
+
+
+
+
   {age:'5',subject:'Bahasa Inggeris',fasa:'PHASE 1',bulan:'JAN – MARCH',
-        sk:`LISTENING AND SPEAKING SKILL
+	sk:`LISTENING AND SPEAKING SKILL
 BI 1.1 Listen to identify sounds`,
-                sp:`BI 1.1.1 Listen to and identify common sounds in the surroundings`},
+		sp:`BI 1.1.1 Listen to and identify common sounds in the surroundings`},
   {age:'5',subject:'Bahasa Inggeris',fasa:'PHASE 1',bulan:'JAN – MARCH',sk:`BI 1.2 Listen to and respond appropriately`,sp:`BI 1.2.1 Listen, repeat and recite nursery rhymes`},
   {age:'5',subject:'Bahasa Inggeris',fasa:'PHASE 1',bulan:'JAN – MARCH',sk:`BI 1.2 Listen to and respond appropriately`,sp:`BI 1.2.2 Listen and sing songs accordingly`},
   {age:'5',subject:'Bahasa Inggeris',fasa:'PHASE 1',bulan:'JAN – MARCH',sk:`BI 1.2 Listen to and respond appropriately`,sp:`BI 1.2.3 Listen and repeat greetings`},
   {age:'5',subject:'Bahasa Inggeris',fasa:'PHASE 1',bulan:'JAN – MARCH',sk:`BI 1.2 Listen to and respond appropriately`,sp:`BI 1.2.4 Listen and follow simple instruction`},
   {age:'5',subject:'Bahasa Inggeris',fasa:'PHASE 1',bulan:'JAN – MARCH',sk:`BI 1.2 Listen to and respond appropriately`,sp:`BI 1.2.5 Listen to and appreciate simple stories`},
   {age:'5',subject:'Bahasa Inggeris',fasa:'PHASE 1',bulan:'JAN – MARCH',
-        sk:`READING SKILL
+	sk:`READING SKILL
 BI 2.1 Demonstrate the appropriate method for book handling`,sp:`BI 2.1.1 Handling books with care`},
   {age:'5',subject:'Bahasa Inggeris',fasa:'PHASE 1',bulan:'JAN – MARCH',
-        sk:`READING SKILL
+	sk:`READING SKILL
 BI 2.1 Demonstrate the appropriate method for book handling`,sp:`BI 2.1.2 Recognise the basic future of the book`},
   {age:'5',subject:'Bahasa Inggeris',fasa:'PHASE 1',bulan:'JAN – MARCH',
-        sk:`READING SKILL
+	sk:`READING SKILL
 BI 2.1 Demonstrate the appropriate method for book handling`,
 sp:`BI 2.1.3 Read printed materials correctly:
 Left to right
@@ -2713,28 +3132,208 @@ BI 2.3 Show understanding in print and non print materials`,sp:`BI 2.3.2 Read wo
   {age:'5',subject:'Bahasa Inggeris',fasa:'PHASE 2',bulan:'APRIL – JUNE',
 sk:`WRITING SKILL
 BI 3.1 Developing prewriting skills`,sp:`BI 3.1.1 Able to use fine motor controls of hands and fingers by using writing tools correctly`},
+  {age:'5',subject:'Bahasa Inggeris',fasa:'PHASE 3',bulan:'JULY – SEPT',
+	sk:`LISTENING AND SPEAKING SKILL
+BI 1.3 Listen, understand and respond in variety of context`,
+		sp:`BI 1.3.1 Engage and interact kindly in daily conversation: Exchange greetings Show appreciation Introduce oneself Express feelings, or  Make simple request`},
+  {age:'5',subject:'Bahasa Inggeris',fasa:'PHASE 3',bulan:'JULY – SEPT',
+	sk:`READING SKILL 
+BI 2.4 Enhance interest in reading independently for information and`,
+		sp:`BI 2.4.1 Recognise and name pictures in books`},
+  {age:'5',subject:'Bahasa Inggeris',fasa:'PHASE 3',bulan:'JULY – SEPT',
+	sk:`READING SKILL 
+BI 2.4 Enhance interest in reading independently for information and`,
+		sp:`BI 2.4.2 Recognise and name object or people in pictures`},
+  {age:'5',subject:'Bahasa Inggeris',fasa:'PHASE 3',bulan:'JULY – SEPT',
+	sk:`WRITING SKILL 
+BI 3.2 Developing writing skills`,
+		sp:`BI 3.2.1 Write recognisable letters`},
+  {age:'5',subject:'Bahasa Inggeris',fasa:'PHASE 3',bulan:'JULY – SEPT',
+	sk:`WRITING SKILL 
+BI 3.2 Developing writing skills`,
+		sp:`BI 3.2.2 Copy and write small letters legibly`},
+  {age:'5',subject:'Bahasa Inggeris',fasa:'PHASE 3',bulan:'JULY – SEPT',
+	sk:`WRITING SKILL 
+BI 3.2 Developing writing skills`,
+		sp:`BI 3.2.3 Copy and write capital letters legibly`},
+  {age:'5',subject:'Bahasa Inggeris',fasa:'PHASE 4',bulan:'OCT - NOV',
+	sk:`READING SKILL 
+BI 2.4 Enhance interest in reading independently for information and enjoyment`,
+		sp:`BI 2.4.2 Recognise and name object or people in pictures`},
+  {age:'5',subject:'Bahasa Inggeris',fasa:'PHASE 4',bulan:'OCT - NOV',
+	sk:`WRITING SKILL 
+BI 3.2 Developing writing skills`,
+		sp:`BI 3.2.4 Copy familiar words in legible print`},
+
+
+
+
+
+
   {age:'5',subject:'Hafazan',fasa:'FASA 1',bulan:'JAN – MAC',
 sk:`PH 2.1 Menghafaz beberapa surah dari Juz Amma
-i:Surah Al- Fatihah
-ii:Surah Al-Ikhlas`,
+PH 2.2 Memahami makna surah daripada Juz Amma
+i: Surah Al- Fatihah`,
 sp:`PH 2.1.1 Membaca surah dengan bimbingan`},
+
+    {age:'5',subject:'Hafazan',fasa:'FASA 1',bulan:'JAN – MAC',
+sk:`PH 2.1 Menghafaz beberapa surah dari Juz Amma
+PH 2.2 Memahami makna surah daripada Juz Amma
+i: Surah Al- Fatihah`,
+sp:`PH 2.1.3 Menghafaz surah al-Fatihah secara beradab`},
+
+
   {age:'5',subject:'Hafazan',fasa:'FASA 1',bulan:'JAN – MAC',
+sk:`PH 2.1 Menghafaz beberapa surah dari Juz Amma
+PH 2.2 Memahami makna surah daripada Juz Amma
+ii: Surah Al-Ikhlas`,
+sp:`PH 2.1.1 Membaca surah dengan bimbingan`},
+    {age:'5',subject:'Hafazan',fasa:'FASA 1',bulan:'JAN – MAC',
+sk:`PH 2.1 Menghafaz beberapa surah dari Juz Amma
+PH 2.2 Memahami makna surah daripada Juz Amma
+ii: Surah Al-Ikhlas`,
+sp:`PH 2.1.3 Menghafaz surah al-Fatihah secara beradab`},
+
+
+
+
+  {age:'5',subject:'Hafazan',fasa:'FASA 2',bulan:'APRIL – JUN',
 sk:`PH 2.2 Memahami makna surah daripada Juz Amma
-i:Surah Al- Fatihah
-ii:Surah Al-Ikhlas`,
+PH 2.2 Memahami makna surah daripada Juz Amma
+i: Surah Al-Falaq`,
+sp:`PH 2.1.3 Menghafaz surah al-Fatihah secara beradab`},
+    {age:'5',subject:'Hafazan',fasa:'FASA 2',bulan:'APRIL – JUN',
+sk:`PH 2.2 Memahami makna surah daripada Juz Amma
+PH 2.2 Memahami makna surah daripada Juz Amma
+i: Surah Al-Falaq`,
+sp:`PH 2.1.4 Menghafaz surah-surah dari Juz Amma`},
+
+
+ {age:'5',subject:'Hafazan',fasa:'FASA 2',bulan:'APRIL – JUN',
+sk:`PH 2.2 Memahami makna surah daripada Juz Amma
+PH 2.2 Memahami makna surah daripada Juz Amma
+ii: Surah An-Nas`,
 sp:`PH 2.1.3 Menghafaz surah al-Fatihah secara beradab`},
   {age:'5',subject:'Hafazan',fasa:'FASA 2',bulan:'APRIL – JUN',
 sk:`PH 2.2 Memahami makna surah daripada Juz Amma
-i:Surah Al-Falaq
-ii:Surah An-Nas
-iii:Surah Al-Nasr`,
-sp:`PH 2.1.3 Menghafaz surah al-Fatihah secara beradab`},
-  {age:'5',subject:'Hafazan',fasa:'FASA 2',bulan:'APRIL – JUN',sk:`
 PH 2.2 Memahami makna surah daripada Juz Amma
-i:Surah Al-Falaq
-ii:Surah An-Nas
-iii:Surah Al-Nasr`,
+ii: Surah An-Nas`,
 sp:`PH 2.1.4 Menghafaz surah-surah dari Juz Amma`},
+
+
+
+
+
+
+
+ {age:'5',subject:'Hafazan',fasa:'FASA 2',bulan:'APRIL – JUN',
+sk:`PH 2.2 Memahami makna surah daripada Juz Amma
+PH 2.2 Memahami makna surah daripada Juz Amma
+iii: Surah Al-Nasr`,
+sp:`PH 2.1.3 Menghafaz surah al-Fatihah secara beradab`},
+  {age:'5',subject:'Hafazan',fasa:'FASA 2',bulan:'APRIL – JUN',
+sk:`PH 2.2 Memahami makna surah daripada Juz Amma
+PH 2.2 Memahami makna surah daripada Juz Amma
+iii: Surah Al-Nasr`,
+sp:`PH 2.1.4 Menghafaz surah-surah dari Juz Amma`},
+
+
+
+
+ {age:'5',subject:'Hafazan',fasa:'FASA 3',bulan:'JULAI – SEPT',
+	sk:`PH 2.1 Menghafaz beberapa surah dari Juz Amma
+PH 2.2 Memahami makna surah daripada Juz Amma
+i: Surah Al-Masad`,
+sp:`PH 2.1.2 Membaca surah dengan makhraj huruf yang betul dengan bimbingan`},
+  {age:'5',subject:'Hafazan',fasa:'FASA 3',bulan:'JULAI – SEPT',
+	sk:`PH 2.1 Menghafaz beberapa surah dari Juz Amma
+PH 2.2 Memahami makna surah daripada Juz Amma
+i: Surah Al-Masad`,
+		sp:`PH 2.1.4 Menghafaz surah-surah dari Juz Amma`},
+   
+
+
+
+
+
+  {age:'5',subject:'Hafazan',fasa:'FASA 3',bulan:'JULAI – SEPT',
+	sk:`PH 2.1 Menghafaz beberapa surah dari Juz Amma
+PH 2.2 Memahami makna surah daripada Juz Amma
+ii: Surah Al-Kauthar`,
+sp:`PH 2.1.2 Membaca surah dengan makhraj huruf yang betul dengan bimbingan`},
+  {age:'5',subject:'Hafazan',fasa:'FASA 3',bulan:'JULAI – SEPT',
+	sk:`PH 2.1 Menghafaz beberapa surah dari Juz Amma
+PH 2.2 Memahami makna surah daripada Juz Amma
+ii: Surah Al-Kauthar`,
+		sp:`PH 2.1.4 Menghafaz surah-surah dari Juz Amma`},
+  
+
+
+
+
+
+
+
+  {age:'5',subject:'Hafazan',fasa:'FASA 3',bulan:'JULAI – SEPT',
+	sk:`PH 2.1 Menghafaz beberapa surah dari Juz Amma
+PH 2.2 Memahami makna surah daripada Juz Amma
+iii: Surah Al-Quraisy`,
+sp:`PH 2.1.2 Membaca surah dengan makhraj huruf yang betul dengan bimbingan`},
+  {age:'5',subject:'Hafazan',fasa:'FASA 3',bulan:'JULAI – SEPT',
+	sk:`PH 2.1 Menghafaz beberapa surah dari Juz Amma
+PH 2.2 Memahami makna surah daripada Juz Amma
+iii: Surah Al-Quraisy`,
+		sp:`PH 2.1.4 Menghafaz surah-surah dari Juz Amma`},
+
+
+
+
+
+
+  {age:'5',subject:'Hafazan',fasa:'FASA 4',bulan:'OKT – NOV',
+	sk:`PH 2.1 Menghafaz beberapa surah dari Juz Amma
+PH 2.2 Memahami makna surah daripada Juz Amma
+i: Surah Al-Kafirun`,
+		sp:`PH 2.1.2 Membaca surah dengan makhraj huruf yang betul dengan bimbingan`},
+
+  {age:'5',subject:'Hafazan',fasa:'FASA 4',bulan:'OKT – NOV',
+	sk:`PH 2.1 Menghafaz beberapa surah dari Juz Amma
+PH 2.2 Memahami makna surah daripada Juz Amma
+i: Surah Al-Kafirun`,
+		sp:`PH 2.2.1 Mengetahui makna daripada surah yang dihafaz`},
+
+
+
+
+  {age:'5',subject:'Hafazan',fasa:'FASA 4',bulan:'OKT – NOV',
+	sk:`PH 2.1 Menghafaz beberapa surah dari Juz Amma
+PH 2.2 Memahami makna surah daripada Juz Amma
+ii: Surah Al-Fil`,
+		sp:`PH 2.1.2 Membaca surah dengan makhraj huruf yang betul dengan bimbingan`},
+
+  {age:'5',subject:'Hafazan',fasa:'FASA 4',bulan:'OKT – NOV',
+	sk:`PH 2.1 Menghafaz beberapa surah dari Juz Amma
+PH 2.2 Memahami makna surah daripada Juz Amma
+ii: Surah Al-Fil`,
+		sp:`PH 2.2.1 Mengetahui makna daripada surah yang dihafaz`},
+
+
+
+
+  {age:'5',subject:'Hafazan',fasa:'FASA 4',bulan:'OKT – NOV',
+	sk:`PH 2.1 Menghafaz beberapa surah dari Juz Amma
+PH 2.2 Memahami makna surah daripada Juz Amma
+iii: (Ulangan semua surah)`,
+		sp:`PH 2.1.2 Membaca surah dengan makhraj huruf yang betul dengan bimbingan`},
+
+  {age:'5',subject:'Hafazan',fasa:'FASA 4',bulan:'OKT – NOV',
+	sk:`PH 2.1 Menghafaz beberapa surah dari Juz Amma
+PH 2.2 Memahami makna surah daripada Juz Amma
+iii: (Ulangan semua surah)`,
+		sp:`PH 2.2.1 Mengetahui makna daripada surah yang dihafaz`},
+
+
+
   {age:'5',subject:'Jawi',fasa:'FASA 1',bulan:'JAN – MAC',
 sk:`KEMAHIRAN MENDENGAR DAN BERTUTUR
 PJW 4.1 Mendengar dan memberi respon terhadap pelbagai bunyi di sekeliling`,sp:`PJW 4.1.1 Mengenal bunyi huruf jawi`},
@@ -2763,6 +3362,68 @@ PJW 5.1 Menguasai Kemahiran membaca`,sp:`PJW 5.1.2 Mengenal bentuk huruf jawi`},
   {age:'5',subject:'Jawi',fasa:'FASA 2',bulan:'APRIL – JUN',sk:`PJW 5.2 Mengenali huruf jawi`,sp:`PJW 5.2.1 Mengenal huruf jawi`},
   {age:'5',subject:'Jawi',fasa:'FASA 2',bulan:'APRIL – JUN',sk:`KEMAHIRAN MENULIS
 PJW 6.2 Menguasai kemahiran menulis`,sp:`PJW 6.2.1 Menulis huruf jawi dengan cara yang betul.`},
+  {age:'5',subject:'Jawi',fasa:'FASA 3',bulan:'JULAI – SEPT',
+	sk:`KEMAHIRAN MENDENGAR DAN BERTUTUR 
+PJW 4.1 Mendengar dan memberi respon terhadap pelbagai bunyi di sekeliling`,
+		sp:`PJW 4.1.2 Memberi respons terhadap bunyi setiap huruf jawi`},
+  {age:'5',subject:'Jawi',fasa:'FASA 3',bulan:'JULAI – SEPT',
+	sk:`KEMAHIRAN MEMBACA 
+PJW 5.1 Menguasai Kemahiran membaca`,
+		sp:`PJW 5.1.1 Menyatakan lambang dan cetakan yang membawa makna tertentu`},
+  {age:'5',subject:'Jawi',fasa:'FASA 3',bulan:'JULAI – SEPT',
+	sk:`KEMAHIRAN MEMBACA 
+PJW 5.1 Menguasai Kemahiran membaca`,
+		sp:`PJW 5.1.2 Mengenal bentuk huruf jawi`},
+  {age:'5',subject:'Jawi',fasa:'FASA 3',bulan:'JULAI – SEPT',
+	sk:`PJW 5.2 Mengenali huruf jawi`,
+		sp:`PJW 5.2.1 Mengenal huruf jawi`},
+  {age:'5',subject:'Jawi',fasa:'FASA 3',bulan:'JULAI – SEPT',
+	sk:`PJW 5.2 Mengenali huruf jawi`,
+		sp:`PJW 5.2.2 Membunyikan huruf vokal dan konsonan jawi`},
+  {age:'5',subject:'Jawi',fasa:'FASA 3',bulan:'JULAI – SEPT',
+	sk:`PJW 5.3 Membaca perkataan jawi`,
+		sp:`PJW 5.3.1 Membunyikan suku kata terbuka`},
+  {age:'5',subject:'Jawi',fasa:'FASA 3',bulan:'JULAI – SEPT',
+	sk:`PJW 5.3 Membaca perkataan jawi`,
+		sp:`PJW 5.3.2 Membunyikan suku kata tertutup`},
+  {age:'5',subject:'Jawi',fasa:'FASA 3',bulan:'JULAI – SEPT',
+	sk:`PJW 5.3 Membaca perkataan jawi`,
+		sp:`PJW 5.3.3 Membatangkan suku kata`},
+  {age:'5',subject:'Jawi',fasa:'FASA 3',bulan:'JULAI – SEPT',
+	sk:`"KEMAHIRAN MENULIS 
+PJW 6.2 Menguasai kemahiran menulis"`,
+		sp:`PJW 6.2.1 Menulis huruf jawi dengan cara yang betul.`},
+  {age:'5',subject:'Jawi',fasa:'FASA 4',bulan:'OKT - NOV',
+	sk:`KEMAHIRAN MENDENGAR DAN BERTUTUR 
+PJW 4.1 Mendengar dan memberi respon terhadap pelbagai bunyi di sekeliling`,
+		sp:`PJW 4.1.2 Memberi respons terhadap bunyi setiap huruf jawi`},
+  {age:'5',subject:'Jawi',fasa:'FASA 4',bulan:'OKT - NOV',
+	sk:`KEMAHIRAN MEMBACA 
+PJW 5.1 Menguasai Kemahiran membaca`,
+		sp:`PJW 5.1.1 Menyatakan lambang dan cetakan yang membawa makna tertentu`},
+  {age:'5',subject:'Jawi',fasa:'FASA 4',bulan:'OKT - NOV',
+	sk:`KEMAHIRAN MEMBACA 
+PJW 5.1 Menguasai Kemahiran membaca`,
+		sp:`PJW 5.1.2 Mengenal bentuk huruf jawi`},
+  {age:'5',subject:'Jawi',fasa:'FASA 4',bulan:'OKT - NOV',
+	sk:`PJW 5.2 Mengenali huruf jawi`,
+		sp:`PJW 5.2.1 Mengenal huruf jawi`},
+  {age:'5',subject:'Jawi',fasa:'FASA 4',bulan:'OKT - NOV',
+	sk:`PJW 5.2 Mengenali huruf jawi`,
+		sp:`PJW 5.2.2 Membunyikan huruf vokal dan konsonan jawi`},
+  {age:'5',subject:'Jawi',fasa:'FASA 4',bulan:'OKT - NOV',
+	sk:`PJW 5.3 Membaca perkataan jawi`,
+		sp:`PJW 5.3.1 Membunyikan suku kata terbuka`},
+  {age:'5',subject:'Jawi',fasa:'FASA 4',bulan:'OKT - NOV',
+	sk:`PJW 5.3 Membaca perkataan jawi`,
+		sp:`PJW 5.3.2 Membunyikan suku kata tertutup`},
+  {age:'5',subject:'Jawi',fasa:'FASA 4',bulan:'OKT - NOV',
+	sk:`PJW 5.3 Membaca perkataan jawi`,
+		sp:`PJW 5.3.3 Membatangkan suku kata`},
+  {age:'5',subject:'Jawi',fasa:'FASA 4',bulan:'OKT - NOV',
+	sk:`KEMAHIRAN MENULIS 
+PJW 6.2 Menguasai kemahiran menulis`,
+		sp:`PJW 6.2.1 Menulis huruf jawi dengan cara yang betul.`},
   {age:'5',subject:'Matematik',fasa:'FASA 1',bulan:'JAN – MAC',sk:`PENGALAMAN PRANOMBOR
 MA 1.1 Memadankan objek`,sp:`MA 1.1.1 Memadankan objek berpasangan yang sama`},
   {age:'5',subject:'Matematik',fasa:'FASA 1',bulan:'JAN – MAC',sk:`PENGALAMAN PRANOMBOR
@@ -2784,48 +3445,152 @@ Nipis ke tebal`},
 Panjang
 Jisim
 Isipadu`},
-  {age:'5',subject:'Matematik',fasa:'FASA 2',bulan:'APRIL – JUN',sk:`KONSEP NOMBOR MA 2.1
-Memahami konsep nombor 1 hingga 10`,sp:`MA 2.1.1 Menyebut nombor
+  {age:'5',subject:'Matematik',fasa:'FASA 2',bulan:'APRIL – JUN',sk:`KONSEP NOMBOR 
+MA 2.1 Memahami konsep nombor 1 hingga 10`,sp:`MA 2.1.1 Menyebut nombor
 1 hingga 10 mengikut urutan`},
-  {age:'5',subject:'Matematik',fasa:'FASA 2',bulan:'APRIL – JUN',sk:`KONSEP NOMBOR MA 2.1
-Memahami konsep nombor 1 hingga 10`,sp:`MA 2.1.2 Mengecam dan menyebut nombor secara rawak`},
-  {age:'5',subject:'Matematik',fasa:'FASA 2',bulan:'APRIL – JUN',sk:`KONSEP NOMBOR MA 2.1
-Memahami konsep nombor 1 hingga 10`,sp:`MA 2.1.3 Memadankan angka dengan nama nombor`},
-  {age:'5',subject:'Matematik',fasa:'FASA 2',bulan:'APRIL – JUN',sk:`KONSEP NOMBOR MA 2.1
-Memahami konsep nombor 1 hingga 10`,sp:`MA 2.1.4 Membilang objek`},
-  {age:'5',subject:'Matematik',fasa:'FASA 2',bulan:'APRIL – JUN',sk:`KONSEP NOMBOR MA 2.1
-Memahami konsep nombor 1 hingga 10`,sp:`MA 2.1.5 Menggunakan bentuk seperti titik untuk mewakili jumlah objek`},
-  {age:'5',subject:'Matematik',fasa:'FASA 2',bulan:'APRIL – JUN',sk:`KONSEP NOMBOR MA 2.1
-Memahami konsep nombor 1 hingga 10`,sp:`MA 2.1.6 Memadankan kumpulan objek dengan nombor`},
-  {age:'5',subject:'Matematik',fasa:'FASA 2',bulan:'APRIL – JUN',sk:`KONSEP NOMBOR MA 2.1
-Memahami konsep nombor 1 hingga 10`,sp:`MA 2.1.7 Menyuruh angka`},
+  {age:'5',subject:'Matematik',fasa:'FASA 2',bulan:'APRIL – JUN',sk:`KONSEP NOMBOR 
+MA 2.1 Memahami konsep nombor 1 hingga 10`,sp:`MA 2.1.2 Mengecam dan menyebut nombor secara rawak`},
+  {age:'5',subject:'Matematik',fasa:'FASA 2',bulan:'APRIL – JUN',sk:`KONSEP NOMBOR 
+MA 2.1 Memahami konsep nombor 1 hingga 10`,sp:`MA 2.1.3 Memadankan angka dengan nama nombor`},
+  {age:'5',subject:'Matematik',fasa:'FASA 2',bulan:'APRIL – JUN',sk:`KONSEP NOMBOR 
+MA 2.1 Memahami konsep nombor 1 hingga 10`,sp:`MA 2.1.4 Membilang objek`},
+  {age:'5',subject:'Matematik',fasa:'FASA 2',bulan:'APRIL – JUN',sk:`KONSEP NOMBOR 
+MA 2.1 Memahami konsep nombor 1 hingga 10`,sp:`MA 2.1.5 Menggunakan bentuk seperti titik untuk mewakili jumlah objek`},
+  {age:'5',subject:'Matematik',fasa:'FASA 2',bulan:'APRIL – JUN',sk:`KONSEP NOMBOR 
+MA 2.1 Memahami konsep nombor 1 hingga 10`,sp:`MA 2.1.6 Memadankan kumpulan objek dengan nombor`},
+  {age:'5',subject:'Matematik',fasa:'FASA 2',bulan:'APRIL – JUN',sk:`KONSEP NOMBOR 
+MA 2.1 Memahami konsep nombor 1 hingga 10`,sp:`MA 2.1.7 Menyuruh angka`},
   {age:'5',subject:'Matematik',fasa:'FASA 2',bulan:'APRIL – JUN',sk:`MA 2.2 Mengetahui sifar`,sp:`MA 2.2.1 Mengenal angka sifar`},
   {age:'5',subject:'Matematik',fasa:'FASA 2',bulan:'APRIL – JUN',sk:`MA 2.2 Mengetahui sifar`,sp:`MA 2.2.2 Menyebut angka sifar`},
   {age:'5',subject:'Matematik',fasa:'FASA 2',bulan:'APRIL – JUN',sk:`MA 2.3 Memahami nombor 11 hingga 20`,sp:`MA 2.3.1 Mengenal nombor 11 hingga 20`},
   {age:'5',subject:'Matematik',fasa:'FASA 2',bulan:'APRIL – JUN',sk:`MA 2.3 Memahami nombor 11 hingga 20`,sp:`MA 2.3.2 Pratulis nombor 11 hingga 20`},
   {age:'5',subject:'Matematik',fasa:'FASA 2',bulan:'APRIL – JUN',sk:`MA 2.4 Memahami siri 10 hingga 100`,sp:`MA 2.4.1 Mengenal siri 10 hingga 100`},
   {age:'5',subject:'Matematik',fasa:'FASA 2',bulan:'APRIL – JUN',sk:`MA 2.4 Memahami siri 10 hingga 100`,sp:`MA 2.4.2 Pratulis siri 10 hingga 100`},
+  {age:'5',subject:'Matematik',fasa:'FASA 3',bulan:'JULAI – SEPT',
+	sk:`OPERASI NOMBOR
+MA 3.1 Menyelesaikan masalah operasi tambah dalam lingkungan 18`,
+		sp:`MA 3.1.1 Menyatakan hasil tambah 2 himpunan objek`},
+  {age:'5',subject:'Matematik',fasa:'FASA 3',bulan:'JULAI – SEPT',
+	sk:`OPERASI NOMBOR  
+MA 3.1 Menyelesaikan masalah operasi tambah dalam lingkungan 18`,
+		sp:`MA 3.1.2 Menyatakan hasil tambah berdasarkan situasi yang diberi menggunakan objek`},
+  {age:'5',subject:'Matematik',fasa:'FASA 3',bulan:'JULAI – SEPT',
+	sk:`MA 3.2 Menyelesaikan masalah operasi tolak dalam lingkungan 18`,
+		sp:`MA 3.2.1 Mengeluarkan objek dari himpunan dari membilang baki`},
+  {age:'5',subject:'Matematik',fasa:'FASA 3',bulan:'JULAI – SEPT',
+	sk:`MA 3.2 Menyelesaikan masalah operasi tolak dalam lingkungan 18`,
+		sp:`MA 3.2.2 Menyatakan baki berdasarkan situasi yang diberi dengan menggunakan objek`},
+  {age:'5',subject:'Matematik',fasa:'FASA 3',bulan:'JULAI – SEPT',
+	sk:`NILAI WANG  
+MA 4.1 Mengecam dan menggunakan wang yang berlainan nilai`,
+		sp:`MA 4.1.1 Mengecam mata wang Malaysia dalam bentuk syiling dan wang kertas`},
+  {age:'5',subject:'Matematik',fasa:'FASA 3',bulan:'JULAI – SEPT',
+	sk:`MA 5.1 Memahami waktu dalam konteks kehidupan seharian`,
+		sp:`MA 5.1.1 Menyatakan waktu dalam sehari`},
+  {age:'5',subject:'Matematik',fasa:'FASA 3',bulan:'JULAI – SEPT',
+	sk:`MA 5.1 Memahami waktu dalam konteks kehidupan seharian`,
+		sp:`MA 5.1.2 Menyusun peristiwa mengikut urutan masa`},
+  {age:'5',subject:'Matematik',fasa:'FASA 3',bulan:'JULAI – SEPT',
+	sk:`MA 5.1 Memahami waktu dalam konteks kehidupan seharian`,
+		sp:`MA 5.1.3 Menyatakan hari dalam seminggu mengikut urutan`},
+  {age:'5',subject:'Matematik',fasa:'FASA 4',bulan:'OKT-NOV',
+	sk:`BENTUK DAN RUANG 
+MA 6.1 Mengetahui kedudukan objek dalam ruang`,
+		sp:`MA 6.1.1 Meletakkan objek dalam kedudukan tertentu`},
+  {age:'5',subject:'Matematik',fasa:'FASA 4',bulan:'OKT-NOV',
+	sk:`MA 6.2 Menghasilkan binaan berdasarkan bentuk yang biasa dijumpai di persekitaran`,
+		sp:`MA 6.2.1 Mengecam bentuk segi empat sama, segi empat tepat, segitiga dan bulatan`},
+  {age:'5',subject:'Matematik',fasa:'FASA 4',bulan:'OKT-NOV',
+	sk:`MA 6.2 Menghasilkan binaan berdasarkan bentuk yang biasa dijumpai di persekitaran`,
+		sp:`MA 6.2.2 Menghasilkan corak berasaskan bentuk dua dimensi`},
+  {age:'5',subject:'Matematik',fasa:'FASA 4',bulan:'OKT-NOV',
+	sk:`MA 6.3 Membuat binaan menggunakan pelbagai bahan mengikut kreativiti dan menceritakannya`,
+		sp:`MA 6.3.1 membina satu lingkungan yang lengkap dan menceritakannya`},
+  {age:'5',subject:'Matematik',fasa:'FASA 4',bulan:'OKT-NOV',
+	sk:`MA 6.3 Membuat binaan menggunakan pelbagai bahan mengikut kreativiti dan menceritakannya`,
+		sp:`MA 6.3.2 Membina perhubungan antara dua objek atau binaan dan menceritakannya`},
+  {age:'5',subject:'Matematik',fasa:'FASA 4',bulan:'OKT-NOV',
+	sk:`MA 6.3 Membuat binaan menggunakan pelbagai bahan mengikut kreativiti dan menceritakannya`,
+		sp:`MA 6.3.3 Membina binaan menggunakan pelbagai bahan mengikut kreativiti dan menceritakannya`},
+
+
+
+
   {age:'5',subject:'Pendidikan Agama Islam - Akidah',fasa:'FASA 1',bulan:'JAN – MAC',sk:`PA 1.1 Mengamalkan kalimah syahadah sebagai asas keimanan kepada Allah Lailahaillallah`,sp:`PA 1.1.1 Menyatakan kalimah dan maksud lafaz Lailahaillallah`},
   {age:'5',subject:'Pendidikan Agama Islam - Akidah',fasa:'FASA 2',bulan:'APRIL – JUN',sk:`PA 1.2 Memahami asas iman kepada Allah`,sp:`PA 1.2.1 Mengenal diri sebagai makhluk ciptaan Allah`},
   {age:'5',subject:'Pendidikan Agama Islam - Akidah',fasa:'FASA 2',bulan:'APRIL – JUN',sk:`PA 1.2 Memahami asas iman kepada Allah`,sp:`PA 1.2.2 Mengenal Allah sebagai pencipta :Menyebut kalimah AllahMenyatakan tanda-tanda kebesaran AllahMemuliakan kemuliaan Allah`},
   {age:'5',subject:'Pendidikan Agama Islam - Akidah',fasa:'FASA 2',bulan:'APRIL – JUN',sk:`PA 1.3 Memahami maksud nama Allah Asma’ul Husna`,sp:`PA 1.3.1 Menyebut nama-nama Allah dan maksudnya (10 nama)`},
   {age:'5',subject:'Pendidikan Agama Islam - Akidah',fasa:'FASA 2',bulan:'APRIL – JUN',sk:`PA 1.3 Memahami maksud nama Allah Asma’ul Husna`,sp:`PA 1.3.2 Mengenal Asma’ul Husna`},
+  {age:'5',subject:'Pendidikan Agama Islam - Akidah',fasa:'FASA 3',bulan:'JULAI – SEPT',
+	sk:`PA 1.4 Memahami Rukun Iman`,
+		sp:`PA 1.4.1 Menyebut Rukun Iman : Beriman kepada Allah Beriman kepada Malaikat Beriman kepada Kitab Beriman kepada Rasul Beriman kepada Hari Kiamat Beriman kepada Qada’ dan Qadar`},
+  {age:'5',subject:'Pendidikan Agama Islam - Akidah',fasa:'FASA 4',bulan:'OGOS - NOV',
+	sk:`PA 1.5 Memahami Rukun Islam`,
+		sp:`PA 1.5.1 Menyebut Rukun Islam : Mengucap dua kalimah syahadah Menunaikan solat lima waktu Berpuasa di bulan Ramadan Mengeluarkan zakat Menunaikan haji`},
+
+
+
+
+
   {age:'5',subject:'Pendidikan Agama Islam - Ibadah',fasa:'FASA 1',bulan:'JAN – MAC',sk:`PI 2.1 Mengetahui solat fardu`,sp:`PI 2.1.1 Menyebut nama-nama solat fardu`},
   {age:'5',subject:'Pendidikan Agama Islam - Ibadah',fasa:'FASA 1',bulan:'JAN – MAC',sk:`PI 2.1 Mengetahui solat fardu`,sp:`PI 2.1.2 Menyatakan waktu solat fardu`},
   {age:'5',subject:'Pendidikan Agama Islam - Ibadah',fasa:'FASA 2',bulan:'APRIL – JUN',sk:`PI 2.3 Amali Wuduk`,sp:`PI 2.3.1 Mengenal pasti anggota wuduk`},
   {age:'5',subject:'Pendidikan Agama Islam - Ibadah',fasa:'FASA 2',bulan:'APRIL – JUN',sk:`PI 2.3 Amali Wuduk`,sp:`PI 2.3.2 Menunjukkan had anggota wuduk`},
   {age:'5',subject:'Pendidikan Agama Islam - Ibadah',fasa:'FASA 2',bulan:'APRIL – JUN',sk:`PI 2.4 Mengamalkan cara bersuci daripada hadas dan najis`,sp:`PI 2.4.1 Menyatakan cara bersuci daripada hadas dan najis`},
   {age:'5',subject:'Pendidikan Agama Islam - Ibadah',fasa:'FASA 2',bulan:'APRIL – JUN',sk:`PI 2.4 Mengamalkan cara bersuci daripada hadas dan najis`,sp:`PI 2.4.2 Mengetahui pengertian berwuduk`},
+  {age:'5',subject:'Pendidikan Agama Islam - Ibadah',fasa:'FASA 3',bulan:'JULAI – SEPT',
+	sk:`PI 2.5 Memperoleh pengetahuan asas tentang Qada’ Hajat`,
+		sp:`PI 2.5.1 Mengetahui pengertian Qada’ Hajat`},
+  {age:'5',subject:'Pendidikan Agama Islam - Ibadah',fasa:'FASA 3',bulan:'JULAI – SEPT',
+	sk:`PI 2.5 Memperoleh pengetahuan asas tentang Qada’ Hajat`,
+		sp:`PI 2.5.2 Mengetahui adab ketika Qada’ Hajat`},
+  {age:'5',subject:'Pendidikan Agama Islam - Ibadah',fasa:'FASA 4',bulan:'OGOS - NOV',
+	sk:`PI 2.6 Ibadah puasa`,
+		sp:`PI 2.6.1 Menyatakan maksud puasa`},
+  {age:'5',subject:'Pendidikan Agama Islam - Ibadah',fasa:'FASA 4',bulan:'OGOS - NOV',
+	sk:`PI 2.6 Ibadah puasa`,
+		sp:`PI 2.6.2 Memerihalkan tentang ibadah berpuasa : Bulan Ramadan Sahur Berbuka`},
+
+
+
+
+
+
   {age:'5',subject:'Pendidikan Agama Islam - Akhlak',fasa:'FASA 1',bulan:'JAN – MAC',sk:`PAK 3.1 Mengaplikasikan adab dalam kehidupan`,sp:`PAK 3.1.1 Menyebut lafaz basmalah dan hamdalah dalam setiap perbuatan yang baik`},
   {age:'5',subject:'Pendidikan Agama Islam - Akhlak',fasa:'FASA 1',bulan:'JAN – MAC',sk:`PAK 3.1 Mengaplikasikan adab dalam kehidupan`,sp:`PAK 3.1.2 Menunjukkan adab makan dan minum dengan bimbingan`},
   {age:'5',subject:'Pendidikan Agama Islam - Akhlak',fasa:'FASA 1',bulan:'JAN – MAC',sk:`PAK 3.1 Mengaplikasikan adab dalam kehidupan`,sp:`PAK 3.1.3 Menyatakan adab di tempat beribadah :Masjid dan surau`},
   {age:'5',subject:'Pendidikan Agama Islam - Akhlak',fasa:'FASA 1',bulan:'JAN – MAC',sk:`PAK 3.1 Mengaplikasikan adab dalam kehidupan`,sp:`PAK 3.1.4 Menyatakan adab terhadap ;Ibu bapaKeluargaGuruRakan sebaya`},
   {age:'5',subject:'Pendidikan Agama Islam - Akhlak',fasa:'FASA 2',bulan:'APRIL – JUN',sk:`PAK 3.2 Mengaplikasikan adab dalam beribadah`,sp:`PAK 3.2.1 Mengenal diri sebagai makhluk ciptaan Allah`},
   {age:'5',subject:'Pendidikan Agama Islam - Akhlak',fasa:'FASA 2',bulan:'APRIL – JUN',sk:`PAK 3.2 Mengaplikasikan adab dalam beribadah`,sp:`PAK 3.2.2 Mengetahui adab beriman kepada Allah`},
-  {age:'5',subject:'Pendidikan Agama Islam - Sirah',fasa:'FASA 1',bulan:'JAN – MAC',sk:`SIRAH PS 4.1 Mengetahui biodata Nabi Muhammad SAW`,sp:`PS 4.1.1 Bercerita tentang Nabi Muhammad SAWMenyebut nama Nabi Muhammad SAWKeturunan Nabi Muhammad SAW`},
-  {age:'5',subject:'Pendidikan Agama Islam - Sirah',fasa:'FASA 1',bulan:'JAN – MAC',sk:`SIRAH PS 4.1 Mengetahui biodata Nabi Muhammad SAW`,sp:`PS 4.1.2 Melafazkan nama Nabi Muhammad SAW dan berselawat dengan lancar dan betul dengan bimbingan`},
-  {age:'5',subject:'Pendidikan Agama Islam - Sirah',fasa:'FASA 2',bulan:'APRIL – JUN',sk:`SIRAH PS 4.2 Memahami peristiwa kelahiran Nabi Muhammad SAW`,sp:`PS 4.2.1 Mengetahui peristiwa kelahiran Nabi Muhammad SAW`},
-  {age:'5',subject:'Pendidikan Agama Islam - Sirah',fasa:'FASA 2',bulan:'APRIL – JUN',sk:`SIRAH PS 4.2 Memahami peristiwa kelahiran Nabi Muhammad SAW`,sp:`PS 4.2.2 Bercerita tentang peristiwa tentera bergajah`},
+  {age:'5',subject:'Pendidikan Agama Islam - Akhlak',fasa:'FASA 3',bulan:'JULAI – SEPT',
+	sk:`PAK 3.3 Mengamalkan adab makan dan minum dalan Islam`,
+		sp:`PAK 3.3.1 Mengenal jenis-jenis makanan dan minuman dalam kehidupan harian Makanan berkhasiat Makanan sunnah`},
+  {age:'5',subject:'Pendidikan Agama Islam - Akhlak',fasa:'FASA 3',bulan:'JULAI – SEPT',
+	sk:`PAK 3.3 Mengamalkan adab makan dan minum dalan Islam`,
+		sp:`PAK 3.3.2 Mengetahui adab Ketika makan dan minum`},
+
+  {age:'5',subject:'Pendidikan Agama Islam - Akhlak',fasa:'FASA 4',bulan:'OGOS - NOV',
+	sk:`PAK 3.4 Mengamalkan adab kebersihan dalam kehidupan`,
+		sp:`PAK 3.4.1 Mengetahui adab menjaga kebersihan diri Menjaga kebersihan anggota badan Menjaga kebersihan pakaian Menjaga kebersihan rumah Menjaga kebersihan sekolah`},
+
+
+
+
+  {age:'5',subject:'Pendidikan Agama Islam - Sirah',fasa:'FASA 1',bulan:'JAN – MAC',sk:`PS 4.1 Mengetahui biodata Nabi Muhammad SAW`,sp:`PS 4.1.1 Bercerita tentang Nabi Muhammad SAWMenyebut nama Nabi Muhammad SAWKeturunan Nabi Muhammad SAW`},
+  {age:'5',subject:'Pendidikan Agama Islam - Sirah',fasa:'FASA 1',bulan:'JAN – MAC',sk:`PS 4.1 Mengetahui biodata Nabi Muhammad SAW`,sp:`PS 4.1.2 Melafazkan nama Nabi Muhammad SAW dan berselawat dengan lancar dan betul dengan bimbingan`},
+  {age:'5',subject:'Pendidikan Agama Islam - Sirah',fasa:'FASA 2',bulan:'APRIL – JUN',sk:`PS 4.2 Memahami peristiwa kelahiran Nabi Muhammad SAW`,sp:`PS 4.2.1 Mengetahui peristiwa kelahiran Nabi Muhammad SAW`},
+  {age:'5',subject:'Pendidikan Agama Islam - Sirah',fasa:'FASA 2',bulan:'APRIL – JUN',sk:`PS 4.2 Memahami peristiwa kelahiran Nabi Muhammad SAW`,sp:`PS 4.2.2 Bercerita tentang peristiwa tentera bergajah`},
+  {age:'5',subject:'Pendidikan Agama Islam - Sirah',fasa:'FASA 3',bulan:'JULAI – SEPT',
+	sk:`PS 4.3 Mengamalkan akhlak dan sifat Nabi Muhammad SAW`,
+		sp:`PS 4.3.1 Menyebut akhlak Nabi Muhammad SAW Rajin Sabar Penyayang`},
+  {age:'5',subject:'Pendidikan Agama Islam - Sirah',fasa:'FASA 4',bulan:'OGOS - NOV',
+	sk:`PS 4.3 Mengamalkan akhlak dan sifat Nabi Muhammad SAW`,
+		sp:`PS 4.3.1 Menyebut akhlak Nabi Muhammad SAW Rajin Sabar Penyayang`},
+
+
+
+
+
   {age:'5',subject:'Sains',fasa:'FASA 1',bulan:'JAN – MAC',
 sk:`SIKAP SAINTIFIK
 SA 1.1 Menonjolkan sikap nilai berdasarkan al-quran dan as-sunnah
@@ -2846,6 +3611,39 @@ Bentuk
 Saiz
 Tekstur
 Berat`},
+  {age:'5',subject:'Sains',fasa:'FASA 3',bulan:'JULAI – SEPT',
+	sk:`KEMAHIRAN PROSES SAINS
+SA 3.3 Membuat pengukuran`,
+		sp:`SA 3.3.1 Mengenal perbezaan ukuran objek: Panjang- pendek`},
+  {age:'5',subject:'Sains',fasa:'FASA 3',bulan:'JULAI – SEPT',
+	sk:`KEMAHIRAN PROSES SAINS   
+SA 3.3 Membuat pengukuran`,
+		sp:`Tebal- nipis`},
+  {age:'5',subject:'Sains',fasa:'FASA 3',bulan:'JULAI – SEPT',
+	sk:`KEMAHIRAN PROSES SAINS   
+SA 3.3 Membuat pengukuran`,
+		sp:`Besar- kecil`},
+  {age:'5',subject:'Sains',fasa:'FASA 3',bulan:'JULAI – SEPT',
+	sk:`KEMAHIRAN PROSES SAINS   
+SA 3.3 Membuat pengukuran`,
+		sp:`Tinggi- rendah`},
+  {age:'5',subject:'Sains',fasa:'FASA 3',bulan:'JULAI – SEPT',
+	sk:`KEMAHIRAN PROSES SAINS   
+SA 3.3 Membuat pengukuran`,
+		sp:`Berat- ringan`},
+  {age:'5',subject:'Sains',fasa:'FASA 3',bulan:'JULAI – SEPT',
+	sk:`KEMAHIRAN PROSES SAINS   
+SA 3.3 Membuat pengukuran`,
+		sp:`SA 3.3.2 Mengukur panjang atau tinggi objek menggunakan satu unit bukan piawaian`},
+  {age:'5',subject:'Sains',fasa:'FASA 4',bulan:'OKT - NOV',
+	sk:`KEMAHIRAN PROSES SAINS  
+SA 3.4 Membuat inferens`,
+		sp:`SA 3.4.1 Membuat andaian yang mudah berdasarkan pemerhatian`},
+
+
+
+
+
   {age:'6',subject:'Muqadam',fasa:'FASA 1',bulan:'JAN – MAC',sk:`PAQ 1.1 Mengenal huruf hijaiyah`,sp:`PAQ 1.1.3 Mengenal pasti dan menyebut bunyi huruf hijaiyah yang berbaris :
 Atas (Fathah)
 Bawah (Kasrah)
@@ -2856,6 +3654,24 @@ Atas (Fathah)
 Bawah (Kasrah)
 Hadapan (Dammah)`},
   {age:'6',subject:'Muqadam',fasa:'FASA 2',bulan:'APRIL – JUN',sk:`PAQ 1.1 Mengenal huruf hijaiyah`,sp:`PAQ 1.1.4 Membanding beza huruf hijaiyah yang berbaris dengan betul`},
+  {age:'6',subject:'Muqadam',fasa:'FASA 3',bulan:'JULAI – SEPT',
+	sk:`PAQ 1.2 Mendengar dan mengecam bunyi huruf hijaiyah`,
+		sp:`PAQ 1.2.3 Menyebut huruf hijaiyah dengan makhraj`},
+  {age:'6',subject:'Muqadam',fasa:'FASA 3',bulan:'JULAI – SEPT',
+	sk:`PAQ 1.2 Mendengar dan mengecam bunyi huruf hijaiyah`,
+		sp:`PAQ 1.2.4 Mengecam huruf hijaiyah`},
+  {age:'6',subject:'Muqadam',fasa:'FASA 3',bulan:'JULAI – SEPT',
+	sk:`PAQ 1.2 Mendengar dan mengecam bunyi huruf hijaiyah`,
+		sp:`PAQ 1.2.5 Memberi respon terhadap huruf yang didengar.`},
+  {age:'6',subject:'Muqadam',fasa:'FASA 4',bulan:'OKT - NOV',
+	sk:`PAQ 1.2 Mendengar dan mengecam bunyi huruf hijaiyah`,
+		sp:`PAQ 1.2.3 Menyebut huruf hijaiyah dengan makhraj`},
+  {age:'6',subject:'Muqadam',fasa:'FASA 4',bulan:'OKT - NOV',
+	sk:`PAQ 1.2 Mendengar dan mengecam bunyi huruf hijaiyah`,
+		sp:`PAQ 1.2.4 Mengecam huruf hijaiyah`},
+  {age:'6',subject:'Muqadam',fasa:'FASA 4',bulan:'OKT - NOV',
+	sk:`PAQ 1.2 Mendengar dan mengecam bunyi huruf hijaiyah`,
+		sp:`PAQ 1.2.5 Memberi respon terhadap huruf yang didengar.`},
   {age:'6',subject:'Pendidikan Jasmani dan Kesihatan',fasa:'FASA 1',bulan:'JAN – MAC',sk:`KF 1.1 Meneroka pelbagai aktiviti yang melibatkan motor halus`,sp:`KF 1.1.3 Menggunakan kemahiran motor halus melalui aktiviti yang melibatkan alatan`},
   {age:'6',subject:'Pendidikan Jasmani dan Kesihatan',fasa:'FASA 1',bulan:'JAN – MAC',sk:`KF 2.1 Meneroka pelbagai pergerakan (kesedaran ruang)`,sp:`KF 2.1.4 Melakukan pergerakan dalam laluan :
 Lurus
@@ -2878,71 +3694,457 @@ Mengimbang`},
 Anggota tubuh
 Pakaian
 Peralatan peribadi`},
-  {age:'6',subject:'Bahasa Arab',fasa:'FASA 1',bulan:'JAN – MAC',sk:`KEMAHIRAN MENDENGAR DAN BERTUTUR B.A 1.1 Mendengar,memahami dan memberi respons secara tindak balas dan lisan`,sp:`BA 1.1.2 Mendengar dan memberi respons terhadap persekitaran`},
-  {age:'6',subject:'Bahasa Arab',fasa:'FASA 1',bulan:'JAN – MAC',sk:`KEMAHIRAN MENDENGAR DAN BERTUTUR B.A 1.1 Mendengar,memahami dan memberi respons secara tindak balas dan lisan`,sp:`BA 1.1.3 Mendengar dan memberi respons terhadap perbualan ringkas`},
+  {age:'6',subject:'Pendidikan Jasmani dan Kesihatan',fasa:'FASA 3',bulan:'JULAI – SEPT',
+	sk:`KF 4.2 Memahami jenis penyakit dan cara pencegahan penyakit`,
+		sp:`KF 4.2.2 Menyatakan langkah-langkah pencegahan awal penyakit bawaan vektor`},
+  {age:'6',subject:'Pendidikan Jasmani dan Kesihatan',fasa:'FASA 4',bulan:'OKT - NOV',
+	sk:`KF 4.3 Menjaga keselamatan diri sendiri`,
+		sp:`KF 4.3.4 Mengenal pasti situasi yang berbahaya semasa di :  Rumah`},
+  {age:'6',subject:'Pendidikan Jasmani dan Kesihatan',fasa:'FASA 4',bulan:'OKT - NOV',
+	sk:`KF 4.3 Menjaga keselamatan diri sendiri`,
+		sp:`Sekolah`},
+  {age:'6',subject:'Pendidikan Jasmani dan Kesihatan',fasa:'FASA 4',bulan:'OKT - NOV',
+	sk:`KF 4.3 Menjaga keselamatan diri sendiri`,
+		sp:`Taman Permainan`},
+  {age:'6',subject:'Pendidikan Jasmani dan Kesihatan',fasa:'FASA 4',bulan:'OKT - NOV',
+	sk:`KF 4.3 Menjaga keselamatan diri sendiri`,
+		sp:`KF 4.3.5 Menunjukkan cara penggunaan alatan dan bahan yang berbahaya dengan betul dan selamat`},
+  {age:'6',subject:'Pendidikan Jasmani dan Kesihatan',fasa:'FASA 4',bulan:'OKT - NOV',
+	sk:`KF 4.3 Menjaga keselamatan diri sendiri`,
+		sp:`KF 4.3.6 Menyatakan cara menyelesaikan masalah semasa dalam situasi yang kurang selamat`},
+  {age:'6',subject:'Pendidikan Jasmani dan Kesihatan',fasa:'FASA 4',bulan:'OKT - NOV',
+	sk:`KF 4.4 Menjaga kesejahteraan diri dalam kehidupan harian`,
+		sp:`KF 4.4.3 Menyatakan makanan yang berkhasiat dan tidak berkhasiat`},
+  {age:'6',subject:'Pendidikan Jasmani dan Kesihatan',fasa:'FASA 4',bulan:'OKT - NOV',
+	sk:`KF 4.4 Menjaga kesejahteraan diri dalam kehidupan harian`,
+		sp:`KF 4.4.4 Mengamalkan pemakanan yang seimbang`},
+  {age:'6',subject:'Bahasa Arab',fasa:'FASA 1',bulan:'JAN – MAC',sk:`KEMAHIRAN MENDENGAR DAN BERTUTUR 
+B.A 1.1 Mendengar,memahami dan memberi respons secara tindak balas dan lisan`,sp:`BA 1.1.2 Mendengar dan memberi respons terhadap persekitaran`},
+  {age:'6',subject:'Bahasa Arab',fasa:'FASA 1',bulan:'JAN – MAC',sk:`KEMAHIRAN MENDENGAR DAN BERTUTUR 
+B.A 1.1 Mendengar,memahami dan memberi respons secara tindak balas dan lisan`,sp:`BA 1.1.3 Mendengar dan memberi respons terhadap perbualan ringkas`},
   {age:'6',subject:'Bahasa Arab',fasa:'FASA 1',bulan:'JAN – MAC',sk:`BA 1.2 Menyebut Bahasa Arab mudah`,sp:`BA 1.2.3 Menyebut perkataan mudah dalam Bahasa Arab`},
   {age:'6',subject:'Bahasa Arab',fasa:'FASA 1',bulan:'JAN – MAC',sk:`BA 1.2 Menyebut Bahasa Arab mudah`,sp:`BA 1.2.4 Menyatakan maksud perkataan Bahasa Arab`},
   {age:'6',subject:'Bahasa Arab',fasa:'FASA 1',bulan:'JAN – MAC',sk:`BA 1.2 Menyebut Bahasa Arab mudah`,sp:`BA 1.2.5 Menyebut dan menyatakan perkataan mudah dalam Bahasa Arab berserta maksud`},
-  {age:'6',subject:'Bahasa Arab',fasa:'FASA 1',bulan:'JAN – MAC',sk:`KEMAHIRAN MENULIS BA 2.1 Menulis huruf hijaiyah`,sp:`BA 2.1.2 Menulis huruf hijaiyah dengan teknik yang betul :
+  {age:'6',subject:'Bahasa Arab',fasa:'FASA 1',bulan:'JAN – MAC',sk:`KEMAHIRAN MENULIS 
+BA 2.1 Menulis huruf hijaiyah`,sp:`BA 2.1.2 Menulis huruf hijaiyah dengan teknik yang betul :
 Kanan ke kiri 
 Kedudukan titik
 Kedudukan baris
 Kedudukan huruf
 Huruf bersambung atau tidak bersambung`},
-  {age:'6',subject:'Bahasa Arab',fasa:'FASA 1',bulan:'JAN – MAC',sk:`KEMAHIRAN MEMBACA BA 3.1 Membaca perkataan mudah`,sp:`BA 3.1.2 Membaca perkataan mudah dalam Bahasa Arab`},
-  {age:'6',subject:'Bahasa Arab',fasa:'FASA 2',bulan:'APRIL – JUN',sk:`KEMAHIRAN MENDENGAR DAN BERTUTUR BA 1.3 Memberi maklum balas menggunakan ayat mudah`,sp:`BA 1.3.3 Mendengar dan menyebut ayat mudah secara bertatasusila`},
-  {age:'6',subject:'Bahasa Arab',fasa:'FASA 2',bulan:'APRIL – JUN',sk:`KEMAHIRAN MENDENGAR DAN BERTUTUR BA 1.3 Memberi maklum balas menggunakan ayat mudah`,sp:`BA 1.3.4 Memberi maklum balas kepada ayat mudah`},
-  {age:'6',subject:'Bahasa Arab',fasa:'FASA 2',bulan:'APRIL – JUN',sk:`KEMAHIRAN MENDENGAR DAN BERTUTUR BA 1.3 Memberi maklum balas menggunakan ayat mudah`,sp:`BA 1.3.5 Bersoal jawab menggunakan ayat mudah berdasarkan bahan ransangan`},
-  {age:'6',subject:'Bahasa Arab',fasa:'FASA 2',bulan:'APRIL – JUN',sk:`KEMAHIRAN MENULIS BA 2.1 Menulis huruf hijaiyah`,sp:`BA 2.1.2 Menulis huruf hijaiyah dengan teknik yang betul :
+  {age:'6',subject:'Bahasa Arab',fasa:'FASA 1',bulan:'JAN – MAC',sk:`KEMAHIRAN MEMBACA 
+BA 3.1 Membaca perkataan mudah`,sp:`BA 3.1.2 Membaca perkataan mudah dalam Bahasa Arab`},
+  {age:'6',subject:'Bahasa Arab',fasa:'FASA 2',bulan:'APRIL – JUN',sk:`KEMAHIRAN MENDENGAR DAN BERTUTUR 
+BA 1.3 Memberi maklum balas menggunakan ayat mudah`,sp:`BA 1.3.3 Mendengar dan menyebut ayat mudah secara bertatasusila`},
+  {age:'6',subject:'Bahasa Arab',fasa:'FASA 2',bulan:'APRIL – JUN',sk:`KEMAHIRAN MENDENGAR DAN BERTUTUR 
+BA 1.3 Memberi maklum balas menggunakan ayat mudah`,sp:`BA 1.3.4 Memberi maklum balas kepada ayat mudah`},
+  {age:'6',subject:'Bahasa Arab',fasa:'FASA 2',bulan:'APRIL – JUN',sk:`KEMAHIRAN MENDENGAR DAN BERTUTUR 
+BA 1.3 Memberi maklum balas menggunakan ayat mudah`,sp:`BA 1.3.5 Bersoal jawab menggunakan ayat mudah berdasarkan bahan ransangan`},
+  {age:'6',subject:'Bahasa Arab',fasa:'FASA 2',bulan:'APRIL – JUN',sk:`KEMAHIRAN MENULIS 
+BA 2.1 Menulis huruf hijaiyah`,sp:`BA 2.1.2 Menulis huruf hijaiyah dengan teknik yang betul :
 Kanan ke kiri 
 Kedudukan titik
 Kedudukan baris
 Kedudukan huruf
 Huruf bersambung atau tidak bersambung`},
-  {age:'6',subject:'Bahasa Arab',fasa:'FASA 2',bulan:'APRIL – JUN',sk:`KEMAHIRAN MEMBACA BA 3.1 Membaca perkataan mudah`,sp:`BA 3.1.2 Membaca perkataan mudah dalam Bahasa Arab`},
-  {age:'6',subject:'Bahasa Melayu',fasa:'FASA 1',bulan:'JAN – MAC',sk:`KEMAHIRAN MENDENGAR DAN BERTUTUR BM 1.1 Menguasai kemahiran mendengar dan memberi respons terhadap pelbagai bunyi di sekeliling`,sp:`BM 1.1.2 Mengecam dan membezakan bunyi di persekitaran ;`},
-  {age:'6',subject:'Bahasa Melayu',fasa:'FASA 1',bulan:'JAN – MAC',sk:`KEMAHIRAN MENDENGAR DAN BERTUTUR BM 1.1 Menguasai kemahiran mendengar dan memberi respons terhadap pelbagai bunyi di sekeliling`,sp:`BM 1.1.3 Memberi respon terhadap bunyi yang didengar`},
+  {age:'6',subject:'Bahasa Arab',fasa:'FASA 2',bulan:'APRIL – JUN',sk:`KEMAHIRAN MEMBACA 
+BA 3.1 Membaca perkataan mudah`,sp:`BA 3.1.2 Membaca perkataan mudah dalam Bahasa Arab`},
+  {age:'6',subject:'Bahasa Arab',fasa:'FASA 3',bulan:'JULAI – SEPT',
+	sk:`KEMAHIRAN MENDENGAR DAN BERTUTUR 
+BA 1.2 Menyebut Bahasa Arab mudah`,
+		sp:`BA 1.2.5 Menyebut dan menyatakan perkataan mudah dalam Bahasa Arab berserta maksud`},
+  {age:'6',subject:'Bahasa Arab',fasa:'FASA 3',bulan:'JULAI – SEPT',
+	sk:`BA 1.3 Memberi maklum balas menggunakan ayat mudah`,
+		sp:`BA 1.3.5 Bersoal jawab menggunakan ayat mudah berdasarkan bahan ransangan`},
+  {age:'6',subject:'Bahasa Arab',fasa:'FASA 3',bulan:'JULAI – SEPT',
+	sk:`KEMAHIRAN MENULIS 
+BA 2.2 Menulis perkataan mudah`,
+		sp:`BA 2.2.2 Menulis perkataan mudah dalam Bahasa Arab`},
+  {age:'6',subject:'Bahasa Arab',fasa:'FASA 3',bulan:'JULAI – SEPT',
+	sk:`KEMAHIRAN MEMBACA 
+BA 3.1 Membaca perkataan mudah`,
+		sp:`BA 3.1.2 Membaca perkataan mudah dalam Bahasa Arab`},
+  {age:'6',subject:'Bahasa Arab',fasa:'FASA 4',bulan:'OKT - NOV',
+	sk:`KEMAHIRAN MENDENGAR DAN BERTUTUR 
+BA 1.2 Menyebut Bahasa Arab mudah`,
+		sp:`BA 1.2.5 Menyebut dan menyatakan perkataan mudah dalam Bahasa Arab berserta maksud`},
+  {age:'6',subject:'Bahasa Arab',fasa:'FASA 4',bulan:'OKT - NOV',
+	sk:`BA 1.3 Memberi maklum balas menggunakan ayat mudah`,
+		sp:`BA 1.3.5 Bersoal jawab menggunakan ayat mudah berdasarkan bahan ransangan`},
+  {age:'6',subject:'Bahasa Arab',fasa:'FASA 4',bulan:'OKT - NOV',
+	sk:`KEMAHIRAN MENULIS 
+BA 2.2 Menulis perkataan mudah`,
+		sp:`BA 2.2.2 Menulis perkataan mudah dalam Bahasa Arab`},
+  {age:'6',subject:'Bahasa Arab',fasa:'FASA 4',bulan:'OKT - NOV',
+	sk:`KEMAHIRAN MEMBACA 
+BA 3.1 Membaca perkataan mudah`,
+		sp:`BA 3.1.2 Membaca perkataan mudah dalam Bahasa Arab`},
+
+
+
+
+  {age:'6',subject:'Bahasa Melayu',fasa:'FASA 1',bulan:'JAN – MAC',sk:`KEMAHIRAN MENDENGAR DAN BERTUTUR 
+BM 1.1 Menguasai kemahiran mendengar dan memberi respons terhadap pelbagai bunyi di sekeliling`,sp:`BM 1.1.2 Mengecam dan membezakan bunyi di persekitaran ;`},
+  {age:'6',subject:'Bahasa Melayu',fasa:'FASA 1',bulan:'JAN – MAC',sk:`KEMAHIRAN MENDENGAR DAN BERTUTUR 
+BM 1.1 Menguasai kemahiran mendengar dan memberi respons terhadap pelbagai bunyi di sekeliling`,sp:`BM 1.1.3 Memberi respon terhadap bunyi yang didengar`},
   {age:'6',subject:'Bahasa Melayu',fasa:'FASA 1',bulan:'JAN – MAC',sk:`BM 1.2 Menguasai Kemahiran mendengar dan memberi respons`,sp:`BM 1.2.4 Mendengar dan memberi respon dengan bertatasusila terhadap ;
 Arahan 
 Soalan
 Cerita `},
   {age:'6',subject:'Bahasa Melayu',fasa:'FASA 1',bulan:'JAN – MAC',sk:`BM 1.2 Menguasai Kemahiran mendengar dan memberi respons`,sp:`BM 1.2.5 Mendengar dan melafazkan puisi dengan intonasi yang betul`},
   {age:'6',subject:'Bahasa Melayu',fasa:'FASA 1',bulan:'JAN – MAC',sk:`BM 1.2 Menguasai Kemahiran mendengar dan memberi respons`,sp:`BM 1.2.6 Melafazkan puisi mudah`},
-  {age:'6',subject:'Bahasa Melayu',fasa:'FASA 1',bulan:'JAN – MAC',sk:`KEMAHIRAN MEMBACA BM 2.1 Menguasai Kemahiran Prabaca`,sp:`BM 2.1.3 Menyatakan ciri-ciri buku`},
-  {age:'6',subject:'Bahasa Melayu',fasa:'FASA 1',bulan:'JAN – MAC',sk:`KEMAHIRAN MEMBACA BM 2.1 Menguasai Kemahiran Prabaca`,sp:`BM 2.1.4 Mempraktikkan cara baca yang betul`},
-  {age:'6',subject:'Bahasa Melayu',fasa:'FASA 1',bulan:'JAN – MAC',sk:`KEMAHIRAN MEMBACA BM 2.1 Menguasai Kemahiran Prabaca`,sp:`BM 2.1.5 Mengamalkan penjagaan buku dengan cara yang betul`},
+  {age:'6',subject:'Bahasa Melayu',fasa:'FASA 1',bulan:'JAN – MAC',sk:`KEMAHIRAN MEMBACA 
+BM 2.1 Menguasai Kemahiran Prabaca`,sp:`BM 2.1.3 Menyatakan ciri-ciri buku`},
+  {age:'6',subject:'Bahasa Melayu',fasa:'FASA 1',bulan:'JAN – MAC',sk:`KEMAHIRAN MEMBACA 
+BM 2.1 Menguasai Kemahiran Prabaca`,sp:`BM 2.1.4 Mempraktikkan cara baca yang betul`},
+  {age:'6',subject:'Bahasa Melayu',fasa:'FASA 1',bulan:'JAN – MAC',sk:`KEMAHIRAN MEMBACA 
+BM 2.1 Menguasai Kemahiran Prabaca`,sp:`BM 2.1.5 Mengamalkan penjagaan buku dengan cara yang betul`},
   {age:'6',subject:'Bahasa Melayu',fasa:'FASA 1',bulan:'JAN – MAC',sk:`BM 2.2 Menguasai Kemahiran mengenal abjad`,sp:`BM 2.2.4 Mengecam bentuk huruf abjad`},
   {age:'6',subject:'Bahasa Melayu',fasa:'FASA 1',bulan:'JAN – MAC',sk:`BM 2.2 Menguasai Kemahiran mengenal abjad`,sp:`BM 2.2.5 Membezakan bunyi huruf abjad`},
   {age:'6',subject:'Bahasa Melayu',fasa:'FASA 1',bulan:'JAN – MAC',sk:`BM 2.2 Menguasai Kemahiran mengenal abjad`,sp:`BM 2.2.6 Mengenalpasti dan menyebut huruf kecil dan huruf besar`},
   {age:'6',subject:'Bahasa Melayu',fasa:'FASA 1',bulan:'JAN – MAC',sk:`BM 2.2 Menguasai Kemahiran mengenal abjad`,sp:`BM 2.2.7 Menyebut dan membunyikan huruf vokal`},
-  {age:'6',subject:'Bahasa Melayu',fasa:'FASA 1',bulan:'JAN – MAC',sk:`KEMAHIRAN MENULIS BM 3.1 Menguasai Kemahiran pratulis`,sp:`BM 3.1.6 Melakukan pergerakan tangan dan jari untuk membentuk corak mengikut arah yang betul`},
-  {age:'6',subject:'Bahasa Melayu',fasa:'FASA 2',bulan:'APRIL – JUN',sk:`KEMAHIRAN MENDENGAR DAN BERTUTUR BM 1.3 Menguasai Kemahiran mendengar dan bertutur`,sp:`BM 1.3.3 Mendengar, mengecam dan menyebut bunyi perkataan`},
-  {age:'6',subject:'Bahasa Melayu',fasa:'FASA 2',bulan:'APRIL – JUN',sk:`KEMAHIRAN MENDENGAR DAN BERTUTUR BM 1.3 Menguasai Kemahiran mendengar dan bertutur`,sp:`BM 1.3.4 Mendengar, mengecam dan menyebut bunyi suku kata akhir yang sama dalam perkataan`},
-  {age:'6',subject:'Bahasa Melayu',fasa:'FASA 2',bulan:'APRIL – JUN',sk:`KEMAHIRAN MENDENGAR DAN BERTUTUR BM 1.3 Menguasai Kemahiran mendengar dan bertutur`,sp:`BM 1.3.5 Mendengar, mengecam dan menyebut bunyi suku kata akhir yang sama dalam perkataan`},
-  {age:'6',subject:'Bahasa Melayu',fasa:'FASA 2',bulan:'APRIL – JUN',sk:`KEMAHIRAN MENDENGAR DAN BERTUTUR BM 1.3 Menguasai Kemahiran mendengar dan bertutur`,sp:`BM 1.2.4 Mendengar dan memberi respon dengan bertatasusila terhadap ;
+  {age:'6',subject:'Bahasa Melayu',fasa:'FASA 1',bulan:'JAN – MAC',sk:`KEMAHIRAN MENULIS 
+BM 3.1 Menguasai Kemahiran pratulis`,sp:`BM 3.1.6 Melakukan pergerakan tangan dan jari untuk membentuk corak mengikut arah yang betul`},
+  {age:'6',subject:'Bahasa Melayu',fasa:'FASA 2',bulan:'APRIL – JUN',sk:`KEMAHIRAN MENDENGAR DAN BERTUTUR 
+BM 1.3 Menguasai Kemahiran mendengar dan bertutur`,sp:`BM 1.3.3 Mendengar, mengecam dan menyebut bunyi perkataan`},
+  {age:'6',subject:'Bahasa Melayu',fasa:'FASA 2',bulan:'APRIL – JUN',sk:`KEMAHIRAN MENDENGAR DAN BERTUTUR 
+BM 1.3 Menguasai Kemahiran mendengar dan bertutur`,sp:`BM 1.3.4 Mendengar, mengecam dan menyebut bunyi suku kata akhir yang sama dalam perkataan`},
+  {age:'6',subject:'Bahasa Melayu',fasa:'FASA 2',bulan:'APRIL – JUN',sk:`KEMAHIRAN MENDENGAR DAN BERTUTUR 
+BM 1.3 Menguasai Kemahiran mendengar dan bertutur`,sp:`BM 1.3.5 Mendengar, mengecam dan menyebut bunyi suku kata akhir yang sama dalam perkataan`},
+  {age:'6',subject:'Bahasa Melayu',fasa:'FASA 2',bulan:'APRIL – JUN',sk:`KEMAHIRAN MENDENGAR DAN BERTUTUR 
+BM 1.3 Menguasai Kemahiran mendengar dan bertutur`,sp:`BM 1.2.4 Mendengar dan memberi respon dengan bertatasusila terhadap ;
 Arahan 
 Soalan
 Cerita `},
-  {age:'6',subject:'Bahasa Melayu',fasa:'FASA 2',bulan:'APRIL – JUN',sk:`KEMAHIRAN MENDENGAR DAN BERTUTUR BM 1.3 Menguasai Kemahiran mendengar dan bertutur`,sp:`BM 1.2.5 Mendengar dan melafazkan puisi dengan intonasi yang betul`},
-  {age:'6',subject:'Bahasa Melayu',fasa:'FASA 2',bulan:'APRIL – JUN',sk:`KEMAHIRAN MENDENGAR DAN BERTUTUR BM 1.3 Menguasai Kemahiran mendengar dan bertutur`,sp:`BM 1.2.6 Melafazkan puisi mudah`},
-  {age:'6',subject:'Bahasa Melayu',fasa:'FASA 2',bulan:'APRIL – JUN',sk:`KEMAHIRAN MENDENGAR DAN BERTUTUR BM 1.3 Menguasai Kemahiran mendengar dan bertutur`,sp:`BM 2.1.3 Menyatakan ciri-ciri buku`},
-  {age:'6',subject:'Bahasa Melayu',fasa:'FASA 2',bulan:'APRIL – JUN',sk:`KEMAHIRAN MEMBACA BM 2.3 Menguasai Kemahiran membina dan membaca suku kata serta perkataan`,sp:`BM 2.1.4 Mempraktikkan cara baca yang betul`},
-  {age:'6',subject:'Bahasa Melayu',fasa:'FASA 2',bulan:'APRIL – JUN',sk:`KEMAHIRAN MEMBACA BM 2.3 Menguasai Kemahiran membina dan membaca suku kata serta perkataan`,sp:`BM 2.1.5 Mengamalkan penjagaan buku dengan cara yang betul`},
-  {age:'6',subject:'Bahasa Melayu',fasa:'FASA 2',bulan:'APRIL – JUN',sk:`KEMAHIRAN MEMBACA BM 2.3 Menguasai Kemahiran membina dan membaca suku kata serta perkataan`,sp:`BM 2.2.4 Mengecam bentuk huruf abjad`},
-  {age:'6',subject:'Bahasa Melayu',fasa:'FASA 2',bulan:'APRIL – JUN',sk:`KEMAHIRAN MEMBACA BM 2.3 Menguasai Kemahiran membina dan membaca suku kata serta perkataan`,sp:`BM 2.2.5 Membezakan bunyi huruf abjad`},
-  {age:'6',subject:'Bahasa Melayu',fasa:'FASA 2',bulan:'APRIL – JUN',sk:`KEMAHIRAN MEMBACA BM 2.3 Menguasai Kemahiran membina dan membaca suku kata serta perkataan`,sp:`BM 2.2.6 Mengenalpasti dan menyebut huruf kecil dan huruf besar`},
-  {age:'6',subject:'Bahasa Melayu',fasa:'FASA 2',bulan:'APRIL – JUN',sk:`KEMAHIRAN MEMBACA BM 2.3 Menguasai Kemahiran membina dan membaca suku kata serta perkataan`,sp:`BM 2.2.7 Menyebut dan membunyikan huruf vokal`},
+  {age:'6',subject:'Bahasa Melayu',fasa:'FASA 2',bulan:'APRIL – JUN',sk:`KEMAHIRAN MENDENGAR DAN BERTUTUR 
+BM 1.3 Menguasai Kemahiran mendengar dan bertutur`,sp:`BM 1.2.5 Mendengar dan melafazkan puisi dengan intonasi yang betul`},
+  {age:'6',subject:'Bahasa Melayu',fasa:'FASA 2',bulan:'APRIL – JUN',sk:`KEMAHIRAN MENDENGAR DAN BERTUTUR 
+BM 1.3 Menguasai Kemahiran mendengar dan bertutur`,sp:`BM 1.2.6 Melafazkan puisi mudah`},
+  {age:'6',subject:'Bahasa Melayu',fasa:'FASA 2',bulan:'APRIL – JUN',sk:`KEMAHIRAN MENDENGAR DAN BERTUTUR 
+BM 1.3 Menguasai Kemahiran mendengar dan bertutur`,sp:`BM 2.1.3 Menyatakan ciri-ciri buku`},
+  {age:'6',subject:'Bahasa Melayu',fasa:'FASA 2',bulan:'APRIL – JUN',sk:`KEMAHIRAN MEMBACA 
+BM 2.3 Menguasai Kemahiran membina dan membaca suku kata serta perkataan`,sp:`BM 2.1.4 Mempraktikkan cara baca yang betul`},
+  {age:'6',subject:'Bahasa Melayu',fasa:'FASA 2',bulan:'APRIL – JUN',sk:`KEMAHIRAN MEMBACA 
+BM 2.3 Menguasai Kemahiran membina dan membaca suku kata serta perkataan`,sp:`BM 2.1.5 Mengamalkan penjagaan buku dengan cara yang betul`},
+  {age:'6',subject:'Bahasa Melayu',fasa:'FASA 2',bulan:'APRIL – JUN',sk:`KEMAHIRAN MEMBACA 
+BM 2.3 Menguasai Kemahiran membina dan membaca suku kata serta perkataan`,sp:`BM 2.2.4 Mengecam bentuk huruf abjad`},
+  {age:'6',subject:'Bahasa Melayu',fasa:'FASA 2',bulan:'APRIL – JUN',sk:`KEMAHIRAN MEMBACA 
+BM 2.3 Menguasai Kemahiran membina dan membaca suku kata serta perkataan`,sp:`BM 2.2.5 Membezakan bunyi huruf abjad`},
+  {age:'6',subject:'Bahasa Melayu',fasa:'FASA 2',bulan:'APRIL – JUN',sk:`KEMAHIRAN MEMBACA 
+BM 2.3 Menguasai Kemahiran membina dan membaca suku kata serta perkataan`,sp:`BM 2.2.6 Mengenalpasti dan menyebut huruf kecil dan huruf besar`},
+  {age:'6',subject:'Bahasa Melayu',fasa:'FASA 2',bulan:'APRIL – JUN',sk:`KEMAHIRAN MEMBACA 
+BM 2.3 Menguasai Kemahiran membina dan membaca suku kata serta perkataan`,sp:`BM 2.2.7 Menyebut dan membunyikan huruf vokal`},
   {age:'6',subject:'Bahasa Melayu',fasa:'FASA 2',bulan:'APRIL – JUN',sk:`BM 3.1 Menguasai Kemahiran pratulis`,sp:`BM 3.1.6 Melakukan pergerakan tangan dan jari untuk membentuk corak mengikut arah yang betul`},
-  {age:'6',subject:'Doa',fasa:'FASA 1',bulan:'JAN – MAC',sk:`PD 3.1 Melafazkan doa`,sp:`PD 3.1.5 Menghafaz doa dalam kehidupan seharian`},
-  {age:'6',subject:'Doa',fasa:'FASA 1',bulan:'JAN – MAC',sk:`PD 3.1 Melafazkan doa`,sp:`PD 3.1.6 Mengamalkan doa dengan betul`},
-  {age:'6',subject:'Doa',fasa:'FASA 2',bulan:'APRIL – JUN',sk:`PD 3.1 Melafazkan doa`,sp:`PD 3.1.5 Menghafaz doa dalam kehidupan seharian`},
-  {age:'6',subject:'Doa',fasa:'FASA 2',bulan:'APRIL – JUN',sk:`PD 3.1 Melafazkan doa`,sp:`PD 3.1.6 Mengamalkan doa dengan betul`},
-  {age:'6',subject:'Bahasa Inggeris',fasa:'PHASE 1',bulan:'JAN – MARCH',sk:`LISTENING AND SPEAKING SKILL BI 1.1 Listen to identify sounds`,sp:`BI 1.1.2 Listen to and respond to stimulus given:
+  {age:'6',subject:'Bahasa Melayu',fasa:'FASA 3',bulan:'JULAI – SEPT',
+	sk:`KEMAHIRAN MENDENGAR DAN BERTUTUR 
+BM 1.4 Menguasai Kemahiran berinteraksi menggunakan ayat mudah`,
+		sp:`BM 1.4.4 Berinteraksi menggunakan ayat mudah mengikut situasi`},
+  {age:'6',subject:'Bahasa Melayu',fasa:'FASA 3',bulan:'JULAI – SEPT',
+	sk:`KEMAHIRAN MENDENGAR DAN BERTUTUR 
+BM 1.4 Menguasai Kemahiran berinteraksi menggunakan ayat mudah`,
+		sp:`BM 1.4.5 Bersoal jawab menggunakan ayat mudah berdasarkan bahan rangsangan`},
+  {age:'6',subject:'Bahasa Melayu',fasa:'FASA 3',bulan:'JULAI – SEPT',
+	sk:`KEMAHIRAN MEMBACA 
+BM 2.4 Menguasai Kemahiran membaca dan memahami frasa serta ayat`,
+		sp:`BM 2.4.3 Membaca dan memahami frasa yang mengandungi perkataan dengan suku kata terbuka dan tertutup`},
+  {age:'6',subject:'Bahasa Melayu',fasa:'FASA 3',bulan:'JULAI – SEPT',
+	sk:`KEMAHIRAN MEMBACA 
+BM 2.4 Menguasai Kemahiran membaca dan memahami frasa serta ayat`,
+		sp:`BM 2.4.4 Membaca dan memahami ayat mudah dengan sebutan yang betul`},
+  {age:'6',subject:'Bahasa Melayu',fasa:'FASA 3',bulan:'JULAI – SEPT',
+	sk:`KEMAHIRAN MENULIS 
+BM 3.2 Menguasai Kemahiran menulis`,
+		sp:`BM 3.2.5 Menyalin ayat mudah`},
+  {age:'6',subject:'Bahasa Melayu',fasa:'FASA 3',bulan:'JULAI – SEPT',
+	sk:`KEMAHIRAN MENULIS 
+BM 3.2 Menguasai Kemahiran menulis`,
+		sp:`BM 3.2.6 Menulis perkataan dan Frasa`},
+  {age:'6',subject:'Bahasa Melayu',fasa:'FASA 4',bulan:'OKT – NOV',
+	sk:`KEMAHIRAN MENDENGAR DAN BERTUTUR 
+BM 1.5 Menguasai Kemahiran bertutur`,
+		sp:`BM 1.5.2 Menyampaikan pandangan secara kritis tentang sesuatu yang didengar, dilihat atau dialami`},
+  {age:'6',subject:'Bahasa Melayu',fasa:'FASA 4',bulan:'OKT – NOV',
+	sk:`KEMAHIRAN MEMBACA 
+BM 2.6 Menguasai Kemahiran memupuk sikap minat membaca`,
+		sp:`BM 2.6.4 Membaca perkataan yang terdapat dalam buku`},
+  {age:'6',subject:'Bahasa Melayu',fasa:'FASA 4',bulan:'OKT – NOV',
+	sk:`KEMAHIRAN MEMBACA 
+BM 2.6 Menguasai Kemahiran memupuk sikap minat membaca`,
+		sp:`BM 2.6.5 Membaca bahan bacaan secara berkongsi dengan rakan`},
+  {age:'6',subject:'Bahasa Melayu',fasa:'FASA 4',bulan:'OKT – NOV',
+	sk:`KEMAHIRAN MEMBACA 
+BM 2.6 Menguasai Kemahiran memupuk sikap minat membaca`,
+		sp:`BM 2.6.6 Membaca bahan bacaan dengan sendiri`},
+  {age:'6',subject:'Bahasa Melayu',fasa:'FASA 4',bulan:'OKT – NOV',
+	sk:`KEMAHIRAN MENULIS 
+BM 3.2 Menguasai Kemahiran menulis`,
+		sp:`BM 3.2.7 Menulis ayat mudah`},
+  {age:'6',subject:'Bahasa Melayu',fasa:'FASA 4',bulan:'OKT – NOV',
+	sk:`KEMAHIRAN MENULIS 
+BM 3.2 Menguasai Kemahiran menulis`,
+		sp:`BM 3.2.8 Menulis cerita dengan bimbingan`},
+
+
+
+
+
+
+
+  {age:'6',subject:'Doa',fasa:'FASA 1',bulan:'JAN – MAC',sk:`PD 3.1 Melafazkan doa
+Doa belajar (penerang hati, kefahaman, kelancaran)`,sp:`PD 3.1.5 Menghafaz doa dalam kehidupan seharian`},
+  {age:'6',subject:'Doa',fasa:'FASA 1',bulan:'JAN – MAC',sk:`PD 3.1 Melafazkan doa
+Doa belajar (penerang hati, kefahaman, kelancaran)`,sp:`PD 3.1.6 Mengamalkan doa dengan betul`},
+
+
+
+
+
+
+
+  {age:'6',subject:'Doa',fasa:'FASA 1',bulan:'JAN – MAC',sk:`PD 3.1 Melafazkan doa
+Doa sebelum makan`,sp:`PD 3.1.5 Menghafaz doa dalam kehidupan seharian`},
+  {age:'6',subject:'Doa',fasa:'FASA 1',bulan:'JAN – MAC',sk:`PD 3.1 Melafazkan doa
+Doa sebelum makan`,sp:`PD 3.1.6 Mengamalkan doa dengan betul`},
+
+
+
+
+
+
+
+
+  {age:'6',subject:'Doa',fasa:'FASA 1',bulan:'JAN – MAC',sk:`PD 3.1 Melafazkan doa
+Doa selepas makan`,sp:`PD 3.1.5 Menghafaz doa dalam kehidupan seharian`},
+  {age:'6',subject:'Doa',fasa:'FASA 1',bulan:'JAN – MAC',sk:`PD 3.1 Melafazkan doa
+Doa selepas makan`,sp:`PD 3.1.6 Mengamalkan doa dengan betul`},
+
+
+
+
+
+
+
+
+  {age:'6',subject:'Doa',fasa:'FASA 1',bulan:'JAN – MAC',sk:`PD 3.1 Melafazkan doa
+Doa ibu bapa `,sp:`PD 3.1.5 Menghafaz doa dalam kehidupan seharian`},
+  {age:'6',subject:'Doa',fasa:'FASA 1',bulan:'JAN – MAC',sk:`PD 3.1 Melafazkan doa
+Doa ibu bapa `,sp:`PD 3.1.6 Mengamalkan doa dengan betul`},
+
+
+
+
+  {age:'6',subject:'Doa',fasa:'FASA 1',bulan:'JAN – MAC',sk:`PD 3.1 Melafazkan doa
+Doa kuatkan iman`,sp:`PD 3.1.5 Menghafaz doa dalam kehidupan seharian`},
+  {age:'6',subject:'Doa',fasa:'FASA 1',bulan:'JAN – MAC',sk:`PD 3.1 Melafazkan doa
+Doa kuatkan iman`,sp:`PD 3.1.6 Mengamalkan doa dengan betul`},
+
+
+
+
+  {age:'6',subject:'Doa',fasa:'FASA 2',bulan:'APRIL – JUN',sk:`PD 3.1 Melafazkan doa
+Doa sebelum masuk tandas`,sp:`PD 3.1.5 Menghafaz doa dalam kehidupan seharian`},
+  {age:'6',subject:'Doa',fasa:'FASA 2',bulan:'APRIL – JUN',sk:`PD 3.1 Melafazkan doa
+Doa sebelum masuk tandas`,sp:`PD 3.1.6 Mengamalkan doa dengan betul`},
+
+
+
+
+ {age:'6',subject:'Doa',fasa:'FASA 2',bulan:'APRIL – JUN',sk:`PD 3.1 Melafazkan doa
+Doa selepas keluar tandas`,sp:`PD 3.1.5 Menghafaz doa dalam kehidupan seharian`},
+  {age:'6',subject:'Doa',fasa:'FASA 2',bulan:'APRIL – JUN',sk:`PD 3.1 Melafazkan doa
+Doa selepas keluar tandas`,sp:`PD 3.1.6 Mengamalkan doa dengan betul`},
+
+
+
+
+
+ {age:'6',subject:'Doa',fasa:'FASA 2',bulan:'APRIL – JUN',sk:`PD 3.1 Melafazkan doa
+Doa menaiki kenderaan`,sp:`PD 3.1.5 Menghafaz doa dalam kehidupan seharian`},
+  {age:'6',subject:'Doa',fasa:'FASA 2',bulan:'APRIL – JUN',sk:`PD 3.1 Melafazkan doa
+Doa menaiki kenderaan`,sp:`PD 3.1.6 Mengamalkan doa dengan betul`},
+
+
+
+
+
+
+ {age:'6',subject:'Doa',fasa:'FASA 2',bulan:'APRIL – JUN',sk:`PD 3.1 Melafazkan doa
+Doa keluar rumah`,sp:`PD 3.1.5 Menghafaz doa dalam kehidupan seharian`},
+  {age:'6',subject:'Doa',fasa:'FASA 2',bulan:'APRIL – JUN',sk:`PD 3.1 Melafazkan doa
+Doa keluar rumah`,sp:`PD 3.1.6 Mengamalkan doa dengan betul`},
+
+
+
+
+
+
+
+ {age:'6',subject:'Doa',fasa:'FASA 2',bulan:'APRIL – JUN',sk:`PD 3.1 Melafazkan doa
+Doa masuk rumah`,sp:`PD 3.1.5 Menghafaz doa dalam kehidupan seharian`},
+  {age:'6',subject:'Doa',fasa:'FASA 2',bulan:'APRIL – JUN',sk:`PD 3.1 Melafazkan doa
+Doa masuk rumah`,sp:`PD 3.1.6 Mengamalkan doa dengan betul`},
+
+
+
+
+
+ {age:'6',subject:'Doa',fasa:'FASA 2',bulan:'APRIL – JUN',sk:`PD 3.1 Melafazkan doa
+Doa taubat
+`,sp:`PD 3.1.5 Menghafaz doa dalam kehidupan seharian`},
+  {age:'6',subject:'Doa',fasa:'FASA 2',bulan:'APRIL – JUN',sk:`PD 3.1 Melafazkan doa
+Doa taubat
+`,sp:`PD 3.1.6 Mengamalkan doa dengan betul`},
+
+
+
+
+
+
+
+  {age:'6',subject:'Doa',fasa:'FASA 3',bulan:'JULAI – SEPT',
+	sk:`PD 3.1 Melafazkan doa
+Doa keselamatan dunia akhirat`,
+		sp:`PD 3.1.5 Menghafaz doa dalam kehidupan seharian`},
+  {age:'6',subject:'Doa',fasa:'FASA 3',bulan:'JULAI – SEPT',
+	sk:`PD 3.1 Melafazkan doa
+Doa keselamatan dunia akhirat`,
+		sp:`PD 3.1.6 Mengamalkan doa dengan betul`},
+
+
+  {age:'6',subject:'Doa',fasa:'FASA 3',bulan:'JULAI – SEPT',
+	sk:`PD 3.1 Melafazkan doa
+Doa kesejahteraan dunia akhirat `,
+		sp:`PD 3.1.5 Menghafaz doa dalam kehidupan seharian`},
+  {age:'6',subject:'Doa',fasa:'FASA 3',bulan:'JULAI – SEPT',
+	sk:`PD 3.1 Melafazkan doa
+Doa kesejahteraan dunia akhirat `,
+		sp:`PD 3.1.6 Mengamalkan doa dengan betul`},
+
+
+
+  {age:'6',subject:'Doa',fasa:'FASA 3',bulan:'JULAI – SEPT',
+	sk:`PD 3.1 Melafazkan doa
+Doa sebelum tidur`,
+		sp:`PD 3.1.5 Menghafaz doa dalam kehidupan seharian`},
+  {age:'6',subject:'Doa',fasa:'FASA 3',bulan:'JULAI – SEPT',
+	sk:`PD 3.1 Melafazkan doa
+Doa sebelum tidur`,
+		sp:`PD 3.1.6 Mengamalkan doa dengan betul`},
+
+
+
+
+
+
+
+  {age:'6',subject:'Doa',fasa:'FASA 3',bulan:'JULAI – SEPT',
+	sk:`PD 3.1 Melafazkan doa
+Doa selepas bangun tidur`,
+		sp:`PD 3.1.5 Menghafaz doa dalam kehidupan seharian`},
+  {age:'6',subject:'Doa',fasa:'FASA 3',bulan:'JULAI – SEPT',
+	sk:`PD 3.1 Melafazkan doa
+Doa selepas bangun tidur`,
+		sp:`PD 3.1.6 Mengamalkan doa dengan betul`},
+
+
+
+
+
+
+
+  {age:'6',subject:'Doa',fasa:'FASA 3',bulan:'JULAI – SEPT',
+	sk:`PD 3.1 Melafazkan doa
+Doa selepas membaca Al-Quran`,
+		sp:`PD 3.1.5 Menghafaz doa dalam kehidupan seharian`},
+  {age:'6',subject:'Doa',fasa:'FASA 3',bulan:'JULAI – SEPT',
+	sk:`PD 3.1 Melafazkan doa
+Doa selepas membaca Al-Quran`,
+		sp:`PD 3.1.6 Mengamalkan doa dengan betul`},
+
+
+
+
+  {age:'6',subject:'Doa',fasa:'FASA 4',bulan:'OKT - NOV',
+	sk:`PD 3.1 Melafazkan doa
+Doa memakai pakaian`,
+		sp:`PD 3.1.5 Menghafaz doa dalam kehidupan seharian`},
+  {age:'6',subject:'Doa',fasa:'FASA 4',bulan:'OKT - NOV',
+	sk:`PD 3.1 Melafazkan doa
+Doa memakai pakaian`,
+		sp:`PD 3.1.6 Mengamalkan doa dengan betul`},
+
+
+
+
+
+  {age:'6',subject:'Doa',fasa:'FASA 4',bulan:'OKT - NOV',
+	sk:`PD 3.1 Melafazkan doa
+Doa melihat cermin`,
+		sp:`PD 3.1.5 Menghafaz doa dalam kehidupan seharian`},
+  {age:'6',subject:'Doa',fasa:'FASA 4',bulan:'OKT - NOV',
+	sk:`PD 3.1 Melafazkan doa
+Doa melihat cermin`,
+		sp:`PD 3.1.6 Mengamalkan doa dengan betul`},
+
+
+
+
+
+
+
+
+
+  {age:'6',subject:'Doa',fasa:'FASA 4',bulan:'OKT - NOV',
+	sk:`PD 3.1 Melafazkan doa
+Doa ketika hujan`,
+		sp:`PD 3.1.5 Menghafaz doa dalam kehidupan seharian`},
+  {age:'6',subject:'Doa',fasa:'FASA 4',bulan:'OKT - NOV',
+	sk:`PD 3.1 Melafazkan doa
+Doa ketika hujan`,
+		sp:`PD 3.1.6 Mengamalkan doa dengan betul`},
+
+
+
+
+
+
+
+
+  {age:'6',subject:'Doa',fasa:'FASA 4',bulan:'OKT - NOV',
+	sk:`PD 3.1 Melafazkan doa
+Doa ditimpa kesusahan`,
+		sp:`PD 3.1.5 Menghafaz doa dalam kehidupan seharian`},
+  {age:'6',subject:'Doa',fasa:'FASA 4',bulan:'OKT - NOV',
+	sk:`PD 3.1 Melafazkan doa
+Doa ditimpa kesusahan`,
+		sp:`PD 3.1.6 Mengamalkan doa dengan betul`},
+
+
+
+
+
+
+  {age:'6',subject:'Doa',fasa:'FASA 4',bulan:'OKT - NOV',
+	sk:`PD 3.1 Melafazkan doa
+Doa qunut nazilah`,
+		sp:`PD 3.1.5 Menghafaz doa dalam kehidupan seharian`},
+  {age:'6',subject:'Doa',fasa:'FASA 4',bulan:'OKT - NOV',
+	sk:`PD 3.1 Melafazkan doa
+Doa qunut nazilah`,
+		sp:`PD 3.1.6 Mengamalkan doa dengan betul`},
+
+
+
+
+
+  {age:'6',subject:'Bahasa Inggeris',fasa:'PHASE 1',bulan:'JAN – MARCH',sk:`LISTENING AND SPEAKING SKILL 
+BI 1.1 Listen to identify sounds`,sp:`BI 1.1.2 Listen to and respond to stimulus given:
 Surrounding sounds
 Voice sounds
 Rhythm and rhyme
 Alliteration`},
-  {age:'6',subject:'Bahasa Inggeris',fasa:'PHASE 1',bulan:'JAN – MARCH',sk:`LISTENING AND SPEAKING SKILL BI 1.1 Listen to identify sounds`,sp:`BI 1.1.3 Listen to and identify rhymes and songs`},
+  {age:'6',subject:'Bahasa Inggeris',fasa:'PHASE 1',bulan:'JAN – MARCH',sk:`LISTENING AND SPEAKING SKILL 
+BI 1.1 Listen to identify sounds`,sp:`BI 1.1.3 Listen to and identify rhymes and songs`},
   {age:'6',subject:'Bahasa Inggeris',fasa:'PHASE 1',bulan:'JAN – MARCH',sk:`BI 1.2 Listen to and respond appropriately`,sp:`BI 1.2.6 Listen and recite rhymes and poetries`},
   {age:'6',subject:'Bahasa Inggeris',fasa:'PHASE 1',bulan:'JAN – MARCH',sk:`BI 1.2 Listen to and respond appropriately`,sp:`BI 1.2.7 Listen and respond to stories`},
   {age:'6',subject:'Bahasa Inggeris',fasa:'PHASE 1',bulan:'JAN – MARCH',sk:`BI 1.3 Listen, understand and respond in variety of context`,sp:`BI 1.3.2 Discuss favourite things and activities`},
@@ -2951,10 +4153,14 @@ Alliteration`},
   {age:'6',subject:'Bahasa Inggeris',fasa:'PHASE 1',bulan:'JAN – MARCH',sk:`BI 1.3 Listen, understand and respond in variety of context`,sp:`BM 1.3.5 Engage and discuss stories heard`},
   {age:'6',subject:'Bahasa Inggeris',fasa:'PHASE 1',bulan:'JAN – MARCH',sk:`BI 1.3 Listen, understand and respond in variety of context`,sp:`BM 1.3.6 Engage in role play familiar situation`},
   {age:'6',subject:'Bahasa Inggeris',fasa:'PHASE 1',bulan:'JAN – MARCH',sk:`BI 1.3 Listen, understand and respond in variety of context`,sp:`BM 1.3.7 Engage in role play about familiar daily situations`},
-  {age:'6',subject:'Bahasa Inggeris',fasa:'PHASE 1',bulan:'JAN – MARCH',sk:`READING SKILL BI 2.1 Demonstrate the appropriate method for book handling`,sp:`BI 2.1.5 Handle books carefully and orderly`},
-  {age:'6',subject:'Bahasa Inggeris',fasa:'PHASE 1',bulan:'JAN – MARCH',sk:`READING SKILL BI 2.1 Demonstrate the appropriate method for book handling`,sp:`BI 2.1.6 Identify the basic features of a book`},
-  {age:'6',subject:'Bahasa Inggeris',fasa:'PHASE 1',bulan:'JAN – MARCH',sk:`WRITING SKILL BI 3.1 Developing prewriting skills`,sp:`BI 3.1.2 Able to show eye-hand coordination`},
-  {age:'6',subject:'Bahasa Inggeris',fasa:'PHASE 2',bulan:'APRIL – JUNE',sk:`READING SKILL BI 2.1 Demonstrate the appropriate method for book handling`,sp:`BI 2.1.7 Read printed material correctly:
+  {age:'6',subject:'Bahasa Inggeris',fasa:'PHASE 1',bulan:'JAN – MARCH',sk:`READING SKILL
+BI 2.1 Demonstrate the appropriate method for book handling`,sp:`BI 2.1.5 Handle books carefully and orderly`},
+  {age:'6',subject:'Bahasa Inggeris',fasa:'PHASE 1',bulan:'JAN – MARCH',sk:`READING SKILL 
+BI 2.1 Demonstrate the appropriate method for book handling`,sp:`BI 2.1.6 Identify the basic features of a book`},
+  {age:'6',subject:'Bahasa Inggeris',fasa:'PHASE 1',bulan:'JAN – MARCH',sk:`WRITING SKILL 
+BI 3.1 Developing prewriting skills`,sp:`BI 3.1.2 Able to show eye-hand coordination`},
+  {age:'6',subject:'Bahasa Inggeris',fasa:'PHASE 2',bulan:'APRIL – JUNE',sk:`READING SKILL 
+BI 2.1 Demonstrate the appropriate method for book handling`,sp:`BI 2.1.7 Read printed material correctly:
 Distance between eyes and the book
 Left to right
 Top to bottom`},
@@ -2964,28 +4170,241 @@ Top to bottom`},
   {age:'6',subject:'Bahasa Inggeris',fasa:'PHASE 2',bulan:'APRIL – JUNE',sk:`BI 2.3 Show understanding in print and non print materials`,sp:`BI 2.3.3 Recognise and read familiar words`},
   {age:'6',subject:'Bahasa Inggeris',fasa:'PHASE 2',bulan:'APRIL – JUNE',sk:`BI 2.3 Show understanding in print and non print materials`,sp:`BI 2.3.4 Read simple phrases`},
   {age:'6',subject:'Bahasa Inggeris',fasa:'PHASE 2',bulan:'APRIL – JUNE',sk:`BI 2.3 Show understanding in print and non print materials`,sp:`BI 2.3.5 Read simple sentences`},
-  {age:'6',subject:'Bahasa Inggeris',fasa:'PHASE 2',bulan:'APRIL – JUNE',sk:`WRITING SKILL BI 3.1 Developing prewriting skills`,sp:`BI 3.1.3 Draw lines, circles and patterns using gross motor and fine motor movement`},
-  {age:'6',subject:'Hafazan',fasa:'FASA 1',bulan:'JAN – MAC',sk:`PH 2.1 Menghafaz beberapa surah dari Juz Amma`,sp:`PH 2.1.5 Menghafaz surah-surah dari Juz Amma`},
-  {age:'6',subject:'Hafazan',fasa:'FASA 2',bulan:'APRIL – JUN',sk:`PH 2.1 Menghafaz beberapa surah dari Juz Amma`,sp:`PH 2.1.6 Membaca surah dengan makhraj huruf yang betul dan lancar`},
-  {age:'6',subject:'Jawi',fasa:'FASA 1',bulan:'JAN – MAC',sk:`KEMAHIRAN MENDENGAR DAN BERTUTUR PJW 4.1 Mendengar dan memberi respon terhadap pelbagai bunyi di sekeliling`,sp:`PJW 4.1.1 Mengenal bunyi huruf jawi`},
-  {age:'6',subject:'Jawi',fasa:'FASA 1',bulan:'JAN – MAC',sk:`KEMAHIRAN MENDENGAR DAN BERTUTUR PJW 4.1 Mendengar dan memberi respon terhadap pelbagai bunyi di sekeliling`,sp:`PJW 4.1.2 Memberi respons terhadap bunyi setiap huruf jawi`},
-  {age:'6',subject:'Jawi',fasa:'FASA 1',bulan:'JAN – MAC',sk:`KEMAHIRAN MENDENGAR DAN BERTUTUR PJW 4.1 Mendengar dan memberi respon terhadap pelbagai bunyi di sekeliling`,sp:`PJW 4.1.3 Mengecam dan membezakan bunyi huruf jawi`},
-  {age:'6',subject:'Jawi',fasa:'FASA 1',bulan:'JAN – MAC',sk:`KEMAHIRAN MEMBACA PJW 5.1 Menguasai Kemahiran membaca`,sp:`PJW 5.1.2 Mengenal bentuk huruf jawi`},
-  {age:'6',subject:'Jawi',fasa:'FASA 1',bulan:'JAN – MAC',sk:`KEMAHIRAN MEMBACA PJW 5.1 Menguasai Kemahiran membaca`,sp:`PJW 5.1.3 Mengenal pasti bentuk huruf jawi`},
-  {age:'6',subject:'Jawi',fasa:'FASA 1',bulan:'JAN – MAC',sk:`KEMAHIRAN MENULIS PJW 6.1 Menguasai kemahiran pratulis`,sp:`PJW 6.1.6 Memegang alat tulis dengan cara yang betul`},
-  {age:'6',subject:'Jawi',fasa:'FASA 1',bulan:'JAN – MAC',sk:`KEMAHIRAN MENULIS PJW 6.1 Menguasai kemahiran pratulis`,sp:`PJW 6.1.7 Mengkoordinasikan pergerakan mata dengan tangan mengikut arah yang betul.`},
+  {age:'6',subject:'Bahasa Inggeris',fasa:'PHASE 2',bulan:'APRIL – JUNE',sk:`WRITING SKILL 
+BI 3.1 Developing prewriting skills`,sp:`BI 3.1.3 Draw lines, circles and patterns using gross motor and fine motor movement`},
+  {age:'6',subject:'Bahasa Inggeris',fasa:'PHASE 3',bulan:'JULY – SEPT',
+	sk:`READING SKILL 
+BI 2.4 Enhance interest in reading independently for information and enjoyment`,
+		sp:`BI 2.4.3 Read texts independently`},
+  {age:'6',subject:'Bahasa Inggeris',fasa:'PHASE 3',bulan:'JULY – SEPT',
+	sk:`READING SKILL 
+BI 2.4 Enhance interest in reading independently for information and enjoyment`,
+		sp:`BI 2.4.4 Read and responds to texts read`},
+  {age:'6',subject:'Bahasa Inggeris',fasa:'PHASE 3',bulan:'JULY – SEPT',
+	sk:`WRITING SKILL 
+BI 3.2 Developing writing skills`,
+		sp:`BI 3.2.5 Copy simple phrases in legible print`},
+  {age:'6',subject:'Bahasa Inggeris',fasa:'PHASE 3',bulan:'JULY – SEPT',
+	sk:`WRITING SKILL 
+BI 3.2 Developing writing skills`,
+		sp:`BI 3.2.6 Copy familiar simple sentences in legible print`},
+  {age:'6',subject:'Bahasa Inggeris',fasa:'PHASE 3',bulan:'JULY – SEPT',
+	sk:`WRITING SKILL 
+BI 3.2 Developing writing skills`,
+		sp:`BI 3.2.7 Communicate ideas and information by using drawing, mark symbols and writing with invented spelling`},
+  {age:'6',subject:'Bahasa Inggeris',fasa:'PHASE 4',bulan:'OCT - NOV',
+	sk:`READING SKILL 
+BI 2.4 Enhance interest in reading independently for information and enjoyment`,
+		sp:`BI 2.4.4 Read and responds to texts read`},
+  {age:'6',subject:'Bahasa Inggeris',fasa:'PHASE 4',bulan:'OCT - NOV',
+	sk:`WRITING SKILL 
+BI 3.2 Developing writing skills`,
+		sp:`BI 3.2.8 Write familiar words and phrases in legible print`},
+
+
+
+
+
+  {age:'6',subject:'Hafazan',fasa:'FASA 1',bulan:'JAN – MAC',sk:`PH 2.1 Menghafaz beberapa surah dari Juz Amma
+Surah Al- Fatihah`,sp:`PH 2.1.5 Menghafaz surah-surah dari Juz Amma`},
+
+  {age:'6',subject:'Hafazan',fasa:'FASA 1',bulan:'JAN – MAC',sk:`PH 2.1 Menghafaz beberapa surah dari Juz Amma
+Surah Al-Ikhlas`,sp:`PH 2.1.5 Menghafaz surah-surah dari Juz Amma`},
+
+
+  {age:'6',subject:'Hafazan',fasa:'FASA 1',bulan:'JAN – MAC',sk:`PH 2.1 Menghafaz beberapa surah dari Juz Amma
+Surah Al-Falaq`,sp:`PH 2.1.5 Menghafaz surah-surah dari Juz Amma`},
+
+
+  {age:'6',subject:'Hafazan',fasa:'FASA 1',bulan:'JAN – MAC',sk:`PH 2.1 Menghafaz beberapa surah dari Juz Amma
+Surah An-Nas`,sp:`PH 2.1.5 Menghafaz surah-surah dari Juz Amma`},
+
+
+
+
+
+
+
+  {age:'6',subject:'Hafazan',fasa:'FASA 2',bulan:'APRIL – JUN',sk:`PH 2.1 Menghafaz beberapa surah dari Juz Amma
+Surah Al-Nasr`,sp:`PH 2.1.6 Membaca surah dengan makhraj huruf yang betul dan lancar`},
+
+
+
+  {age:'6',subject:'Hafazan',fasa:'FASA 2',bulan:'APRIL – JUN',sk:`PH 2.1 Menghafaz beberapa surah dari Juz Amma
+Surah Al-Masad
+`,sp:`PH 2.1.6 Membaca surah dengan makhraj huruf yang betul dan lancar`},
+
+
+
+  {age:'6',subject:'Hafazan',fasa:'FASA 2',bulan:'APRIL – JUN',sk:`PH 2.1 Menghafaz beberapa surah dari Juz Amma
+Surah Al-Kauthar`,sp:`PH 2.1.6 Membaca surah dengan makhraj huruf yang betul dan lancar`},
+
+
+
+
+
+
+
+
+  {age:'6',subject:'Hafazan',fasa:'FASA 3',bulan:'JULAI – SEPT',
+	sk:`PH 2.2 Memahami makna surah daripada Juz Amma
+Surah Al-Quraisy`,
+		sp:`PH 2.1.7 Menghafaz surah secara beradab berserta makhraj yang betul dan jelas`},
+
+
+  {age:'6',subject:'Hafazan',fasa:'FASA 3',bulan:'JULAI – SEPT',
+	sk:`PH 2.2 Memahami makna surah daripada Juz Amma
+Surah Al-Kafirun`,
+		sp:`PH 2.1.7 Menghafaz surah secara beradab berserta makhraj yang betul dan jelas`},
+
+
+
+
+
+
+
+
+
+
+  {age:'6',subject:'Hafazan',fasa:'FASA 4',bulan:'OKT - NOV',
+	sk:`PH 2.2 Memahami makna surah daripada Juz Amma
+Surah Al-Fil`,
+		sp:`PH 2.2.2 Menjelaskan semula makna yang terkandung di dalam surah yang dihafaz`},
+
+
+
+  {age:'6',subject:'Hafazan',fasa:'FASA 4',bulan:'OKT - NOV',
+	sk:`PH 2.2 Memahami makna surah daripada Juz Amma
+Surah Al-Maun`,
+		sp:`PH 2.2.2 Menjelaskan semula makna yang terkandung di dalam surah yang dihafaz`},
+
+
+
+
+
+
+  {age:'6',subject:'Hafazan',fasa:'FASA 4',bulan:'OKT - NOV',
+	sk:`PH 2.2 Memahami makna surah daripada Juz Amma
+(Ulangan semua surah)`,
+		sp:`PH 2.2.2 Menjelaskan semula makna yang terkandung di dalam surah yang dihafaz`},
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  {age:'6',subject:'Jawi',fasa:'FASA 1',bulan:'JAN – MAC',sk:`KEMAHIRAN MENDENGAR DAN BERTUTUR 
+PJW 4.1 Mendengar dan memberi respon terhadap pelbagai bunyi di sekeliling`,sp:`PJW 4.1.1 Mengenal bunyi huruf jawi`},
+  {age:'6',subject:'Jawi',fasa:'FASA 1',bulan:'JAN – MAC',sk:`KEMAHIRAN MENDENGAR DAN BERTUTUR 
+PJW 4.1 Mendengar dan memberi respon terhadap pelbagai bunyi di sekeliling`,sp:`PJW 4.1.2 Memberi respons terhadap bunyi setiap huruf jawi`},
+  {age:'6',subject:'Jawi',fasa:'FASA 1',bulan:'JAN – MAC',sk:`KEMAHIRAN MENDENGAR DAN BERTUTUR 
+PJW 4.1 Mendengar dan memberi respon terhadap pelbagai bunyi di sekeliling`,sp:`PJW 4.1.3 Mengecam dan membezakan bunyi huruf jawi`},
+  {age:'6',subject:'Jawi',fasa:'FASA 1',bulan:'JAN – MAC',sk:`KEMAHIRAN MEMBACA 
+PJW 5.1 Menguasai Kemahiran membaca`,sp:`PJW 5.1.2 Mengenal bentuk huruf jawi`},
+  {age:'6',subject:'Jawi',fasa:'FASA 1',bulan:'JAN – MAC',sk:`KEMAHIRAN MEMBACA 
+PJW 5.1 Menguasai Kemahiran membaca`,sp:`PJW 5.1.3 Mengenal pasti bentuk huruf jawi`},
+  {age:'6',subject:'Jawi',fasa:'FASA 1',bulan:'JAN – MAC',sk:`KEMAHIRAN MENULIS 
+PJW 6.1 Menguasai kemahiran pratulis`,sp:`PJW 6.1.6 Memegang alat tulis dengan cara yang betul`},
+  {age:'6',subject:'Jawi',fasa:'FASA 1',bulan:'JAN – MAC',sk:`KEMAHIRAN MENULIS 
+PJW 6.1 Menguasai kemahiran pratulis`,sp:`PJW 6.1.7 Mengkoordinasikan pergerakan mata dengan tangan mengikut arah yang betul.`},
   {age:'6',subject:'Jawi',fasa:'FASA 1',bulan:'JAN – MAC',sk:`PJW 6.2 Menguasai kemahiran menulis`,sp:`PJW 6.2.2 Menulis huruf jawi dengan cara yang betul`},
-  {age:'6',subject:'Jawi',fasa:'FASA 2',bulan:'APRIL – JUN',sk:`KEMAHIRAN MENDENGAR DAN BERTUTUR PJW 4.1 Mendengar dan memberi respon terhadap pelbagai bunyi di sekeliling`,sp:`PJW 4.1.1 Mengenal bunyi huruf jawi`},
-  {age:'6',subject:'Jawi',fasa:'FASA 2',bulan:'APRIL – JUN',sk:`KEMAHIRAN MENDENGAR DAN BERTUTUR PJW 4.1 Mendengar dan memberi respon terhadap pelbagai bunyi di sekeliling`,sp:`PJW 4.1.2 Memberi respons terhadap bunyi setiap huruf jawi`},
-  {age:'6',subject:'Jawi',fasa:'FASA 2',bulan:'APRIL – JUN',sk:`KEMAHIRAN MENDENGAR DAN BERTUTUR PJW 4.1 Mendengar dan memberi respon terhadap pelbagai bunyi di sekeliling`,sp:`PJW 4.1.3 Mengecam dan membezakan bunyi huruf jawi`},
-  {age:'6',subject:'Jawi',fasa:'FASA 2',bulan:'APRIL – JUN',sk:`KEMAHIRAN MEMBACA PJW 5.1 Menguasai Kemahiran membaca`,sp:`PJW 5.1.3 Mengenal pasti bentuk huruf jawi`},
+  {age:'6',subject:'Jawi',fasa:'FASA 2',bulan:'APRIL – JUN',sk:`KEMAHIRAN MENDENGAR DAN BERTUTUR 
+PJW 4.1 Mendengar dan memberi respon terhadap pelbagai bunyi di sekeliling`,sp:`PJW 4.1.1 Mengenal bunyi huruf jawi`},
+  {age:'6',subject:'Jawi',fasa:'FASA 2',bulan:'APRIL – JUN',sk:`KEMAHIRAN MENDENGAR DAN BERTUTUR 
+PJW 4.1 Mendengar dan memberi respon terhadap pelbagai bunyi di sekeliling`,sp:`PJW 4.1.2 Memberi respons terhadap bunyi setiap huruf jawi`},
+  {age:'6',subject:'Jawi',fasa:'FASA 2',bulan:'APRIL – JUN',sk:`KEMAHIRAN MENDENGAR DAN BERTUTUR 
+PJW 4.1 Mendengar dan memberi respon terhadap pelbagai bunyi di sekeliling`,sp:`PJW 4.1.3 Mengecam dan membezakan bunyi huruf jawi`},
+  {age:'6',subject:'Jawi',fasa:'FASA 2',bulan:'APRIL – JUN',sk:`KEMAHIRAN MEMBACA 
+PJW 5.1 Menguasai Kemahiran membaca`,sp:`PJW 5.1.3 Mengenal pasti bentuk huruf jawi`},
   {age:'6',subject:'Jawi',fasa:'FASA 2',bulan:'APRIL – JUN',sk:`PJW 5.2 Mengenali huruf jawi`,sp:`PJW 5.2.3 Menyebut huruf jawi`},
   {age:'6',subject:'Jawi',fasa:'FASA 2',bulan:'APRIL – JUN',sk:`PJW 5.2 Mengenali huruf jawi`,sp:`PJW 5.2.4 Membezakan huruf vokal dan konsonan`},
   {age:'6',subject:'Jawi',fasa:'FASA 2',bulan:'APRIL – JUN',sk:`PJW 5.3 Membaca perkataan jawi`,sp:`PJW 5.3.4 Membunyikan suku kata terbuka`},
   {age:'6',subject:'Jawi',fasa:'FASA 2',bulan:'APRIL – JUN',sk:`PJW 5.3 Membaca perkataan jawi`,sp:`PJW 5.3.5 Membunyikan suku kata tertutup`},
-  {age:'6',subject:'Jawi',fasa:'FASA 2',bulan:'APRIL – JUN',sk:`KEMAHIRAN MENULIS PJW 6.1 Menguasai kemahiran pratulis`,sp:`PJW 6.1.6 Memegang alat tulis dengan cara yang betul`},
-  {age:'6',subject:'Jawi',fasa:'FASA 2',bulan:'APRIL – JUN',sk:`KEMAHIRAN MENULIS PJW 6.1 Menguasai kemahiran pratulis`,sp:`PJW 6.1.7 Mengkoordinasikan pergerakan mata dengan tangan mengikut arah yang betul.`},
+  {age:'6',subject:'Jawi',fasa:'FASA 2',bulan:'APRIL – JUN',sk:`KEMAHIRAN MENULIS 
+PJW 6.1 Menguasai kemahiran pratulis`,sp:`PJW 6.1.6 Memegang alat tulis dengan cara yang betul`},
+  {age:'6',subject:'Jawi',fasa:'FASA 2',bulan:'APRIL – JUN',sk:`KEMAHIRAN MENULIS 
+PJW 6.1 Menguasai kemahiran pratulis`,sp:`PJW 6.1.7 Mengkoordinasikan pergerakan mata dengan tangan mengikut arah yang betul.`},
   {age:'6',subject:'Jawi',fasa:'FASA 2',bulan:'APRIL – JUN',sk:`PJW 6.2 Menguasai kemahiran menulis`,sp:`PJW 6.2.2 Menulis huruf jawi dengan cara yang betul`},
+  {age:'6',subject:'Jawi',fasa:'FASA 3',bulan:'JULAI – SEPT',
+	sk:`KEMAHIRAN MENDENGAR DAN BERTUTUR 
+PJW 4.1 Mendengar dan memberi respon terhadap pelbagai bunyi di sekeliling`,
+		sp:`PJW 4.1.3 Mengecam dan membezakan bunyi huruf jawi`},
+  {age:'6',subject:'Jawi',fasa:'FASA 3',bulan:'JULAI – SEPT',
+	sk:`KEMAHIRAN MEMBACA 
+PJW 5.1 Menguasai Kemahiran membaca`,
+		sp:`PJW 5.1.3 Mengenal pasti bentuk huruf jawi`},
+  {age:'6',subject:'Jawi',fasa:'FASA 3',bulan:'JULAI – SEPT',
+	sk:`PJW 5.3 Membaca perkataan jawi`,
+		sp:`PJW 5.3.4 Membunyikan suku kata terbuka`},
+  {age:'6',subject:'Jawi',fasa:'FASA 3',bulan:'JULAI – SEPT',
+	sk:`PJW 5.3 Membaca perkataan jawi`,
+		sp:`PJW 5.3.5 Membunyikan suku kata tertutup`},
+  {age:'6',subject:'Jawi',fasa:'FASA 3',bulan:'JULAI – SEPT',
+	sk:`PJW 5.3 Membaca perkataan jawi`,
+		sp:`PJW 5.3.6 Membatangkan suku kata`},
+  {age:'6',subject:'Jawi',fasa:'FASA 3',bulan:'JULAI – SEPT',
+	sk:`PJW 5.3 Membaca perkataan jawi`,
+		sp:`PJW 5.3.7 Membaca perkataan dengan suku kata terbuka`},
+  {age:'6',subject:'Jawi',fasa:'FASA 3',bulan:'JULAI – SEPT',
+	sk:`PJW 5.3 Membaca perkataan jawi`,
+		sp:`PJW 5.3.8 Membaca perkataan dengan suku kata tertutup`},
+  {age:'6',subject:'Jawi',fasa:'FASA 3',bulan:'JULAI – SEPT',
+	sk:`KEMAHIRAN MENULIS 
+PJW 6.2 Menguasai kemahiran menulis`,
+		sp:`PJW 6.2.2 Menulis huruf jawi dengan cara yang betul`},
+  {age:'6',subject:'Jawi',fasa:'FASA 4',bulan:'OKT - NOV',
+	sk:`KEMAHIRAN MENDENGAR DAN BERTUTUR 
+PJW 4.1 Mendengar dan memberi respon terhadap pelbagai bunyi di sekeliling`,
+		sp:`PJW 4.1.3 Mengecam dan membezakan bunyi huruf jawi`},
+  {age:'6',subject:'Jawi',fasa:'FASA 4',bulan:'OKT - NOV',
+	sk:`KEMAHIRAN MEMBACA 
+PJW 5.1 Menguasai Kemahiran membaca`,
+		sp:`PJW 5.1.3 Mengenal pasti bentuk huruf jawi`},
+  {age:'6',subject:'Jawi',fasa:'FASA 4',bulan:'OKT - NOV',
+	sk:`PJW 5.3 Membaca perkataan jawi`,
+		sp:`PJW 5.3.4 Membunyikan suku kata terbuka`},
+  {age:'6',subject:'Jawi',fasa:'FASA 4',bulan:'OKT - NOV',
+	sk:`PJW 5.3 Membaca perkataan jawi`,
+		sp:`PJW 5.3.5 Membunyikan suku kata tertutup`},
+  {age:'6',subject:'Jawi',fasa:'FASA 4',bulan:'OKT - NOV',
+	sk:`PJW 5.3 Membaca perkataan jawi`,
+		sp:`PJW 5.3.6 Membatangkan suku kata`},
+  {age:'6',subject:'Jawi',fasa:'FASA 4',bulan:'OKT - NOV',
+	sk:`PJW 5.3 Membaca perkataan jawi`,
+		sp:`PJW 5.3.7 Membaca perkataan dengan suku kata terbuka`},
+  {age:'6',subject:'Jawi',fasa:'FASA 4',bulan:'OKT - NOV',
+	sk:`PJW 5.3 Membaca perkataan jawi`,
+		sp:`PJW 5.3.8 Membaca perkataan dengan suku kata tertutup`},
+  {age:'6',subject:'Jawi',fasa:'FASA 4',bulan:'OKT - NOV',
+	sk:`KEMAHIRAN MENULIS 
+PJW 6.2 Menguasai kemahiran menulis`,
+		sp:`PJW 6.2.2 Menulis huruf jawi dengan cara yang betul`},
+  {age:'6',subject:'Jawi',fasa:'FASA 4',bulan:'OKT - NOV',
+	sk:`KEMAHIRAN MENULIS 
+PJW 6.2 Menguasai kemahiran menulis`,
+		sp:`PJW 6.2.3 Menyalin perkataan yang mudah melalui bahan bercetak.`},
   {age:'6',subject:'Matematik',fasa:'FASA 1',bulan:'JAN – MAC',sk:`MA 1.1 Memadankan objek`,sp:`MA 1.1.4 Memadankan objek yang sama berdasarkan:
 Warna
 Bentuk
@@ -3026,6 +4445,64 @@ MA 2.1 Memahami konsep nombor 1 Hingga 10`,sp:`MA 2.1.10 Menulis nombor mengikut
   {age:'6',subject:'Matematik',fasa:'FASA 2',bulan:'APRIL – JUN',sk:`MA 2.3 Memahami nombor 11 hingga 20`,sp:`MA 2.3.5 Menulis nombor 11 hingga 20`},
   {age:'6',subject:'Matematik',fasa:'FASA 2',bulan:'APRIL – JUN',sk:`MA 2.4 Memahami Siri 10 hingga 100`,sp:`MA 2.4.3 Membilang nombor sepuluh-sepuluh secara terrible menaik dan menurun`},
   {age:'6',subject:'Matematik',fasa:'FASA 2',bulan:'APRIL – JUN',sk:`MA 2.4 Memahami Siri 10 hingga 100`,sp:`MA 2.4.4 Menulis Siri 10 hingga 100`},
+  {age:'6',subject:'Matematik',fasa:'FASA 3',bulan:'JULAI – SEPT',
+	sk:`OPERASI NOMBOR 
+MA 3.1 Menyelesaikan masalah operasi tambah Dalam lingkungan 18`,
+		sp:`MA 3.1.3 Menyatakan basil tambah dengan membilang terus dari suatu nombor`},
+  {age:'6',subject:'Matematik',fasa:'FASA 3',bulan:'JULAI – SEPT',
+	sk:`OPERASI NOMBOR 
+MA 3.1 Menyelesaikan masalah operasi tambah Dalam lingkungan 18`,
+		sp:`MA 3.1.4 Menulis dan Menyatakan ayat matematik dengan menggunakan simbol tambah (+) dan sama dengan (=)`},
+  {age:'6',subject:'Matematik',fasa:'FASA 3',bulan:'JULAI – SEPT',
+	sk:`OPERASI NOMBOR 
+MA 3.1 Menyelesaikan masalah operasi tambah Dalam lingkungan 18`,
+		sp:`MA 3.1.5 Menambah dalam lingkungan fakta asas`},
+  {age:'6',subject:'Matematik',fasa:'FASA 3',bulan:'JULAI – SEPT',
+	sk:`OPERASI NOMBOR 
+MA 3.1 Menyelesaikan masalah operasi tambah Dalam lingkungan 18`,
+		sp:`MA 3.1.6 Menyelesaikan masalah operasi tambah`},
+  {age:'6',subject:'Matematik',fasa:'FASA 3',bulan:'JULAI – SEPT',
+	sk:`MA 3.2 Menyelesaikan masalah operasi tolak dalam lingkungan 18`,
+		sp:`MA 3.2.3 Menulis dan menyatakan ayat matematik dengan menggunakan simbol Tolak (-) dan sama dengan (=)`},
+  {age:'6',subject:'Matematik',fasa:'FASA 3',bulan:'JULAI – SEPT',
+	sk:`MA 3.2 Menyelesaikan masalah operasi tolak dalam lingkungan 18`,
+		sp:`MA 3.2.4 Menolak dalam lingkungan fakta asas`},
+  {age:'6',subject:'Matematik',fasa:'FASA 3',bulan:'JULAI – SEPT',
+	sk:`MA 3.2 Menyelesaikan masalah operasi tolak dalam lingkungan 18`,
+		sp:`MA 3.2.5 Menyelesaikan masalah operasi tolak`},
+  {age:'6',subject:'Matematik',fasa:'FASA 3',bulan:'JULAI – SEPT',
+	sk:`NILAI WANG 
+MA 4.1 Mengecam dan menggunakan wang yang berlainan`,
+		sp:`MA 4.1.2 Menyusun nilai wang mengikut urutan`},
+  {age:'6',subject:'Matematik',fasa:'FASA 3',bulan:'JULAI – SEPT',
+	sk:`NILAI WANG 
+MA 4.1 Mengecam dan menggunakan wang yang berlainan`,
+		sp:`MA 4.1.3 Menggunakan wang dlm pelbagai aktiviti`},
+  {age:'6',subject:'Matematik',fasa:'FASA 4',bulan:'OKT - NOV',
+	sk:`KONSEP MASA DAN WAKTU 
+MA 5.1 Memahami waktu dalam konteks kehidupan seharian`,
+		sp:`MA5.1.4 Menyebut waktu dalam jam dengan menggunakan jam analog`},
+  {age:'6',subject:'Matematik',fasa:'FASA 4',bulan:'OKT - NOV',
+	sk:`KONSEP MASA DAN WAKTU 
+MA 5.1 Memahami waktu dalam konteks kehidupan seharian`,
+		sp:`MA 5.1.5 Menyatakan bulan dalam setahun`},
+  {age:'6',subject:'Matematik',fasa:'FASA 4',bulan:'OKT - NOV',
+	sk:`KONSEP MASA DAN WAKTU 
+MA 5.1 Memahami waktu dalam konteks kehidupan seharian`,
+		sp:`MA 5.1.6 Menghubungkaitkan waktu dengan peristiwa yang telah berlaku , sedang berlaku dan akan berlaku`},
+  {age:'6',subject:'Matematik',fasa:'FASA 4',bulan:'OKT - NOV',
+	sk:`BENTUK DAN RUANG 
+MA 6.1 Mengetahui kedudukan objek dalam ruang`,
+		sp:`MA 6.1.2 Menyusun objek dalam kedudukan tertentu`},
+  {age:'6',subject:'Matematik',fasa:'FASA 4',bulan:'OKT - NOV',
+	sk:`MA 6.2 Menghasilkan bahan berdasarkan Bentuk yang biasa dijumpai di persekitaran`,
+		sp:`MA 6.2.3 Mengecam Bentuk kuboid, kubus, piramid dan Sfera`},
+  {age:'6',subject:'Matematik',fasa:'FASA 4',bulan:'OKT - NOV',
+	sk:`MA 6.2 Menghasilkan bahan berdasarkan Bentuk yang biasa dijumpai di persekitaran`,
+		sp:`MA 6.2.4 Menghasilkan Bentuk Baharu dari gabungan bentuk tiga`},
+  {age:'6',subject:'Matematik',fasa:'FASA 4',bulan:'OKT - NOV',
+	sk:`MA6.3 Membuat pelbagai bahan mengikut kreativiti`,
+		sp:`MA 6.3.4 Membina pelbagai bahan yang kukuh dan stabil menggunakan pelbagai bahan mengikut kreativiti`},
   {age:'6',subject:'Pendidikan Agama Islam - Akidah',fasa:'FASA 1',bulan:'JAN – MAC',sk:`PA 1.1 Mengamalkan kalimah syahadah sebagai asas keimanan kepada allah
 Lailahaillallah`,sp:`PA 1.1.2 Menyebut lafaz kalimah syahadah dengan lancar`},
   {age:'6',subject:'Pendidikan Agama Islam - Akidah',fasa:'FASA 1',bulan:'JAN – MAC',sk:`PA 1.1 Mengamalkan kalimah syahadah sebagai asas keimanan kepada allah
@@ -3037,6 +4514,24 @@ Lailahaillallah`,sp:`PA 1.1.4 Memahami dan mengamalkan dalam kehidupan`},
   {age:'6',subject:'Pendidikan Agama Islam - Akidah',fasa:'FASA 2',bulan:'APRIL – JUN',sk:`PA 1.3 Memahami maksud nama allah asmaul husna`,sp:`PA 1.3.3 Menyebut nama-nama allah dan maksudnya (20 nama)`},
   {age:'6',subject:'Pendidikan Agama Islam - Akidah',fasa:'FASA 2',bulan:'APRIL – JUN',sk:`PA 1.3 Memahami maksud nama allah asmaul husna`,sp:`PA 1.3.4 Menghafal nama-nama allah dan maksudnya (20 nama)`},
   {age:'6',subject:'Pendidikan Agama Islam - Akidah',fasa:'FASA 2',bulan:'APRIL – JUN',sk:`PA 1.3 Memahami maksud nama allah asmaul husna`,sp:`PA 1.3.5 Menghafal asmaul husnah`},
+  {age:'6',subject:'Pendidikan Agama Islam - Akidah',fasa:'FASA 3',bulan:'JULAI – SEPT',
+	sk:`PA 1.4 Memahami rukun iman`,
+		sp:`PA 1.4.2 Memahami rukun iman`},
+  {age:'6',subject:'Pendidikan Agama Islam - Akidah',fasa:'FASA 3',bulan:'JULAI – SEPT',
+	sk:`PA 1.4 Memahami rukun iman`,
+		sp:`PA 1.4.3 Mengamalkan rukun iman dalam kehidupan seharian`},
+  {age:'6',subject:'Pendidikan Agama Islam - Akidah',fasa:'FASA 3',bulan:'JULAI – SEPT',
+	sk:`PA 1.5 Memahami rukun islam`,
+		sp:`PA 1.5.2 Memahami rukun islam`},
+  {age:'6',subject:'Pendidikan Agama Islam - Akidah',fasa:'FASA 3',bulan:'JULAI – SEPT',
+	sk:`PA 1.5 Memahami rukun islam`,
+		sp:`PA 1.5.3 Mengamalkan rukun islam dalam kehidupan seharian`},
+  {age:'6',subject:'Pendidikan Agama Islam - Akidah',fasa:'FASA 4',bulan:'OKTOBER - NOV',
+	sk:`PA 1.5 Memahami rukun islam`,
+		sp:`PA 1.5.2 Memahami rukun islam`},
+  {age:'6',subject:'Pendidikan Agama Islam - Akidah',fasa:'FASA 4',bulan:'OKTOBER - NOV',
+	sk:`PA 1.5 Memahami rukun islam`,
+		sp:`PA 1.5.3 Mengamalkan rukun islam dalam kehidupan seharian`},
   {age:'6',subject:'Pendidikan Agama Islam - Ibadah',fasa:'FASA 1',bulan:'JAN – MAC',sk:`PI 2.1 Mengetahui solat fardu`,sp:`PI 2.1.3 Menyebut nama-nama solat fardu`},
   {age:'6',subject:'Pendidikan Agama Islam - Ibadah',fasa:'FASA 1',bulan:'JAN – MAC',sk:`PI 2.1 Mengetahui solat fardu`,sp:`PI 2.1.4 Menyatakan waktu solat fardu`},
   {age:'6',subject:'Pendidikan Agama Islam - Ibadah',fasa:'FASA 1',bulan:'JAN – MAC',sk:`PI 2.2 Amali solat`,sp:`PI 2.2.3 Membaca niat setiap solat fardu dengan betul`},
@@ -3044,6 +4539,30 @@ Lailahaillallah`,sp:`PA 1.1.4 Memahami dan mengamalkan dalam kehidupan`},
   {age:'6',subject:'Pendidikan Agama Islam - Ibadah',fasa:'FASA 2',bulan:'APRIL – JUN',sk:`PI 2.3 Amali wuduk`,sp:`PI 2.3.3 Menyatakan cara berwuduk dengan tertib`},
   {age:'6',subject:'Pendidikan Agama Islam - Ibadah',fasa:'FASA 2',bulan:'APRIL – JUN',sk:`PI 2.3 Amali wuduk`,sp:`PI 2.3.4 Mengetahui doa selepas berwuduk`},
   {age:'6',subject:'Pendidikan Agama Islam - Ibadah',fasa:'FASA 2',bulan:'APRIL – JUN',sk:`PI 2.4 Mengamalkan cara bersuci dengan betul`,sp:`PI 2.4.3 Mengetahui peralatan untuk beristinjak`},
+  {age:'6',subject:'Pendidikan Agama Islam - Ibadah',fasa:'FASA 3',bulan:'JULAI – SEPT',
+	sk:`PI 2.5 Memperoleh pengetahuan asas`,
+		sp:`PI 2.5.3 Menghafal doa masuk dan keluar tandas`},
+  {age:'6',subject:'Pendidikan Agama Islam - Ibadah',fasa:'FASA 3',bulan:'JULAI – SEPT',
+	sk:`PI 2.6 Ibadah puasa`,
+		sp:`PI 2.6.3 Memahami kelebihan ibadah puasa`},
+  {age:'6',subject:'Pendidikan Agama Islam - Ibadah',fasa:'FASA 3',bulan:'JULAI – SEPT',
+	sk:`PI 2.6 Ibadah puasa`,
+		sp:`PI 2.6.4 Menyebut dan menghafal niat puasa`},
+  {age:'6',subject:'Pendidikan Agama Islam - Ibadah',fasa:'FASA 3',bulan:'JULAI – SEPT',
+	sk:`PI 2.6 Ibadah puasa`,
+		sp:`PI 2.6.5 Mengetahui adab ketika berpuasa`},
+  {age:'6',subject:'Pendidikan Agama Islam - Ibadah',fasa:'FASA 3',bulan:'JULAI – SEPT',
+	sk:`PI 2.6 Ibadah puasa`,
+		sp:`PI 2.6.6 Menyatakan amalan sunat semasa bulan puasa`},
+  {age:'6',subject:'Pendidikan Agama Islam - Ibadah',fasa:'FASA 4',bulan:'OKTOBER - NOV',
+	sk:`PI 2.6 Ibadah puasa`,
+		sp:`PI 2.6.4 Menyebut dan menghafal niat puasa`},
+  {age:'6',subject:'Pendidikan Agama Islam - Ibadah',fasa:'FASA 4',bulan:'OKTOBER - NOV',
+	sk:`PI 2.6 Ibadah puasa`,
+		sp:`PI 2.6.5 Mengetahui adab ketika berpuasa`},
+  {age:'6',subject:'Pendidikan Agama Islam - Ibadah',fasa:'FASA 4',bulan:'OKTOBER - NOV',
+	sk:`PI 2.6 Ibadah puasa`,
+		sp:`PI 2.6.6 Menyatakan amalan sunat semasa bulan puasa`},
   {age:'6',subject:'Pendidikan Agama Islam - Akhlak',fasa:'FASA 1',bulan:'JAN – MAC',sk:`PAK 3.1 Mengaplikasikan adab dalam kehidupan`,sp:`PAK 3.1.5 Melafazkan doa dalam kehidupan seharian secara beradab`},
   {age:'6',subject:'Pendidikan Agama Islam - Akhlak',fasa:'FASA 1',bulan:'JAN – MAC',sk:`PAK 3.1 Mengaplikasikan adab dalam kehidupan`,sp:`PAK 3.1.6 Mengaplikasi adab masuk dan keluar tandas`},
   {age:'6',subject:'Pendidikan Agama Islam - Akhlak',fasa:'FASA 1',bulan:'JAN – MAC',sk:`PAK 3.1 Mengaplikasikan adab dalam kehidupan`,sp:`PAK 3.1.7 Membezakan halal dan haram dalam makanan dan minuman`},
@@ -3055,6 +4574,18 @@ Lailahaillallah`,sp:`PA 1.1.4 Memahami dan mengamalkan dalam kehidupan`},
 Iii.halal dan haram
 Iv.makanan berkhasiat dan baik`},
   {age:'6',subject:'Pendidikan Agama Islam - Akhlak',fasa:'FASA 2',bulan:'APRIL – JUN',sk:`PAK 3.3 Mengamalkan adab makan dan minum dalam islam`,sp:`PAK 3.3.4 Menyatakan adab ketika makan dan minum`},
+  {age:'6',subject:'Pendidikan Agama Islam - Akhlak',fasa:'FASA 3',bulan:'JULAI – SEPT',
+	sk:`PAK 3.3 Mengamalkan adab makan dan minum dalam islam`,
+		sp:`PAK 3.3.3 Membezakan jenis makanan dan minuman dalam kehidupan harian Iii.halal dan haram Iv.makanan berkhasiat dan baik`},
+  {age:'6',subject:'Pendidikan Agama Islam - Akhlak',fasa:'FASA 3',bulan:'JULAI – SEPT',
+	sk:`PAK 3.3 Mengamalkan adab makan dan minum dalam islam`,
+		sp:`PAK 3.3.4 Menyatakan adab ketika makan dan minum`},
+  {age:'6',subject:'Pendidikan Agama Islam - Akhlak',fasa:'FASA 3',bulan:'JULAI – SEPT',
+	sk:`PAK 3.4 Mengamalkan adab kebersihan dalam kehidupan`,
+		sp:`PAK 3.4.2 Menyebut kesan tidak menjaga kebersihan diri i.Diri sendiri ii.Persekitaran`},
+  {age:'6',subject:'Pendidikan Agama Islam - Akhlak',fasa:'FASA 4',bulan:'OKTOBER - NOV',
+	sk:`PAK 3.4 Mengamalkan adab kebersihan dalam kehidupan`,
+		sp:`PAK 3.4.2 Menyebut kesan tidak menjaga kebersihan diri i.Diri sendiri ii.Persekitaran`},
   {age:'6',subject:'Pendidikan Agama Islam - Sirah',fasa:'FASA 1',bulan:'JAN – MAC',sk:`PS 4.1 Mengetahui biodata nabi muhammad saw`,sp:`PS 4.1.3 Menceritakan tentang keluarga nabi muhammad saw
 i.Ibu nabi
 ii.Ayah nabi
@@ -3071,6 +4602,15 @@ i.Siddiq
 ii.Amanah
 iii.Tabligh
 iv.Fatonah`},
+  {age:'6',subject:'Pendidikan Agama Islam - Sirah',fasa:'FASA 3',bulan:'JULAI – SEPT',
+	sk:`PS 4.3 Mengamalkan akhlak dan sifat nabi muhammad saw`,
+		sp:`PS 4.3.2 Memerihalkan sifat nabi muhammad saw i.Siddiq ii.Amanah iii.Tabligh iv.Fatonah`},
+  {age:'6',subject:'Pendidikan Agama Islam - Sirah',fasa:'FASA 3',bulan:'JULAI – SEPT',
+	sk:`PS 4.3 Mengamalkan akhlak dan sifat nabi muhammad saw`,
+		sp:`PS 4.3.3 Mengaplikasikan akhlak nabi muhammad saw dalam kehidupan seharian`},
+  {age:'6',subject:'Pendidikan Agama Islam - Sirah',fasa:'FASA 4',bulan:'OKTOBER - NOV',
+	sk:`PS 4.3 Mengamalkan akhlak dan sifat nabi muhammad saw`,
+		sp:`PS 4.3.3 Mengaplikasikan akhlak nabi muhammad saw dalam kehidupan seharian"`},
   {age:'6',subject:'Sains',fasa:'FASA 1',bulan:'JAN – MAC',sk:`SIKAP SAINTIFIK
 SA 1.1 Menonjolkan sikap nilai berdasarkan al-quran dan as-sunnah`,sp:`SA 1.1.2 Menggalakkan semangat bertanya dan bekerjasama dengan rakan `},
   {age:'6',subject:'Sains',fasa:'FASA 1',bulan:'JAN – MAC',sk:`KEMAHIRAN SAINTIFIK
@@ -3095,7 +4635,134 @@ Berat`},
 sp:`SA 3.2.2  Membanding dan membezakan objek berdasarkan dua ciri yang sama `},
   {age:'6',subject:'Sains',fasa:'FASA 2',bulan:'APRIL – JUN',sk:`SA 3.2 Mengenal ciptaan Allah melalui objek di persekitaran`,
 sp:`SA 3.2.3 Mengumpul objek mengikut ciri yang dikenalpasti 
- `}
+ `},
+  {age:'6',subject:'Sains',fasa:'FASA 3',bulan:'JULAI – SEPT',
+	sk:`KEMAHIRAN PROSES SAINS
+SA 3.3 Membuat pengukuran`,
+		sp:`SA 3.3.1 Mengenal perbezaan ukuran objek: Panjang- pendek`},
+  {age:'6',subject:'Sains',fasa:'FASA 3',bulan:'JULAI – SEPT',
+	sk:`KEMAHIRAN PROSES SAINS
+SA 3.3 Membuat pengukuran`,
+		sp:`Tebal- nipis`},
+  {age:'6',subject:'Sains',fasa:'FASA 3',bulan:'JULAI – SEPT',
+	sk:`KEMAHIRAN PROSES SAINS
+SA 3.3 Membuat pengukuran`,
+		sp:`Besar- kecil`},
+  {age:'6',subject:'Sains',fasa:'FASA 3',bulan:'JULAI – SEPT',
+	sk:`KEMAHIRAN PROSES SAINS
+SA 3.3 Membuat pengukuran`,
+		sp:`Tinggi- rendah`},
+  {age:'6',subject:'Sains',fasa:'FASA 3',bulan:'JULAI – SEPT',
+	sk:`KEMAHIRAN PROSES SAINS
+SA 3.3 Membuat pengukuran`,
+		sp:`Berat- ringan`},
+  {age:'6',subject:'Sains',fasa:'FASA 3',bulan:'JULAI – SEPT',
+	sk:`KEMAHIRAN PROSES SAINS
+SA 3.3 Membuat pengukuran`,
+		sp:`SA 3.3.2 Mengukur panjang atau tinggi objek menggunakan satu unit bukan piawaian`},
+  {age:'6',subject:'Sains',fasa:'FASA 4',bulan:'OKT - NOV',
+	sk:`KEMAHIRAN PROSES SAINS
+SA 3.4 Membuat inferens`,
+		sp:`SA 3.4.1 Membuat andaian yang mudah berdasarkan pemerhatian`},
+  {age:'5',subject:'Kreativiti dan Estetika',fasa:'FASA 1',bulan:'JAN \u2013 MAC',
+	sk:`KE 1.0 MUZIK\nKE 1.1 Menyanyikan lagu daripada pelbagai koleksi :\n1. Drama\n2. Muzik\n3. Nyanyian\n4. Cerita`,
+		sp:`KE 1.1.1 Meniru pelbagai ton suara manusia :\n1. Bercakap\n2. Memanggil\n3. Berbisik\n4. Bernyanyi\n5. Lelaki dan perempuan`},
+  {age:'5',subject:'Kreativiti dan Estetika',fasa:'FASA 1',bulan:'JAN \u2013 MAC',
+	sk:`KE 1.1 Menyanyikan lagu daripada pelbagai koleksi`,
+		sp:`KE 1.1.2 Menyanyi lagu yang mudah dengan sebutan yang jelas`},
+  {age:'5',subject:'Kreativiti dan Estetika',fasa:'FASA 1',bulan:'JAN \u2013 MAC',
+	sk:`KE 1.2 Memainkan alat muzik perkusi`,
+		sp:`KE 1.2.1 Mengecam bunyi perkusi dan menamakan jenis alat yang dibunyikan`},
+  {age:'5',subject:'Kreativiti dan Estetika',fasa:'FASA 1',bulan:'JAN \u2013 MAC',
+	sk:`KE 1.2 Memainkan alat muzik perkusi`,
+		sp:`KE 1.2.2 Menghasilkan bunyi menggunakan perkusi badan`},
+  {age:'5',subject:'Kreativiti dan Estetika',fasa:'FASA 1',bulan:'JAN \u2013 MAC',
+	sk:`KE 1.2 Memainkan alat muzik perkusi`,
+		sp:`KE 1.2.3 Memainkan perkusi dengan iringan muzik dengan bimbingan`},
+  {age:'5',subject:'Kreativiti dan Estetika',fasa:'FASA 1',bulan:'JAN \u2013 MAC',
+	sk:`KE 1.3 Membuat pergerakan mengikut muzik`,
+		sp:`KE 1.3.1 Melakukan pergerakan anggota badan mengikut lirik lagu`},
+  {age:'5',subject:'Kreativiti dan Estetika',fasa:'FASA 1',bulan:'JAN \u2013 MAC',
+	sk:`KE 1.3 Membuat pergerakan mengikut muzik`,
+		sp:`KE 1.3.2 Menunjukkan perasaan terhadap muzik yang didengar`},
+  {age:'5',subject:'Kreativiti dan Estetika',fasa:'FASA 1',bulan:'JAN \u2013 MAC',
+	sk:`KE 1.4 Menghayati muzik daripada pelbagai koleksi :\n1. Drama\n2. Muzik\n3. Nyanyian\n4. Cerita`,
+		sp:`KE 1.4.1 Menyanyi dan menunjukkan ekspresi terhadap muzik yang didengar :\n1. Lagu kanak-kanak\n2. Lagu budaya\n3. Lagu nasyid`},
+  {age:'5',subject:'Kreativiti dan Estetika',fasa:'FASA 2',bulan:'APRIL \u2013 JUN',
+	sk:`KE 2.0 DRAMA DAN GERAKAN KREATIF\nKE 2.1 Mengambil bahagian dalam drama dan gerakan kreatif`,
+		sp:`KE 2.1.1 Melakonkan watak menggunakan imaginasi`},
+  {age:'5',subject:'Kreativiti dan Estetika',fasa:'FASA 2',bulan:'APRIL \u2013 JUN',
+	sk:`KE 2.1 Mengambil bahagian dalam drama dan gerakan kreatif`,
+		sp:`KE 2.1.2 Bergerak secara kreatif untuk menunjukkan elemen ruang, masa dan tenaga`},
+  {age:'5',subject:'Kreativiti dan Estetika',fasa:'FASA 2',bulan:'APRIL \u2013 JUN',
+	sk:`KE 3.0 SENI VISUAL\nKE 3.1 Mengetahui unsur seni (persepsi estetik)`,
+		sp:`KE 3.1.1 Menyatakan unsur seni yang terdapat dalam persekitaran kehidupan muslim`},
+  {age:'5',subject:'Kreativiti dan Estetika',fasa:'FASA 2',bulan:'APRIL \u2013 JUN',
+	sk:`KE 3.2 Mengetahui media dalam menghasilkan karya seni islam`,
+		sp:`KE 3.2.1 Menyatakan jenis media yang digunakan dalam penghasilan karya seni islam`},
+  {age:'5',subject:'Kreativiti dan Estetika',fasa:'FASA 3',bulan:'JULAI \u2013 SEPT',
+	sk:`KE 3.2 Mengetahui media dalam menghasilkan karya seni islam`,
+		sp:`KE 3.2.1 Menyatakan jenis media yang digunakan dalam penghasilan karya seni islam`},
+  {age:'5',subject:'Kreativiti dan Estetika',fasa:'FASA 3',bulan:'JULAI \u2013 SEPT',
+	sk:`KE 3.3 Menzahirkan idea kreatif dalam penghasilan karya seni (ekspresi kreatif)`,
+		sp:`KE 3.3.1 Menghasilkan karya kreatif melalui aktiviti bergambar`},
+  {age:'5',subject:'Kreativiti dan Estetika',fasa:'FASA 3',bulan:'JULAI \u2013 SEPT',
+	sk:`KE 3.3 Menzahirkan idea kreatif dalam penghasilan karya seni (ekspresi kreatif)`,
+		sp:`KE 3.3.2 Menghasilkan karya kreatif melalui aktiviti teknologi digital`},
+  {age:'5',subject:'Kreativiti dan Estetika',fasa:'FASA 4',bulan:'OKT - NOV',
+	sk:`KE 3.4 Menghargai karya seni (apresiasi kreatif)`,
+		sp:`KE 3.4.1 Menceritakan hasil kerja sendiri`},
+  {age:'6',subject:'Kreativiti dan Estetika',fasa:'FASA 1',bulan:'JAN \u2013 MAC',
+	sk:`KE 1.0 MUZIK\nKE 1.1 Menyanyikan lagu daripada pelbagai koleksi :\n1. Drama\n2. Muzik\n3. Nyanyian\n4. Cerita`,
+		sp:`KE 1.1.3 Menyanyikan lagu dengan :\n1. Sebutan yang betul dan jelas\n2. Pic yang betul\n3. Irama yang betul\n4. Tempo yang tepat`},
+  {age:'6',subject:'Kreativiti dan Estetika',fasa:'FASA 1',bulan:'JAN \u2013 MAC',
+	sk:`KE 1.1 Menyanyikan lagu daripada pelbagai koleksi`,
+		sp:`KE 1.1.4 Menyanyi lagu yang mudah mengikut iringan muzik :\n1. Lagu kanak-kanak\n2. Lagu budaya\n3. Lagu nasyid`},
+  {age:'6',subject:'Kreativiti dan Estetika',fasa:'FASA 1',bulan:'JAN \u2013 MAC',
+	sk:`KE 1.2 Memainkan alat muzik perkusi`,
+		sp:`KE 1.2.4 Memainkan perkusi dengan ekspresi yang sesuai :\n1. Kuat\n2. Lembut`},
+  {age:'6',subject:'Kreativiti dan Estetika',fasa:'FASA 1',bulan:'JAN \u2013 MAC',
+	sk:`KE 1.2 Memainkan alat muzik perkusi`,
+		sp:`KE 1.2.5 Memainkan alat improvisasi bagi menghasilkan muzik`},
+  {age:'6',subject:'Kreativiti dan Estetika',fasa:'FASA 1',bulan:'JAN \u2013 MAC',
+	sk:`KE 1.2 Memainkan alat muzik perkusi`,
+		sp:`KE 1.2.6 Memainkan alat muzik mengiringi nyanyian secara kreatif :\n1. Lagu kanak-kanak\n2. Lagu budaya\n3. Lagu nasyid`},
+  {age:'6',subject:'Kreativiti dan Estetika',fasa:'FASA 2',bulan:'APRIL \u2013 JUN',
+	sk:`KE 1.0 MUZIK\nKE 1.3 Menunjukkan apresiasi muzik`,
+		sp:`KE 1.3.3 Melakukan pergerakan kreatif mengikut muzik untuk meneroka ruang`},
+  {age:'6',subject:'Kreativiti dan Estetika',fasa:'FASA 2',bulan:'APRIL \u2013 JUN',
+	sk:`KE 1.4 Menghayati muzik yang diperdengarkan`,
+		sp:`KE 1.4.2 Mengenal elemen muzik :\n1. Kuat-lembut\n2. Cepat-lambat\n3. Tinggi-rendah\n4. Panjang-pendek\n5. Sedih-gembira-bersemangat`},
+  {age:'6',subject:'Kreativiti dan Estetika',fasa:'FASA 3',bulan:'JULAI \u2013 SEPT',
+	sk:`KE 2.0 DRAMA DAN GERAKAN KREATIF\nKE 2.1 Mengambil bahagian dalam drama dan gerakan kreatif`,
+		sp:`KE 2.1.3 Belakon dengan menggunakan prop dan kostum`},
+  {age:'6',subject:'Kreativiti dan Estetika',fasa:'FASA 3',bulan:'JULAI \u2013 SEPT',
+	sk:`KE 2.1 Mengambil bahagian dalam drama dan gerakan kreatif`,
+		sp:`KE 2.1.4 Melakonkan watak berdasarkan cerita :\n1. Cerita islamik\n2. Cerita kontemporari\n3. Cerita nilai-nilai murni`},
+  {age:'6',subject:'Kreativiti dan Estetika',fasa:'FASA 3',bulan:'JULAI \u2013 SEPT',
+	sk:`KE 3.0 SENI VISUAL\nKE 3.1 Mengetahui unsur seni (persepsi estetik)`,
+		sp:`KE 3.1.2 Menyatakan unsur seni yang terdapat pada objek buatan manusia mengikut budaya islam`},
+  {age:'6',subject:'Kreativiti dan Estetika',fasa:'FASA 3',bulan:'JULAI \u2013 SEPT',
+	sk:`KE 3.2 Mengetahui media dalam menghasilkan karya seni (aplikasi seni)`,
+		sp:`KE 3.2.2 Memilih media yang sesuai dalam penghasilan karya seni islam`},
+  {age:'6',subject:'Kreativiti dan Estetika',fasa:'FASA 3',bulan:'JULAI \u2013 SEPT',
+	sk:`KE 3.2 Mengetahui media dalam menghasilkan karya seni (aplikasi seni)`,
+		sp:`KE 3.2.3 Menghasilkan inovasi karya seni melibatkan penggunaan integrasi teknologi`},
+  {age:'6',subject:'Kreativiti dan Estetika',fasa:'FASA 4',bulan:'OKT - NOV',
+	sk:`KE 3.3 Menghasilkan idea kreatif dalam penghasilan karya seni (ekspresi kreatif)`,
+		sp:`KE 3.3.3 Membuat corak dan rekaan mengikut kreativiti sendiri dan penjanaan idea`},
+  {age:'6',subject:'Kreativiti dan Estetika',fasa:'FASA 4',bulan:'OKT - NOV',
+	sk:`KE 3.3 Menghasilkan idea kreatif dalam penghasilan karya seni (ekspresi kreatif)`,
+		sp:`KE 3.3.4 Menghasilkan seni dan kraf tradisional menggunakan pelbagai bahan`},
+  {age:'6',subject:'Kreativiti dan Estetika',fasa:'FASA 4',bulan:'OKT - NOV',
+	sk:`KE 3.3 Menghasilkan idea kreatif dalam penghasilan karya seni (ekspresi kreatif)`,
+		sp:`KE 3.3.5 Menghasilkan karya kreatif menggunakan bahan kitar semula`},
+  {age:'6',subject:'Kreativiti dan Estetika',fasa:'FASA 4',bulan:'OKT - NOV',
+	sk:`KE 3.4 Menghargai karya seni (apresiasi kreatif)`,
+		sp:`KE 3.4.2 Menunjukkan penghargaan terhadap hasil kerja orang lain`},
+  {age:'6',subject:'Kreativiti dan Estetika',fasa:'FASA 4',bulan:'OKT - NOV',
+	sk:`KE 3.4 Menghargai karya seni (apresiasi kreatif)`,
+		sp:`KE 3.4.3 Menunjukkan hasil seni untuk dikongsikan kepada orang lain`}
 ];
 // @@RPT_END@@
 // ── STATE ─────────────────────────────────────────────────
@@ -5468,7 +7135,7 @@ function initAutoSave() {
 <!-- @@start JPPMPAPRPXY@@ -->
 (function() {
   var el = document.getElementById('JPPMPAPRPXY');
-  if (el) el.textContent = atob('RGVtbw==');
+  if (el) el.textContent = atob('RGlsYSdz');
 })();
 <!-- @@end JPPMPAPRPXY@@ -->
 
