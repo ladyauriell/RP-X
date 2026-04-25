@@ -1573,9 +1573,11 @@ body { font-family: var(--font); background: var(--sidebar-bg); min-height: 100v
       <details style="margin:6px 0 14px">
         <summary style="font-size:11px;font-weight:700;color:var(--teal);cursor:pointer;letter-spacing:0.5px">FORMAT TEMA ▸</summary>
         <div style="background:rgba(13,122,107,0.05);border:1px solid rgba(13,122,107,0.15);border-radius:8px;padding:10px;font-size:12px;line-height:1.8;color:var(--text-muted);margin-top:6px">
-          Lajur A: <strong>Minggu (Tarikh mula)</strong> cth: 12 (31 Mac)<br>
-          Lajur B: <strong>Nombor Minggu</strong> cth: 12<br>
-          Lajur C: <strong>Tema</strong> cth: Diri Saya
+          Lajur A: <strong>Tarikh</strong> (Tarikh mula) dalam format DD MMM YYYY<br>
+          Lajur B: <strong>Paparan yang tertera</strong> cth: 12 (30 Mac -  3 Apr) <br>
+          Lajur C: <strong>Nombor Minggu</strong> dalam format nombor (bukan perkataan) <br>
+ 	  Lajur D: <strong>Tema</strong><br>
+
         </div>
       </details>
       </div>
@@ -1595,7 +1597,7 @@ body { font-family: var(--font); background: var(--sidebar-bg); min-height: 100v
       <details style="margin:6px 0 14px">
         <summary style="font-size:11px;font-weight:700;color:var(--teal);cursor:pointer;letter-spacing:0.5px">FORMAT JADUAL ▸</summary>
         <div style="background:rgba(13,122,107,0.05);border:1px solid rgba(13,122,107,0.15);border-radius:8px;padding:10px;font-size:12px;line-height:1.8;color:var(--text-muted);margin-top:6px">
-          Lajur A: <strong>Hari</strong> cth: Isnin/Selasa/etc<br>
+          Lajur A: <strong>Hari</strong> cth: Isnin, Selasa<br>
           Lajur B: <strong>Masa mula</strong> cth: 8:00 AM<br>
           Lajur C: <strong>Masa tamat</strong> cth: 9:00 AM<br>
           Lajur D: <strong>Mata Pelajaran</strong> cth: Bahasa Melayu<br>
@@ -1904,25 +1906,39 @@ body { font-family: var(--font); background: var(--sidebar-bg); min-height: 100v
   <div style="display:flex;flex-direction:column;gap:14px;">
     <div style="border-left:3px solid var(--teal);padding:10px 14px;background:rgba(13,122,107,0.04);border-radius:0 8px 8px 0">
       <div style="font-weight:700;margin-bottom:4px;">1. Isi Maklumat Asas</div>
-      <p>Mulakan dengan mengisi maklumat asas RPH anda — tarikh, hari, kelas, mata pelajaran, dan tema minggu.</p>
+      <p>Mulakan dengan memuat naik dokumen di bahagian tab <strong>Tetapan</strong>;</p>
+<p> i. Logo,</p>
+<p> ii. Tema (mengikut templat yang disediakan),</p>
+<p> iii. Jadual Mengajar (mengikut templat yang disediakan).</p>
     </div>
     <div style="border-left:3px solid var(--teal);padding:10px 14px;background:rgba(13,122,107,0.04);border-radius:0 8px 8px 0">
       <div style="font-weight:700;margin-bottom:4px;">2. Lengkapkan Standard & Objektif</div>
-      <p>Masukkan Standard Kandungan (SK), Standard Pembelajaran (SP), dan objektif pembelajaran untuk sesi anda.</p>
+      <p>i. Pilih Tarikh RPH,</p> 
+<p>ii. Semak sama ada pengisian automatik Hari dan Tema adalah tepat,</p> 
+ <p>iii. Pilih Masa subjek,</p> 
+<p>iv. Semak sama ada pengisian automatik Masa, Kelas, Jumlah Murid dan Mata Pelajaran adalah tepat,</p> 
+<p>v. Pilih Standard Kandungan (SK) dan Standard Pembelajaran (SP) mengikut fasa.</p>
     </div>
     <div style="border-left:3px solid var(--teal);padding:10px 14px;background:rgba(13,122,107,0.04);border-radius:0 8px 8px 0">
-      <div style="font-weight:700;margin-bottom:4px;">3. Isi Aktiviti & Elemen</div>
-      <p>Lengkapkan set induksi, aktiviti pengajaran, serta pilih elemen PAK21, EMK, KBAT, dan BBM yang bersesuaian.</p>
+      <div style="font-weight:700;margin-bottom:4px;">3. Isi RPH</div>
+      <p>Taipkan Tajuk, Objektif, Set Induksi dan Aktiviti pengajaran.</p>
     </div>
     <div style="border-left:3px solid var(--teal);padding:10px 14px;background:rgba(13,122,107,0.04);border-radius:0 8px 8px 0">
-      <div style="font-weight:700;margin-bottom:4px;">4. Semak Pratonton</div>
-      <p>Pergi ke tab <strong>Pratonton</strong> untuk melihat RPH anda dalam bentuk dokumen sebelum memuat turun.</p>
-    </div>
+      <div style="font-weight:700;margin-bottom:4px;">4. Pilih dan Isi Elemen Lain</div>
+<p>Skrol ke bawah dan tekan butang 'Pilihan Lain' untuk memilih elemen yang lain seperti AKT21, PAK21, EMK, KBAT, BBM/BBB dan Nilai Murni  yang bersesuaian.</p></div>
+ <div style="border-left:3px solid var(--teal);padding:10px 14px;background:rgba(13,122,107,0.04);border-radius:0 8px 8px 0">
+
+<div style="font-weight:700;margin-bottom:4px;">5. Semak dan Jana</div> <p>Butang di sebelah kiri butang 'Jana' akan berwarna merah dan ikon ⚠️ akan muncul sekiranya ada data yang masih belum terisi. Tekan butang tersebut untuk menyemak data.</p> </div>
+
+
     <div style="border-left:3px solid var(--teal);padding:10px 14px;background:rgba(13,122,107,0.04);border-radius:0 8px 8px 0">
-      <div style="font-weight:700;margin-bottom:4px;">5. Muat Turun</div>
-      <p>Muat turun RPH anda apabila sudah berpuas hati. Data anda disimpan secara automatik dalam pelayar anda.</p>
-    </div>
-  </div>
+      <div style="font-weight:700;margin-bottom:4px;">6. Semak</div>
+      <p>i. Semak RPH yang dijana pada tab <strong>Pratonton</strong> sebelum memuat turun untuk</p><p>ii. Pastikan tiada perkataan terkeluar daripada kotak yang disediakan.</p><p> iii. Saiz huruf boleh ditukar di bahagian tab <strong>Tetapan</strong>.</p></div>
+
+
+<div style="border-left:3px solid var(--teal);padding:10px 14px;background:rgba(13,122,107,0.04);border-radius:0 8px 8px 0">
+      <div style="font-weight:700;margin-bottom:4px;">7. Muat Turun</div>
+      <p>i. Muat turun dalam bentuk PDF atau PNG untuk sedia di cetak.</p><p>ii. Muat turun dalam bentuk JSON membolehkan RPH anda dimuat naik semula pada bila-bila masa akan datang.</p></div>  </div>
 </div>
 
 <div id="about-tab-lesen" style="display:none;overflow-y:auto;padding:20px;font-size:13px;color:var(--text);line-height:1.8;flex:1">
@@ -1931,8 +1947,9 @@ body { font-family: var(--font); background: var(--sidebar-bg); min-height: 100v
         
 
       <div style="border-left:3px solid #c0392b;padding:10px 14px;margin-bottom:45px;font-size:12px;color:#555;line-height:1.9;background:rgba(229,62,62,0.03);border-radius:0 8px 8px 0">
-        <p>Aplikasi ini dilindungi di bawah Akta Hak Cipta 1987.</p>
-<p>Aplikasi ini adalah versi demo yang disediakan dalam bentuk laman web dan dihoskan secara dalam talian. Sebarang penyalinan, pengubahsuaian atau pengedaran tanpa kebenaran adalah dilarang dan boleh dikenakan tindakan undang-undang. </p>
+        <p>Aplikasi ini dilindungi di bawah <strong>Akta Hak Cipta 1987</strong>.</p><br>
+<p>Aplikasi ini adalah versi demo yang disediakan dalam bentuk laman web dan dihoskan secara dalam talian.</p><br><p> Sebarang <strong>penyalinan, pengubahsuaian, pengedaran, penjualan</strong>  dalam apa jua bentuk termasuklah (tetapi tidak terhad kepada) <strong>penghantaran fail, simpanan ke rangkaian hos, siaran media sosial</strong> atau kepada mana-mana pihak tanpa kebenaran adalah <strong>dilarang dan boleh dikenakan tindakan undang-undang</strong>. </p><br>
+<p> Hanya pautan demo dibenarkan untuk dikongsi. Sebarang perkongsian versi penuh adalah melanggar Akta ini.</p>
 </div>
 
     
@@ -2060,12 +2077,19 @@ body { font-family: var(--font); background: var(--sidebar-bg); min-height: 100v
         <!-- Bottom: features -->
         <div style="background:#f7f9fc;padding:14px 16px 16px;border-radius:0 0 13px 13px">
           <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--text-muted);margin-bottom:12px">Apa yang anda dapat</div>
-          <div style="display:flex;flex-direction:column;gap:8px">
+ <div style="display:flex;flex-direction:column;gap:8px">
+<div style="font-size:12px;color:var(--text);display:flex;align-items:center;justify-content:center;gap:8px"><span style="color:#003580">✓</span> Automatik Pengisian 'Hari' dan 'Tema' untuk setiap 'Tarikh' yang dipilih</div>
+         
+<div style="font-size:12px;color:var(--text);display:flex;align-items:center;justify-content:center;gap:8px"><span style="color:#003580">✓</span> Automatik Pengisian 'Kelas', 'Jumlah Murid' dan 'Mata Pelajaran' untuk setiap 'Masa' yang dipilih</div>
+
 <div style="font-size:12px;color:var(--text);display:flex;align-items:center;justify-content:center;gap:8px"><span style="color:#003580">✓</span> Standard Kandungan Fasa 1 dan 2</div>
 <div style="font-size:12px;color:var(--text);display:flex;align-items:center;justify-content:center;gap:8px"><span style="color:#003580">✓</span> Standard Pembelajaran Fasa 1 dan 2</div>
 <div style="font-size:12px;color:var(--text);display:flex;align-items:center;justify-content:center;gap:8px"><span style="color:#003580">✓</span> Senarai contoh BBM dan BBB</div>
 <div style="font-size:12px;color:var(--text);display:flex;align-items:center;justify-content:center;gap:8px"><span style="color:#003580">✓</span> Senarai contoh Nilai-nilai murni</div>
-            <!-- Hidden items kept in DOM -->
+        
+
+
+    <!-- Hidden items kept in DOM -->
             <div style="display:none"><span>✓</span> Tanpa daftar akaun</div>
             <div style="display:none"><span>✓</span> Tanpa login</div>
             <div style="display:none"><span>✓</span> Tanpa install</div>
@@ -2088,7 +2112,7 @@ body { font-family: var(--font); background: var(--sidebar-bg); min-height: 100v
           <div style="font-size:48px;font-weight:800;color:#003580;line-height:1">RM40</div>
           <div style="font-size:14px;color:var(--text-muted);margin-top:4px">/ untuk tahun 2026</div>
  <div style="font-size:14px;color:var(--text-muted);margin-top:4px">(bukan langganan bulanan)</div>
-          <div style="font-size:11px;color:var(--text-muted);margin-top:6px">Bermula Julai 2026 → <span style="color:var(--text);font-weight:600">RM45</span></div>
+          <div style="font-size:11px;color:var(--text-muted);margin-top:6px">Bermula Julai 2026 harga akan dinaikkan kepada <span style="color:var(--text);font-weight:600">RM45</span></div>
         </div>
         <hr style="border:none;border-top:1px solid rgba(0,42,112,0.2);margin:0">
         <!-- Bottom: features -->
@@ -2100,11 +2124,43 @@ body { font-family: var(--font); background: var(--sidebar-bg); min-height: 100v
             <hr style="border:none;border-top:1px solid rgba(0,42,112,0.2);margin:4px 0">
             <!-- Apa yang anda dapat -->
             <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--text-muted);margin-top:4px;margin-bottom:4px">Apa yang anda dapat</div>
+
+
+
+
+<div style="font-size:12px;color:var(--text);display:flex;align-items:center;justify-content:center;gap:8px"><span style="color:#003580">✓</span> Automatik Pengisian 'Hari' dan 'Tema' untuk setiap 'Tarikh' yang dipilih</div>
+         
+<div style="font-size:12px;color:var(--text);display:flex;align-items:center;justify-content:center;gap:8px"><span style="color:#003580">✓</span> Automatik Pengisian 'Kelas', 'Jumlah Murid' dan 'Mata Pelajaran' untuk setiap 'Masa' yang dipilih</div>
+
+
 <div style="font-size:12px;color:var(--text);display:flex;align-items:center;justify-content:center;gap:8px"><span style="color:#003580">✓</span> Standard Kandungan Fasa 1 hingga 4</div>
 <div style="font-size:12px;color:var(--text);display:flex;align-items:center;justify-content:center;gap:8px"><span style="color:#003580">✓</span> Standard Pembelajaran Fasa 1 hingga 4</div>
+
 <div style="font-size:12px;color:var(--text);display:flex;align-items:center;justify-content:center;gap:8px"><span style="color:#003580">✓</span> Senarai contoh BBM dan BBB</div>
 <div style="font-size:12px;color:var(--text);display:flex;align-items:center;justify-content:center;gap:8px"><span style="color:#003580">✓</span> Senarai contoh Nilai-nilai murni</div>
+
+
+
 <div style="font-size:12px;color:var(--text);display:flex;align-items:center;justify-content:center;gap:8px"><span style="color:#003580">✓</span> Menjadi Rakan Perujuk RP-X (referral)</div>
+
+<!-- CTA buttons -->
+      <div style="display:flex;gap:10px;width:100%">
+
+<a href="https://wa.me/60146701157?text=Salam,saya%20nak%20order%20pelan%20penuh%20RP-X%20" target="_blank" style="flex:1;display:flex;align-items:center;justify-content:center;gap:8px;background:linear-gradient(135deg,#1ebe6e,#25d366);color:#fff;text-decoration:none;padding:12px;border-radius:12px;font-size:13px;font-weight:700;font-family:var(--font);letter-spacing:0.3px">
+          <span style="font-size:18px">💬</span> Order Melalui WhatsApp
+        </a>
+
+<!--        <a href="https://wa.me/60146701157?text=Salam,saya%20nak%20order%20pelan%20penuh%20RP-X%20" target="_blank" style="
+        display:flex;align-items:center;justify-content:center;gap:8px;
+        background:#25D366;color:#fff;
+        padding:12px;border-radius:10px;
+        font-size:13px;font-weight:700;
+        text-decoration:none;font-family:var(--font);
+        transition:background 0.15s;margin-top:8px;
+      " onmouseover="this.style.background='#1ebe5d'" onmouseout="this.style.background='#25D366'">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="#fff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Order Melalui WhatsApp
+      </a> --> </div>
 
             <!-- Hidden items kept in DOM -->
             <div style="display:none"><span>✓</span> Tanpa daftar akaun</div>
@@ -2149,11 +2205,25 @@ body { font-family: var(--font); background: var(--sidebar-bg); min-height: 100v
         <div style="background:#f7f9fc;padding:14px 16px 16px;border-radius:0 0 13px 13px">
           <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--text-muted);margin-top:4px;margin-bottom:4px">Apa yang anda dapat</div>
           <div style="display:flex;flex-direction:column;gap:8px">
+
+
+<div style="font-size:12px;color:var(--text);display:flex;align-items:center;justify-content:center;gap:8px"><span style="color:#003580">✓</span> Automatik Pengisian 'Hari' dan 'Tema' untuk setiap 'Tarikh' yang dipilih</div>
+         
+<div style="font-size:12px;color:var(--text);display:flex;align-items:center;justify-content:center;gap:8px"><span style="color:#003580">✓</span> Automatik Pengisian 'Kelas', 'Jumlah Murid' dan 'Mata Pelajaran' untuk setiap 'Masa' yang dipilih</div>
+
+
 <div style="font-size:12px;color:var(--text);display:flex;align-items:center;justify-content:center;gap:8px"><span style="color:#003580">✓</span> Standard Kandungan Fasa 1 hingga 4</div>
 <div style="font-size:12px;color:var(--text);display:flex;align-items:center;justify-content:center;gap:8px"><span style="color:#003580">✓</span> Standard Pembelajaran Fasa 1 hingga 4</div>
+
 <div style="font-size:12px;color:var(--text);display:flex;align-items:center;justify-content:center;gap:8px"><span style="color:#003580">✓</span> Senarai contoh BBM dan BBB</div>
 <div style="font-size:12px;color:var(--text);display:flex;align-items:center;justify-content:center;gap:8px"><span style="color:#003580">✓</span> Senarai contoh Nilai-nilai murni</div>
+
+
+
 <div style="font-size:12px;color:var(--text);display:flex;align-items:center;justify-content:center;gap:8px"><span style="color:#003580">✓</span> Menjadi Rakan Perujuk RP-X (referral)</div>
+
+
+
 <div style="font-size:12px;color:var(--text);display:flex;align-items:center;justify-content:center;gap:8px"><span style="color:#003580">✓</span> Cadangan <strong>Tajuk</strong></div>
 <div style="font-size:12px;color:var(--text);display:flex;align-items:center;justify-content:center;gap:8px"><span style="color:#003580">✓</span> Cadangan <strong>Objektif</strong></div>
 <div style="font-size:12px;color:var(--text);display:flex;align-items:center;justify-content:center;gap:8px"><span style="color:#003580">✓</span> Cadangan <strong>Induksi</strong></div>
@@ -2186,16 +2256,7 @@ body { font-family: var(--font); background: var(--sidebar-bg); min-height: 100v
 
 
 
-      <!-- CTA buttons -->
-      <div style="display:flex;gap:10px;width:100%">
-        <a href="https://wa.me/60146701157" target="_blank" style="flex:1;display:flex;align-items:center;justify-content:center;gap:8px;background:linear-gradient(135deg,#1ebe6e,#25d366);color:#fff;text-decoration:none;padding:12px;border-radius:12px;font-size:13px;font-weight:700;font-family:var(--font);letter-spacing:0.3px">
-          <span style="font-size:18px">💬</span> WhatsApp
-        </a>
-      
-<!--
-  <a href="https://t.me/PLACEHOLDER_TELEGRAM" target="_blank" style="flex:1;display:flex;align-items:center;justify-content:center;gap:8px;background:linear-gradient(135deg,#0088cc,#29b5e8);color:#fff;text-decoration:none;padding:12px;border-radius:12px;font-size:13px;font-weight:700;font-family:var(--font);letter-spacing:0.3px">
-          <span style="font-size:18px">✈️</span> Telegram
-        </a> -->
+     
       </div>
 
     </div>
@@ -2303,7 +2364,8 @@ body { font-family: var(--font); background: var(--sidebar-bg); min-height: 100v
       <div style="margin: 18px 0 0; border-top: 1px solid var(--border);"></div>
 
       <!-- BBM -->
-      <div class="pilihan-section-title" style="margin-top:18px">BBM (Bahan Bantu Mengajar)</div>
+      <div class="pilihan-section-title" style="margin-top:18px"><p>BBM (Bahan Bantu Mengajar)</p><p>BBB (Bahan Bantu Belajar)</p></div>
+
       <div id="pilihan-err-bbm" style="display:none;color:#e53e3e;font-size:12px;font-weight:600;margin-bottom:8px;background:rgba(229,62,62,0.08);padding:7px 10px;border-radius:7px;border:1px solid rgba(229,62,62,0.2);"></div>
       <div class="pilihan-options-grid" id="bbm-chips"></div>
       <div class="pilihan-custom-area">
@@ -2324,7 +2386,7 @@ body { font-family: var(--font); background: var(--sidebar-bg); min-height: 100v
         <label>Lain-lain (maksimum 3 kesemuanya, satu per baris):</label>
         <textarea class="pilihan-custom-input" id="nilai-custom" rows="2"
           style="resize:vertical;min-height:60px;"
-          placeholder="Taip Nilai lain di sini..."
+          placeholder="Taip Nilai Murni lain di sini..."
           oninput="onPilihanCustomInput('nilai', this.value)"></textarea>
       </div>
 
@@ -3347,8 +3409,8 @@ sp:`SA 3.2.3 Mengumpul objek mengikut ciri yang dikenalpasti
 ];
 // @@RPT_END@@
 // ── STATE ─────────────────────────────────────────────────
-let skList = [];
-let spList = [];
+let skList = '';
+let spList = '';
 let temaData = [];
 let rptData = [...EMBEDDED_RPT]; // pre-loaded from embedded data
 let jadualData = {}; // { 'Isnin': [{masa:'8:00-9:00', subject:'Bahasa Malaysia'}, ...], ... }
@@ -3484,8 +3546,8 @@ function loadState() {
       }
       applySettings();
     }
-    if (state.skList) { skList = state.skList; renderSkSpList(); }
-    if (state.spList) { spList = state.spList; renderSkSpList(); }
+    if (state.skList !== undefined) { skList = typeof state.skList === 'string' ? state.skList : (Array.isArray(state.skList) ? state.skList.map(i => i.text).join('\n') : ''); renderSkSpList(); }
+    if (state.spList !== undefined) { spList = typeof state.spList === 'string' ? state.spList : (Array.isArray(state.spList) ? state.spList.map(i => i.text).join('\n') : ''); renderSkSpList(); }
     if (state.temaData) {
       temaData = state.temaData.map(item => ({
         ...item,
@@ -3645,8 +3707,8 @@ function padamKandungan() {
   updateWeekStepper();
 
   // Clear SK and SP lists
-  skList = [];
-  spList = [];
+  skList = '';
+  spList = '';
   renderSkSpList();
 
   // Clear pilihan selections
@@ -3719,8 +3781,8 @@ function loadRphJson(input) {
       if (data.formValues) setFormValues(data.formValues);
 
       // Restore SK / SP lists
-      if (Array.isArray(data.skList)) { skList = data.skList; renderSkSpList(); }
-      if (Array.isArray(data.spList)) { spList = data.spList; renderSkSpList(); }
+      if (data.skList !== undefined) { skList = typeof data.skList === 'string' ? data.skList : (Array.isArray(data.skList) ? data.skList.map(i => i.text).join('\n') : ''); renderSkSpList(); }
+      if (data.spList !== undefined) { spList = typeof data.spList === 'string' ? data.spList : (Array.isArray(data.spList) ? data.spList.map(i => i.text).join('\n') : ''); renderSkSpList(); }
 
       // Restore pilihan (chip selections)
       if (data.pilihanState) {
@@ -4278,15 +4340,13 @@ function renderSkSpList() {
 function renderList(containerId, list, type) {
   const container = document.getElementById(containerId);
   
-  // Always show a textarea — pre-filled if items exist, empty if not
-  const combinedText = list.map(item => item.text).join('\n\n');
   const placeholder = type === 'sk'
     ? 'Taip Standard Kandungan di sini...'
     : 'Taip Standard Pembelajaran di sini...';
 
   container.innerHTML = `
     <div class="sk-sp-item">
-      <textarea class="sk-sp-edit-textarea" placeholder="${placeholder}" oninput="updateAllItems('${type}', this.value)">${combinedText}</textarea>
+      <textarea class="sk-sp-edit-textarea" placeholder="${placeholder}" oninput="updateAllItems('${type}', this.value)">${list.replace(/@@SK_SP@@/g, '\n')}</textarea>
       <div class="sk-sp-actions">
         <button class="btn-clear" onclick="clearAllItems('${type}')" title="Kosongkan semua">🗑 Kosongkan</button>
       </div>
@@ -4295,18 +4355,13 @@ function renderList(containerId, list, type) {
 }
 
 function updateAllItems(type, newValue) {
-  const list = type === 'sk' ? skList : spList;
-  
-  // Split by double line breaks (paragraphs)
-  const items = newValue.split('\n\n').filter(text => text.trim());
-  
-  // Update the list
+  // Convert newlines from textarea back to internal @@SK_SP@@ boundary markers
+  const internal = newValue.replace(/\n/g, '@@SK_SP@@');
   if (type === 'sk') {
-    skList = items.map(text => ({ text: text.trim(), subject: list[0]?.subject || '' }));
+    skList = internal;
   } else {
-    spList = items.map(text => ({ text: text.trim(), subject: list[0]?.subject || '' }));
+    spList = internal;
   }
-  
   saveState();
 }
 
@@ -4338,15 +4393,14 @@ function fallbackCopy(text, cb) {
 }
 
 function copyAllItems(type) {
-  const list = type === 'sk' ? skList : spList;
-  const text = list.map(item => item.text).join('\n\n');
-  if (!text.trim()) return;
-  copyToClipboard(text);
+  const raw = type === 'sk' ? skList : spList;
+  if (!raw.trim()) return;
+  copyToClipboard(raw.replace(/@@SK_SP@@/g, '\n'));
 }
 
 function copySkSp() {
-  const skText = skList.map(i => i.text).join('\n\n');
-  const spText = spList.map(i => i.text).join('\n\n');
+  const skText = skList.replace(/@@SK_SP@@/g, '\n');
+  const spText = spList.replace(/@@SK_SP@@/g, '\n');
   const parts = [];
   if (skText.trim()) parts.push('SK:\n' + skText);
   if (spText.trim()) parts.push('SP:\n' + spText);
@@ -4359,9 +4413,9 @@ function clearAllItems(type) {
   if (!confirm(`Kosongkan semua ${type.toUpperCase()}?`)) return;
   
   if (type === 'sk') {
-    skList = [];
+    skList = '';
   } else {
-    spList = [];
+    spList = '';
   }
   
   renderSkSpList();
@@ -4529,14 +4583,31 @@ function selectRptCell(cell, type, idx) {
 
   cell.classList.toggle('cell-selected');
   const isSelected = cell.classList.contains('cell-selected');
-  const list = type === 'sk' ? skList : spList;
-  const item = { text, subject: row.subject };
 
+  // Items in skList/spList are separated by @@SK_SP@@ internally.
+  // Multi-line item text (containing \n) is tracked correctly as one unit.
   if (isSelected) {
-    if (!list.find(i => i.text === text)) list.push(item);
+    if (type === 'sk') {
+      const items = skList ? skList.split('@@SK_SP@@') : [];
+      if (!items.includes(text)) items.push(text);
+      skList = items.join('@@SK_SP@@');
+    } else {
+      const items = spList ? spList.split('@@SK_SP@@') : [];
+      if (!items.includes(text)) items.push(text);
+      spList = items.join('@@SK_SP@@');
+    }
   } else {
-    const pos = list.findIndex(i => i.text === text);
-    if (pos !== -1) list.splice(pos, 1);
+    if (type === 'sk') {
+      const items = skList ? skList.split('@@SK_SP@@') : [];
+      const i = items.indexOf(text);
+      if (i !== -1) items.splice(i, 1);
+      skList = items.join('@@SK_SP@@');
+    } else {
+      const items = spList ? spList.split('@@SK_SP@@') : [];
+      const i = items.indexOf(text);
+      if (i !== -1) items.splice(i, 1);
+      spList = items.join('@@SK_SP@@');
+    }
   }
   renderSkSpList();
   saveState();
@@ -4699,20 +4770,14 @@ function generateRPH() {
   }
 
   // ── Standard Kandungan (SK) ───────────────────────────────────────────────
-  // Starts at FIELDS.f18.y = 869. Each item in skList draws below the previous.
-  // Font: FONT_SK (slider-controlled). To change starting y, edit FIELDS.f18.y above.
+  // Drawn as plain string. Font: FONT_SK (slider-controlled).
   let skY = FIELDS.f18.y;
-  skList.forEach((item, i) => {
-    skY = drawWrappedText(item.text, FIELDS.f18.x, skY, WRAP_MAX_W, FONT_SK, 8) + LINE_HEIGHT;
-  });
+  if (skList.trim()) drawWrappedText(skList.replace(/@@SK_SP@@/g, '\n'), FIELDS.f18.x, skY, WRAP_MAX_W, FONT_SK, 8);
 
   // ── Standard Pembelajaran (SP) ────────────────────────────────────────────
-  // Starts at FIELDS.f20.y = 1173. Same pattern as SK above.
-  // Font: FONT_SP (slider-controlled). To change starting y, edit FIELDS.f20.y above.
+  // Drawn as plain string. Font: FONT_SP (slider-controlled).
   let spY = FIELDS.f20.y;
-  spList.forEach((item, i) => {
-    spY = drawWrappedText(item.text, FIELDS.f20.x, spY, WRAP_MAX_W, FONT_SP, 8) + LINE_HEIGHT;
-  });
+  if (spList.trim()) drawWrappedText(spList.replace(/@@SK_SP@@/g, '\n'), FIELDS.f20.x, spY, WRAP_MAX_W, FONT_SP, 8);
   
   // Set Induksi
   if (val('inp-set-induksi')) {
@@ -5224,8 +5289,8 @@ const PILIHAN_OPTIONS = {
   'kbat':      ['Mencipta','Menilai','Menganalisis','Mengaplikasi','Memahami','Mengingati'],
   'penilaian': ['Latihan bertulis','Hasil Kerja','Kuiz','Pembentangan','Soal Jawab','Pemerhatian / lisan / soal jawab','Lembaran kerja','Drama','Projek'],
   'pnp':       [],
-  'bbm':       ['Buku aktiviti','Buku latihan','Buku Cerita','Kad imbas','Audio','Video','Lembaran kerja','Kon','Papan putih','Kertas warna','Plastisin','Permainan Blok','Slide Power Point'],
-  'nilai':     ['Kerohanian','Kesyukuran','Keceriaan','Kreativiti','Disiplin','Kebersihan','Keyakinan','Keberanian','Tolong-menolong','Bertanggungjawab','Fokus','Kerjasama','Hormat-menghormati','Kasih sayang','Sopan-santun','Pemaaf','Rajin','Berdikari','Kejujuran','Amanah',],
+  'bbm':       ['Buku aktiviti','Buku latihan','Buku Cerita','Kad imbas','Audio','Video','Lembaran kerja','Kon','Papan putih','Kertas warna','Warna air','Plastisin','Permainan Blok','Bola','Slide Power Point','Bunting'],
+  'nilai':     ['Kerohanian','Kesyukuran','Keceriaan','Kreativiti','Disiplin','Kebersihan','Keyakinan','Ingin tahu','Keberanian','Tolong-menolong','Bertanggungjawab','Fokus','Kerjasama','Hormat-menghormati','Kasih sayang','Sopan-santun','Pemaaf','Rajin','Berdikari','Kejujuran','Amanah',],
 };
 
 // Max selections per section (chips + typed lines combined). 0 = unlimited.
@@ -5958,8 +6023,8 @@ const WARN_FIELDS = [
   { key: 'tema',         label: 'Tema belum diisi',                     check: () => !val('inp-tema') },
   { key: 'matapelajaran',label: 'Mata pelajaran belum diisi',           check: () => !val('inp-matapelajaran') },
   { key: 'fokus',        label: 'Fokus / Tajuk belum diisi',            check: () => !val('inp-fokus') },
-  { key: 'sk',           label: 'Standard Kandungan (SK) belum diisi',  check: () => skList.length === 0 },
-  { key: 'sp',           label: 'Standard Pembelajaran (SP) belum diisi',check: () => spList.length === 0 },
+  { key: 'sk',           label: 'Standard Kandungan (SK) belum diisi',  check: () => !skList.trim() },
+  { key: 'sp',           label: 'Standard Pembelajaran (SP) belum diisi',check: () => !spList.trim() },
   { key: 'objektif',     label: 'Objektif belum diisi',                 check: () => !val('inp-objektif') },
   { key: 'induksi',      label: 'Set Induksi belum diisi',              check: () => !val('inp-set-induksi') },
   { key: 'aktiviti',     label: 'Aktiviti belum diisi',                 check: () => !val('inp-aktiviti') },
