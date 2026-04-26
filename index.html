@@ -13,6 +13,7 @@
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
+  --background-container: #f6feff;
   --teal: #1a5fad;
   --teal-light: #2a7fd4;
   --teal-dark: #002060;
@@ -23,7 +24,7 @@
   --border: #d8e4df;
   --text: #1a2e29;
   --text-muted: #5a7a72;
-  --input-bg: #f7faf8;
+  --input-bg: #fff;
   --tab-inactive: #c5deff;
   --danger: #e53e3e;
   --success: #0d7a6b;
@@ -962,7 +963,7 @@ input.pilihan-custom-input {
       </div>
 
       <!-- Day tabs box -->
-      <div style="background:#fdf8f2;border:1.5px solid rgba(26,95,173,0.2);border-radius:14px;padding:14px 16px;margin-bottom:10px;">
+      <div style="background: var(--background-container);border:1.5px solid rgba(26,95,173,0.2);border-radius:14px;padding:14px 16px;margin-bottom:10px;">
         <div style="display:flex;align-items:flex-start;gap:16px;flex-wrap:wrap">
           <!-- Left: title + day tabs -->
           <div style="flex:0 0 auto">
