@@ -13,7 +13,7 @@
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  --background-container: #f6fffc;
+  --background-container: #fff3ec;
   --teal: #1a5fad;
   --teal-light: #2a7fd4;
   --teal-dark: #002060;
@@ -143,7 +143,7 @@ body { font-family: var(--font); background: #fff; min-height: 100vh; color: var
 .section-title {
   font-size: 10px; font-weight: 700; text-transform: uppercase;
   letter-spacing: 1px; color: #1a5fad;
-  margin: 20px 0 10px; padding-bottom: 5px;
+  margin: 20px 0 4px; padding-bottom: 2px;
 }
 .section-title:first-child { margin-top: 0; }
 
@@ -182,6 +182,7 @@ body { font-family: var(--font); background: #fff; min-height: 100vh; color: var
   font-family: var(--font); background: var(--input-bg);
   transition: border 0.15s, box-shadow 0.15s;
   line-height: 1.4; box-sizing: border-box; min-width: 0;
+  height: 34px;
 }
 .info-row input:focus, .info-row select:focus {
   outline: none; border-color: #1a5fad;
@@ -190,11 +191,11 @@ body { font-family: var(--font); background: #fff; min-height: 100vh; color: var
 }
 .info-row { min-width: 0; }
 .info-row label.row-label {
-  flex: 0 0 110px; font-size: 13px; font-weight: 600; color: var(--text);
+  flex: 0 0 70px; font-size: 13px; font-weight: 600; color: var(--text);
 }
 @media (max-width: 480px) {
   .info-row label.row-label {
-    flex: 0 0 80px; font-size: 11px;
+    flex: 0 0 60px; font-size: 11px;
   }
 }
 .form-row-2 .form-row { flex: 1; }
@@ -1006,9 +1007,9 @@ input.pilihan-custom-input {
       </div>
 
       <!-- ── INFO CONTAINER ── -->
-      <div style="background:var(--background-container);border:1.5px solid rgba(26,95,173,0.2);border-radius:14px;padding:16px;margin-bottom:14px;display:flex;flex-direction:column;gap:14px;box-sizing:border-box;overflow:hidden;">
+      <div style="background:var(--background-container);border:1.5px solid rgba(26,95,173,0.2);border-radius:14px;padding:16px;margin-bottom:14px;display:flex;flex-direction:column;gap:8px;box-sizing:border-box;overflow:hidden;">
 
-        <div class="section-title" style="margin-top:0;margin-bottom:4px">Maklumat Slot</div>
+        <div class="section-title" style="margin-top:0;margin-bottom:4px;text-align:center">Maklumat Slot</div>
 
         <!-- Tema + stepper -->
         <div class="info-row" style="display:flex;align-items:center;gap:10px;min-width:0">
@@ -1032,7 +1033,7 @@ input.pilihan-custom-input {
         <!-- Minggu edit on its own line -->
         <div class="info-row" style="display:flex;align-items:center;gap:10px;min-width:0">
           <label class="row-label">Minggu</label>
-          <input type="number" id="inp-minggu" min="1" max="52" placeholder="—" style="flex:1;min-width:0" />
+          <input type="number" id="inp-minggu" min="1" max="52" placeholder="—" style="flex:0 0 calc((100% - 70px) / 7);min-width:0" />
         </div>
 
         <!-- Slot Masa -->
@@ -1056,13 +1057,17 @@ input.pilihan-custom-input {
         </div>
 
         <!-- Kehadiran + Jumlah -->
-        <div class="info-row" style="display:flex;align-items:center;gap:10px;min-width:0">
-          <label class="row-label">Kehadiran</label>
-          <input type="text" id="inp-hadir" placeholder="" style="flex:1;min-width:0" />
-          <label style="font-size:13px;font-weight:600;color:var(--text);white-space:nowrap;flex-shrink:0">Jumlah</label>
-          <input type="text" id="inp-jumlah" placeholder="" style="flex:1;min-width:0" />
+        <div style="display:flex;flex-direction:column;gap:4px;min-width:0">
+          <div class="info-row" style="display:flex;align-items:center;gap:4px;min-width:0">
+            <label class="row-label" style="margin-right:6px">Kehadiran</label>
+            <input type="text" id="inp-hadir" placeholder="—" style="width:52px;flex:none;text-align:center" />
+            <label style="font-size:13px;font-weight:600;color:var(--text);white-space:nowrap;flex-shrink:0;margin:0 2px 0 6px">Jumlah</label>
+            <input type="text" id="inp-jumlah" placeholder="—" style="width:52px;flex:none;text-align:center" oninput="saveState()" />
+            <button class="font-stepper-btn" onclick="stepJumlah(-1)" style="width:32px;height:32px;font-size:16px;border-radius:7px;flex-shrink:0">−</button>
+            <button class="font-stepper-btn" onclick="stepJumlah(1)" style="width:32px;height:32px;font-size:16px;border-radius:7px;flex-shrink:0">+</button>
+          </div>
+          <p style="font-size:11px;color:var(--text-muted);margin:0;font-style:italic">💡 Kosongkan jika tidak perlu</p>
         </div>
-        <p style="font-size:11px;color:var(--text-muted);margin:0;font-style:italic">💡 Kosongkan jika tidak perlu</p>
 
         <!-- Mata Pelajaran -->
         <div class="info-row" style="display:flex;align-items:center;gap:10px;min-width:0">
@@ -1075,7 +1080,7 @@ input.pilihan-custom-input {
       <!-- ── KANDUNGAN RPH CONTAINER ── -->
       <div id="kandungan-rph" style="background:var(--background-container);border:1.5px solid rgba(26,95,173,0.2);border-radius:14px;padding:16px;margin-bottom:14px;display:flex;flex-direction:column;gap:10px;box-sizing:border-box;overflow:hidden;">
 
-        <div class="section-title" style="margin-top:0;margin-bottom:4px">Kandungan RPH</div>
+        <div class="section-title" style="margin-top:0;margin-bottom:4px;text-align:center">Kandungan RPH</div>
 
         <!-- Tambah SK & SP from RPT button -->
         <div style="display:flex;justify-content:center">
@@ -1096,13 +1101,13 @@ input.pilihan-custom-input {
         <!-- SK -->
         <div class="form-row" style="margin:0">
           <div class="section-title" style="margin-top:0">Standard Kandungan (SK)</div>
-          <div class="sk-sp-list" id="sk-list"><div class="sk-sp-item" style="background:transparent;border:none;padding:0;margin:0;"><textarea class="sk-sp-edit-textarea" placeholder="Taip Standard Kandungan di sini..." oninput="updateAllItems('sk', this.value)"></textarea><div class="sk-sp-actions"><button class="btn-clear" onclick="clearAllItems('sk')">🗑 Kosongkan</button></div></div></div>
+          <div id="sk-list"></div>
         </div>
 
         <!-- SP -->
         <div class="form-row" style="margin:0">
           <div class="section-title" style="margin-top:0">Standard Pembelajaran (SP)</div>
-          <div class="sk-sp-list" id="sp-list"><div class="sk-sp-item" style="background:transparent;border:none;padding:0;margin:0;"><textarea class="sk-sp-edit-textarea" placeholder="Taip Standard Pembelajaran di sini..." oninput="updateAllItems('sp', this.value)"></textarea><div class="sk-sp-actions"><button class="btn-clear" onclick="clearAllItems('sp')">🗑 Kosongkan</button></div></div></div>
+          <div id="sp-list"></div>
         </div>
 
         <!-- Salin SK & SP button -->
@@ -3976,6 +3981,14 @@ function stepFont(type, delta) {
   updateFontSize(type, newVal);
 }
 
+function stepJumlah(delta) {
+  const inp = document.getElementById('inp-jumlah');
+  const current = parseInt(inp.value, 10);
+  const next = isNaN(current) ? (delta > 0 ? 1 : 0) : Math.max(0, current + delta);
+  inp.value = next;
+  saveState();
+}
+
 
 function clampFontInput(type, inp) {
   let v = parseInt(inp.value, 10);
@@ -3998,7 +4011,7 @@ function renderList(containerId, list, type) {
     : 'Taip Standard Pembelajaran di sini...';
 
   container.innerHTML = `
-    <div class="sk-sp-item">
+    <div class="sk-sp-item" style="background:transparent;border:none;padding:0;margin:0;">
       <textarea class="sk-sp-edit-textarea" placeholder="${placeholder}" oninput="updateAllItems('${type}', this.value)">${list.replace(/@@SK_SP@@/g, '\n')}</textarea>
       <div class="sk-sp-actions">
         <button class="btn-clear" onclick="clearAllItems('${type}')" title="Kosongkan semua">🗑 Kosongkan</button>
