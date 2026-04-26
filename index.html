@@ -272,7 +272,7 @@ body { font-family: var(--font); background: #fff; min-height: 100vh; color: var
 
 /* Subject info bar */
 #subject-info-bar {
-  background: #1c60ae;
+ background-color: rgba(28, 96, 174, 0.9);
   border: 1px solid rgba(26,95,173,0.2);
   border-radius: 10px; padding: 10px 13px; margin-bottom: 14px;
   font-size: 12px; color: #1a5fad; display: none;
@@ -1009,7 +1009,7 @@ input.pilihan-custom-input {
       <!-- ── INFO CONTAINER ── -->
       <div style="background:var(--background-container);border:1.5px solid rgba(26,95,173,0.2);border-radius:14px;padding:16px;margin-bottom:14px;display:flex;flex-direction:column;gap:8px;box-sizing:border-box;overflow:hidden;">
 
-        <div class="section-title" style="margin-top:0;margin-bottom:4px;text-align:center;font-size:12px;">Maklumat Slot</div>
+        <div class="section-title" style="margin-top:0;margin-bottom:4px;text-align:center;font-size:12px;">Maklumat Am</div>
 
         <!-- Tema + stepper -->
         <div class="info-row" style="display:flex;align-items:center;gap:10px;min-width:0">
@@ -1060,15 +1060,16 @@ input.pilihan-custom-input {
         <div style="display:flex;flex-direction:column;gap:4px;min-width:0">
           <div class="info-row" style="display:flex;align-items:center;gap:4px;min-width:0">
             <label class="row-label" style="margin-right:6px">Kehadiran</label>
-            <input type="text" id="inp-hadir" placeholder="—" style="width:100px;flex:none;text-align:center" />
+            <input type="text" id="inp-hadir" style="width:100px;flex:none;text-align:center" />
           </div>
+<p style="font-size:11px;color:var(--text-muted);margin:0;font-style:italic">💡 Kosongkan jika tidak perlu</p>
           <div class="info-row" style="display:flex;align-items:center;gap:4px;min-width:0">
             <label class="row-label" style="margin-right:6px">Jumlah</label>
             <input type="text" id="inp-jumlah" placeholder="—" style="width:100px;flex:none;text-align:center" oninput="saveState()" />
             <button class="font-stepper-btn" onclick="stepJumlah(-1)" style="width:32px;height:32px;font-size:16px;border-radius:7px;flex-shrink:0">−</button>
             <button class="font-stepper-btn" onclick="stepJumlah(1)" style="width:32px;height:32px;font-size:16px;border-radius:7px;flex-shrink:0">+</button>
           </div>
-          <p style="font-size:11px;color:var(--text-muted);margin:0;font-style:italic">💡 Kosongkan jika tidak perlu</p>
+         
         </div>
 
         <!-- Mata Pelajaran -->
