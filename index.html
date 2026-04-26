@@ -898,6 +898,41 @@ input.pilihan-custom-input {
 </style>
 </head>
 <body>
+
+<!-- falling books background -->
+<div id="falling-books" aria-hidden="true" style="position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:-1;overflow:hidden;">
+  <span class="fbook" style="left:3%;animation-duration:28s;animation-delay:0s;font-size:1.2rem;">📘</span>
+  <span class="fbook" style="left:9%;animation-duration:34s;animation-delay:6s;font-size:1rem;">📗</span>
+  <span class="fbook" style="left:15%;animation-duration:25s;animation-delay:2s;font-size:1.4rem;">📕</span>
+  <span class="fbook" style="left:22%;animation-duration:31s;animation-delay:11s;font-size:1rem;">📙</span>
+  <span class="fbook" style="left:28%;animation-duration:27s;animation-delay:4s;font-size:1.2rem;">📗</span>
+  <span class="fbook" style="left:35%;animation-duration:36s;animation-delay:14s;font-size:0.9rem;">📘</span>
+  <span class="fbook" style="left:41%;animation-duration:29s;animation-delay:7s;font-size:1.1rem;">📙</span>
+  <span class="fbook" style="left:47%;animation-duration:33s;animation-delay:1s;font-size:1.3rem;">📕</span>
+  <span class="fbook" style="left:53%;animation-duration:26s;animation-delay:9s;font-size:1rem;">📗</span>
+  <span class="fbook" style="left:59%;animation-duration:38s;animation-delay:5s;font-size:0.9rem;">📘</span>
+  <span class="fbook" style="left:65%;animation-duration:30s;animation-delay:16s;font-size:1.2rem;">📙</span>
+  <span class="fbook" style="left:71%;animation-duration:24s;animation-delay:3s;font-size:1rem;">📕</span>
+  <span class="fbook" style="left:77%;animation-duration:35s;animation-delay:12s;font-size:1.4rem;">📗</span>
+  <span class="fbook" style="left:83%;animation-duration:28s;animation-delay:8s;font-size:1.1rem;">📘</span>
+  <span class="fbook" style="left:88%;animation-duration:32s;animation-delay:18s;font-size:0.9rem;">📙</span>
+  <span class="fbook" style="left:93%;animation-duration:29s;animation-delay:10s;font-size:1.2rem;">📕</span>
+  <span class="fbook" style="left:98%;animation-duration:37s;animation-delay:15s;font-size:1rem;">📗</span>
+</div>
+<style>
+.fbook {
+  position: absolute;
+  top: -60px;
+  opacity: 0.07;
+  animation: bookfall linear infinite;
+  will-change: transform;
+}
+@keyframes bookfall {
+  0%   { transform: translateY(0) rotate(0deg); }
+  100% { transform: translateY(110vh) rotate(25deg); }
+}
+</style>
+<!-- /falling books -->
 <div id="app">
 
   <!-- ─── STICKY TOP (header + tabs) ─────────────── -->
@@ -1062,14 +1097,14 @@ input.pilihan-custom-input {
             <label class="row-label" style="margin-right:6px">Kehadiran</label>
             <input type="text" id="inp-hadir" style="width:100px;flex:none;text-align:center" />
           </div>
-<p style="font-size:11px;color:var(--text-muted);margin:0;font-style:italic">💡 Kosongkan jika tidak perlu</p>
+  <p style="font-size:11px;color:var(--text-muted);margin:0;font-style:italic">💡 Kosongkan jika tidak perlu</p>
           <div class="info-row" style="display:flex;align-items:center;gap:4px;min-width:0">
             <label class="row-label" style="margin-right:6px">Jumlah</label>
-            <input type="text" id="inp-jumlah" placeholder="—" style="width:100px;flex:none;text-align:center" oninput="saveState()" />
+            <input type="text" id="inp-jumlah" style="width:100px;flex:none;text-align:center" oninput="saveState()" />
             <button class="font-stepper-btn" onclick="stepJumlah(-1)" style="width:32px;height:32px;font-size:16px;border-radius:7px;flex-shrink:0">−</button>
             <button class="font-stepper-btn" onclick="stepJumlah(1)" style="width:32px;height:32px;font-size:16px;border-radius:7px;flex-shrink:0">+</button>
           </div>
-         
+        
         </div>
 
         <!-- Mata Pelajaran -->
@@ -3746,7 +3781,7 @@ function updateWeekStepper() {
   if (!label) return;
 
   if (temaData.length === 0) {
-    label.textContent = '— Tiada RPT —';
+    label.textContent = '— Tiada Tema —';
     label.classList.add('muted');
     prevBtn.disabled = true;
     nextBtn.disabled = true;
