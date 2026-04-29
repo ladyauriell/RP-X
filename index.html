@@ -1378,18 +1378,8 @@ input.pilihan-custom-input {
     <!-- ── TAB: RPH ─────────────────────────────── -->
     <div id="tab-rph" class="tab-panel active">
 
-      <!-- Padam + Load JSON buttons -->
+      <!-- Load JSON button -->
       <div style="display:flex;justify-content:center;gap:8px;margin-bottom:10px;background:#fff;padding:8px 0;border-radius:10px">
-        <button onclick="padamKandungan()" style="
-          padding:8px 20px;
-          background:rgba(229,62,62,0.08); border:1.5px solid rgba(229,62,62,0.35);
-          border-radius:15px; color:#e53e3e; font-size:11px; font-weight:700;
-          font-family:var(--font); cursor:pointer; transition:all 0.15s;
-          display:flex; align-items:center; gap:5px;
-        " onmouseover="this.style.background='rgba(229,62,62,0.16)';this.style.borderColor='#e53e3e'"
-           onmouseout="this.style.background='rgba(229,62,62,0.08)';this.style.borderColor='rgba(229,62,62,0.35)'">
-          🗑 Padam
-        </button>
         <label style="
           padding:8px 16px;
           background:rgba(26,95,173,0.07); border:1.5px solid rgba(26,95,173,0.3);
@@ -1445,13 +1435,6 @@ input.pilihan-custom-input {
         <div id="subject-info-bar" style="margin-top:10px">
           <strong id="subject-info-name">—</strong>
         </div>
-      </div>
-
-      <!-- ── INFO CONTAINER ── -->
-      <div style="background:var(--background-container);border:1.5px solid rgba(26,95,173,0.2);border-radius:14px;padding:16px;margin-bottom:14px;display:flex;flex-direction:column;gap:8px;box-sizing:border-box;overflow:hidden;">
-
-        <div class="section-title" style="margin-top:0;margin-bottom:4px;text-align:center;font-size:12px;">Maklumat Am</div>
-
         <!-- Tema + stepper -->
         <div class="info-row" style="display:flex;align-items:center;gap:10px;min-width:0">
           <label class="row-label">Tema</label>
@@ -1471,11 +1454,32 @@ input.pilihan-custom-input {
           <input type="text" id="inp-tema" placeholder="Tema minggu ini" style="flex:1;min-width:0" />
         </div>
 
-        <!-- Minggu edit on its own line -->
+        <!-- Minggu -->
         <div class="info-row" style="display:flex;align-items:center;gap:10px;min-width:0">
           <label class="row-label">Minggu</label>
           <input type="number" id="inp-minggu" min="1" max="52" placeholder="—" style="flex:0 0 calc((100% - 70px) / 7);min-width:0" />
         </div>
+
+      </div>
+
+      <!-- Padam button -->
+      <div style="display:flex;justify-content:center;margin-bottom:10px;">
+        <button onclick="padamKandungan()" style="
+          padding:8px 20px;
+          background:rgba(229,62,62,0.08); border:1.5px solid rgba(229,62,62,0.35);
+          border-radius:15px; color:#e53e3e; font-size:11px; font-weight:700;
+          font-family:var(--font); cursor:pointer; transition:all 0.15s;
+          display:flex; align-items:center; gap:5px;
+        " onmouseover="this.style.background='rgba(229,62,62,0.16)';this.style.borderColor='#e53e3e'"
+           onmouseout="this.style.background='rgba(229,62,62,0.08)';this.style.borderColor='rgba(229,62,62,0.35)'">
+          🗑 Padam
+        </button>
+      </div>
+
+      <!-- ── INFO CONTAINER ── -->
+      <div style="background:var(--background-container);border:1.5px solid rgba(26,95,173,0.2);border-radius:14px;padding:16px;margin-bottom:14px;display:flex;flex-direction:column;gap:8px;box-sizing:border-box;overflow:hidden;">
+
+        <div class="section-title" style="margin-top:0;margin-bottom:4px;text-align:center;font-size:12px;">Maklumat Am</div>
 
         <!-- Slot Masa -->
         <div class="info-row" style="display:flex;align-items:center;gap:10px;min-width:0">
@@ -2686,6 +2690,33 @@ function normaliseDay(raw) {
   return DAY_NORM[String(raw || '').trim().toLowerCase()] || String(raw || '').trim();
 }
 
+const SUBJECT_NORM = {
+  'english'                        : 'Bahasa Inggeris',
+  'bi'                             : 'Bahasa Inggeris',
+  'bahasa inggeris'                : 'Bahasa Inggeris',
+  'bm'                             : 'Bahasa Melayu',
+  'bahasa malaysia'                : 'Bahasa Melayu',
+  'bahasa melayu'                  : 'Bahasa Melayu',
+  'matematik'                      : 'Matematik',
+  'math'                           : 'Matematik',
+  'maths'                          : 'Matematik',
+  'pendidikan islam'               : 'Pendidikan Islam',
+  'pi'                             : 'Pendidikan Islam',
+  'kreativiti dan estetika'        : 'Kreativiti dan Estetika',
+  'kreativiti'                     : 'Kreativiti dan Estetika',
+  'estetika'                       : 'Kreativiti dan Estetika',
+  'sains awal'                     : 'Sains Awal',
+  'sains'                          : 'Sains Awal',
+  'kajian tempatan'                : 'Kajian Tempatan',
+  'kt'                             : 'Kajian Tempatan',
+  'pendidikan jasmani'             : 'Pendidikan Jasmani dan Kesihatan',
+  'pjk'                            : 'Pendidikan Jasmani dan Kesihatan',
+  'pendidikan jasmani dan kesihatan': 'Pendidikan Jasmani dan Kesihatan',
+};
+function normaliseSubject(raw) {
+  return SUBJECT_NORM[String(raw || '').trim().toLowerCase()] || String(raw || '').trim();
+}
+
 // @@RPT_START@@
 // ── EMBEDDED RPT DATA (DEMO) ─────────────────────────────────────────────
 // RPT 2026 – Fasa 1 & 2 sahaja · semua subjek · umur 5 & 6 tahun
@@ -3792,8 +3823,8 @@ function saveSettings() {
 function padamKandungan() {
   if (!confirm('Padam semua kandungan RPH? (Logo, jadual, senarai kelas dan tema dalam Tetapan tidak akan terpadam)')) return;
 
-  // Clear ALL RPH input fields
-  ['inp-tarikh','inp-minggu','inp-tema','inp-masa','inp-matapelajaran',
+  // Clear RPH input fields (tarikh, minggu, tema preserved)
+  ['inp-masa','inp-matapelajaran',
    'inp-hadir','inp-jumlah','inp-fokus','inp-objektif','inp-set-induksi','inp-aktiviti'].forEach(id => {
     const el = document.getElementById(id);
     if (el) el.value = '';
@@ -3803,10 +3834,6 @@ function padamKandungan() {
   const hariEl = document.getElementById('inp-hari');
   if (hariEl) hariEl.value = '';
 
-  // Reset tema display
-  const temaDisplay = document.getElementById('tema-display');
-  if (temaDisplay) temaDisplay.textContent = '';
-
   // Reset masa select to default
   const masaSel = document.getElementById('inp-masa-select');
   if (masaSel) masaSel.selectedIndex = 0;
@@ -3814,10 +3841,6 @@ function padamKandungan() {
   // Reset kelas text to default
   const kelasText = document.getElementById('inp-kelas-text');
   if (kelasText) kelasText.value = '';
-
-  // Reset week stepper
-  currentWeekIdx = -1;
-  updateWeekStepper();
 
   // Clear SK and SP lists
   skList = '';
@@ -4339,7 +4362,7 @@ function loadJadualExcel(input) {
       day = normaliseDay(day);
       masaMula = String(masaMula || '').trim();
       masaTamat = String(masaTamat || '').trim();
-      subject = String(subject || '').trim();
+      subject = normaliseSubject(subject);
       kelas = String(kelas || '').trim();
       jumlah = String(jumlah || '').trim();
       if (!day || !subject) return;
