@@ -1378,11 +1378,6 @@ input.pilihan-custom-input {
     <!-- ── TAB: RPH ─────────────────────────────── -->
     <div id="tab-rph" class="tab-panel active">
 
-<!-- Kemaskini notice -->
-<div style="background:rgba(229,62,62,0.07);border:1.5px solid rgba(229,62,62,0.3);border-radius:10px;padding:8px 12px;margin-bottom:10px;font-size:11px;color:#c0392b;font-family:var(--font);line-height:1.5;">
-  <strong>Kemaskini:</strong> Tukar <code>English</code> kepada <code>Bahasa Inggeris</code> dalam jadual Excel anda, kemudian muat naik semula.
-</div>
-		
       <!-- Load JSON button -->
       <div style="display:flex;justify-content:center;gap:8px;margin-bottom:10px;background:#fff;padding:8px 0;border-radius:10px">
         <label style="
@@ -3835,9 +3830,7 @@ function padamKandungan() {
     if (el) el.value = '';
   });
 
-  // Reset hari (readonly field)
-  const hariEl = document.getElementById('inp-hari');
-  if (hariEl) hariEl.value = '';
+  // inp-hari preserved (needed for slot numbering in filename)
 
   // Reset masa select to default
   const masaSel = document.getElementById('inp-masa-select');
@@ -3887,6 +3880,7 @@ function padamKandungan() {
       syncToMobileCanvas();
     }
   }
+  updateWarnBadge();
 }
 
 // ── RPH JSON SAVE / LOAD ──────────────────────────────────
@@ -6209,9 +6203,7 @@ function getEmptyFields() {
 function updateWarnBadge() {
   const empty = getEmptyFields();
   const badge = document.getElementById('warn-badge');
-  const countEl = document.getElementById('warn-count');
-  if (!badge || !countEl) return;
-  countEl.textContent = empty.length;
+  if (!badge) return;
   if (empty.length === 0) {
     badge.classList.add('all-ok');
     badge.innerHTML = '✓';
