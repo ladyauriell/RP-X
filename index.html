@@ -2224,7 +2224,7 @@ input.pilihan-custom-input {
       <div style="border:1px solid rgba(0,53,128,0.15);border-radius:14px;margin-bottom:16px;width:100%;text-align:center">
         <!-- Top: title + price -->
         <div style="background:rgba(0,53,128,0.08);padding:16px 16px 14px;border-radius:13px 13px 0 0">
-          <div style="font-size:25px;font-weight:800;color:#003580;line-height:1">Pelan Penuh</div>
+          <div style="font-size:25px;font-weight:800;color:#003580;line-height:1">Pelan Standard</div>
           <div style="font-size:48px;font-weight:800;color:#003580;line-height:1">RM40</div>
           <div style="font-size:14px;color:var(--text-muted);margin-top:4px">/ untuk tahun 2026</div>
  <div style="font-size:14px;color:var(--text-muted);margin-top:4px">(bukan langganan bulanan)</div>
@@ -3911,6 +3911,9 @@ function loadRphJson(input) {
   reader.onload = e => {
     try {
       const data = JSON.parse(e.target.result);
+
+      // Read _owner from Standard/Pro JSON — used for canvas watermark
+      window.RPX_BUYER_FULLNAME = (data._owner && data._owner.trim()) ? data._owner.trim() : '';
 
       // Populate form fields
       if (data.formValues) setFormValues(data.formValues);
@@ -5627,6 +5630,16 @@ function drawStaticLabels() {
   dc.fillStyle = '#000';
   dc.textAlign = 'left';
 
+  // ── Buyer name watermark — drawn if JSON was from Standard/Pro ──
+  if (window.RPX_BUYER_FULLNAME) {
+    dc.save();
+    dc.font = '28px ' + FONT_FAMILY;
+    dc.fillStyle = 'rgba(69,69,69,1)';
+    dc.textAlign = 'left';
+    dc.fillText('Dibuat oleh ' + window.RPX_BUYER_FULLNAME, 1997, 174);
+    dc.restore();
+  }
+
   // ── Left column row labels ────────────────────────────────────
   dc.font = 'bold ' + f + 'px ' + FONT_FAMILY;
   dc.fillText('Minggu:',          lx,   FIELDS.minggu.y);               // Statik Minggu:
@@ -5947,6 +5960,10 @@ function initAutoSave() {
 document.addEventListener('DOMContentLoaded', () => {
   // Restore saved state immediately — never wait on image loading for this
   loadState();
+  // Always render SK/SP containers — on fresh/empty load loadState() returns
+  // early (no localStorage) so renderSkSpList() inside it never fires.
+  // Calling it here unconditionally ensures the textareas are always present.
+  renderSkSpList();
   rebuildRptFilterDropdowns();
 
   // Wait for web fonts (Plus Jakarta Sans) to load before any canvas drawing
