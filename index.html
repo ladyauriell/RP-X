@@ -115,10 +115,6 @@ body { font-family: var(--font); background: #fff; min-height: 100vh; color: var
   #sidebar-header p { font-size: 11px; }
   #sidebar-header button[title="Mula di sini"] { padding: 6px 9px !important; font-size: 11px !important; }
   #sidebar-header button[title="Mula di sini"] span:first-child { font-size: 15px !important; }
-  /* Owner name: show short version on mobile */
-  #JPPMPAPRPXY::before { content: attr(data-short); }
-  #JPPMPAPRPXY { font-size: 0 !important; }
-  #JPPMPAPRPXY::before { font-size: 22px; color: #fff; font-weight: 700; }
 }
 
 /* Tab navigation */
@@ -982,21 +978,6 @@ input.pilihan-custom-input {
     <!-- ── TAB: RPH ─────────────────────────────── -->
     <div id="tab-rph" class="tab-panel active">
 
-      <!-- Load JSON button -->
-      <div style="display:flex;justify-content:center;gap:8px;margin-bottom:10px;background:#fff;padding:8px 0;border-radius:10px">
-        <label style="
-          padding:8px 16px;
-          background:rgba(26,95,173,0.07); border:1.5px solid rgba(26,95,173,0.3);
-          border-radius:15px; color:#1a5fad; font-size:11px; font-weight:700;
-          font-family:var(--font); cursor:pointer; transition:all 0.15s;
-          display:flex; align-items:center; gap:5px;
-        " onmouseover="this.style.background='rgba(26,95,173,0.14)';this.style.borderColor='#1a5fad'"
-           onmouseout="this.style.background='rgba(26,95,173,0.07)';this.style.borderColor='rgba(26,95,173,0.3)'">
-          📂 Buka JSON
-          <input type="file" accept=".json" style="display:none" onchange="loadRphJson(this)">
-        </label>
-      </div>
-
       <!-- Day tabs box -->
       <div style="background: var(--background-container);border:1.5px solid rgba(26,95,173,0.2);border-radius:14px;padding:14px 16px;margin-bottom:10px;">
         <div style="display:flex;align-items:flex-start;gap:16px;flex-wrap:wrap">
@@ -1066,10 +1047,10 @@ input.pilihan-custom-input {
 
       </div>
 
-      <!-- Padam button -->
-      <div style="display:flex;justify-content:center;margin-bottom:10px;">
+      <!-- Padam | Buka JSON | RPH Pro -->
+      <div style="display:flex;justify-content:center;align-items:center;gap:8px;margin-bottom:10px;">
         <button onclick="padamKandungan()" style="
-          padding:8px 20px;
+          padding:8px 14px;
           background:rgba(229,62,62,0.08); border:1.5px solid rgba(229,62,62,0.35);
           border-radius:15px; color:#e53e3e; font-size:11px; font-weight:700;
           font-family:var(--font); cursor:pointer; transition:all 0.15s;
@@ -1077,6 +1058,28 @@ input.pilihan-custom-input {
         " onmouseover="this.style.background='rgba(229,62,62,0.16)';this.style.borderColor='#e53e3e'"
            onmouseout="this.style.background='rgba(229,62,62,0.08)';this.style.borderColor='rgba(229,62,62,0.35)'">
           🗑 Padam
+        </button>
+        <label style="
+          padding:8px 14px;
+          background:rgba(26,95,173,0.07); border:1.5px solid rgba(26,95,173,0.3);
+          border-radius:15px; color:#1a5fad; font-size:11px; font-weight:700;
+          font-family:var(--font); cursor:pointer; transition:all 0.15s;
+          display:flex; align-items:center; gap:5px;
+        " onmouseover="this.style.background='rgba(26,95,173,0.14)';this.style.borderColor='#1a5fad'"
+           onmouseout="this.style.background='rgba(26,95,173,0.07)';this.style.borderColor='rgba(26,95,173,0.3)'">
+          📂 Buka JSON
+          <input type="file" accept=".json" style="display:none" onchange="loadRphJson(this)">
+        </label>
+        <button onclick="openProLibraryModal()" style="
+          padding:8px 14px;
+          background:linear-gradient(135deg,#d4a017,#f0c93a); border:1.5px solid #c49010;
+          border-radius:15px; color:#002060; font-size:11px; font-weight:700;
+          font-family:var(--font); cursor:pointer; transition:all 0.15s;
+          display:flex; align-items:center; gap:5px;
+          box-shadow:0 2px 8px rgba(212,160,23,0.3);
+        " onmouseover="this.style.opacity='0.85'"
+           onmouseout="this.style.opacity='1'">
+          ⭐ RPH Pro
         </button>
       </div>
 
@@ -1667,8 +1670,16 @@ input.pilihan-custom-input {
 
       <div style="border-left:3px solid #c0392b;padding:10px 14px;margin-bottom:45px;font-size:12px;color:#555;line-height:1.9;background:rgba(229,62,62,0.03);border-radius:0 8px 8px 0">
         <p>Aplikasi ini dilindungi di bawah <strong>Akta Hak Cipta 1987</strong>.</p><br>
-<p>Aplikasi ini adalah versi demo yang disediakan dalam bentuk laman web dan dihoskan secara dalam talian.</p><br><p> Sebarang <strong>penyalinan, pengubahsuaian, pengedaran, penjualan</strong>  dalam apa jua bentuk termasuklah (tetapi tidak terhad kepada) <strong>penghantaran fail, simpanan ke rangkaian hos, siaran media sosial</strong> atau kepada mana-mana pihak tanpa kebenaran adalah <strong>dilarang dan boleh dikenakan tindakan undang-undang</strong>. </p><br>
-<p> Hanya pautan demo dibenarkan untuk dikongsi. Sebarang perkongsian versi penuh adalah melanggar Akta ini.</p>
+
+<p>Penggunaan Aplikasi RP-X ini adalah untuk kegunaan khas individu bernama</p><br>
+<p><strong id="rpx-buyer-fullname">Nama Pengguna</strong></p><br>
+ <p style="margin-bottom:45px"> dengan menggunakan <em>Lesen Peribadi</em> dan <em>Lesen Persendirian</em>.</p> 
+
+
+
+<p>Aplikasi ini disediakan dalam bentuk laman web dan dihoskan secara dalam talian.</p>
+<p> Sebarang <strong>penyalinan, pengubahsuaian, pengedaran, penjualan</strong>  dalam apa jua bentuk termasuklah (tetapi tidak terhad kepada) <strong>penghantaran fail, simpanan ke rangkaian hos, siaran media sosial</strong> atau kepada mana-mana pihak tanpa kebenaran adalah <strong>dilarang dan boleh dikenakan tindakan undang-undang</strong>. </p><br>
+<p> Hanya pautan demo dibenarkan untuk dikongsi. Sebarang perkongsian versi selain demo adalah melanggar Akta ini.</p>
 </div>
 
     
@@ -1828,7 +1839,7 @@ input.pilihan-custom-input {
       <div style="border:1px solid rgba(0,53,128,0.15);border-radius:14px;margin-bottom:16px;width:100%;text-align:center">
         <!-- Top: title + price -->
         <div style="background:rgba(0,53,128,0.08);padding:16px 16px 14px;border-radius:13px 13px 0 0">
-          <div style="font-size:25px;font-weight:800;color:#003580;line-height:1">Pelan Penuh</div>
+          <div style="font-size:25px;font-weight:800;color:#003580;line-height:1">Pelan Standard</div>
           <div style="font-size:48px;font-weight:800;color:#003580;line-height:1">RM40</div>
           <div style="font-size:14px;color:var(--text-muted);margin-top:4px">/ untuk tahun 2026</div>
  <div style="font-size:14px;color:var(--text-muted);margin-top:4px">(bukan langganan bulanan)</div>
@@ -2114,6 +2125,52 @@ input.pilihan-custom-input {
     </div><!-- end pilihan-modal-body -->
     <div id="pilihan-modal-footer" style="padding:14px 20px; border-top:1px solid var(--border); background:#f8fbfa;">
       <button onclick="closePilihanModal()" style="width:100%; padding:16px; font-size:16px; font-weight:700; font-family:var(--font); background:linear-gradient(135deg,#002060,#003580); color:#fff; border:none; border-radius:12px; cursor:pointer; letter-spacing:0.3px; box-shadow:0 4px 14px rgba(0,53,128,0.3);" onmousedown="this.style.opacity='0.88';this.style.transform='scale(0.98)'" onmouseup="this.style.opacity='1';this.style.transform=''">✓ Gunakan</button>
+    </div>
+  </div>
+</div>
+
+<!-- ── PRO LIBRARY MODAL ─────────────────────────────────── -->
+<div id="pro-library-modal" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.55);z-index:200;align-items:center;justify-content:center;">
+  <div style="background:#fff;border-radius:18px;width:820px;max-width:96vw;max-height:88vh;display:flex;flex-direction:column;box-shadow:0 24px 64px rgba(0,0,0,0.28);overflow:hidden;">
+    <div style="background:linear-gradient(135deg,#002060,#003580);padding:18px 20px 14px;flex-shrink:0">
+      <div style="display:flex;align-items:center;justify-content:space-between">
+        <div>
+          <div style="font-size:16px;font-weight:800;color:#fff;letter-spacing:0.3px">⭐ Perpustakaan RPH Pro</div>
+          <div style="font-size:11px;color:rgba(255,255,255,0.7);margin-top:3px">RPH siap sedia — pilih dan muat terus ke kanvas</div>
+        </div>
+        <button onclick="closeProLibraryModal()" style="background:rgba(255,255,255,0.15);border:none;color:#fff;width:32px;height:32px;border-radius:8px;font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;">✕</button>
+      </div>
+      <div style="display:flex;gap:8px;margin-top:14px;flex-wrap:wrap;">
+        <select id="pro-filter-fasa" onchange="proLibraryFilter()" style="flex:1;min-width:90px;padding:7px 10px;border:1.5px solid rgba(255,255,255,0.3);border-radius:8px;font-size:12px;font-family:var(--font);background:rgba(255,255,255,0.12);color:#fff;font-weight:600;">
+          <option value="">Semua fasa</option>
+          <option value="1">Fasa 1</option>
+          <option value="2">Fasa 2</option>
+          <option value="3">Fasa 3</option>
+          <option value="4">Fasa 4</option>
+        </select>
+        <select id="pro-filter-age" onchange="proLibraryFilter()" style="flex:1;min-width:90px;padding:7px 10px;border:1.5px solid rgba(255,255,255,0.3);border-radius:8px;font-size:12px;font-family:var(--font);background:rgba(255,255,255,0.12);color:#fff;font-weight:600;">
+          <option value="">Semua umur</option>
+          <option value="5">Umur 5</option>
+          <option value="6">Umur 6</option>
+        </select>
+        <select id="pro-filter-subject" onchange="proLibraryFilter()" style="flex:1;min-width:110px;padding:7px 10px;border:1.5px solid rgba(255,255,255,0.3);border-radius:8px;font-size:12px;font-family:var(--font);background:rgba(255,255,255,0.12);color:#fff;font-weight:600;">
+          <option value="">Semua subjek</option>
+        </select>
+        <select id="pro-filter-week" onchange="proLibraryFilter()" style="flex:1;min-width:90px;padding:7px 10px;border:1.5px solid rgba(255,255,255,0.3);border-radius:8px;font-size:12px;font-family:var(--font);background:rgba(255,255,255,0.12);color:#fff;font-weight:600;">
+          <option value="">Semua minggu</option>
+        </select>
+      </div>
+    </div>
+    <div id="pro-library-body" style="flex:1;overflow-y:auto;padding:16px 18px;">
+      <div id="pro-library-status" style="text-align:center;padding:32px;color:var(--text-muted);font-size:13px;">
+        <div style="font-size:32px;margin-bottom:10px">📚</div>
+        Memuatkan senarai RPH...
+      </div>
+      <div id="pro-library-list" style="display:flex;flex-direction:column;gap:8px;"></div>
+    </div>
+    <div style="padding:12px 18px;border-top:1px solid var(--border);background:#f8fbfa;flex-shrink:0;">
+      <div id="pro-library-selected-info" style="font-size:11px;color:var(--text-muted);text-align:center;min-height:16px;"></div>
+      <button id="pro-library-load-btn" onclick="proLibraryLoad()" disabled style="width:100%;margin-top:8px;padding:14px;font-size:14px;font-weight:700;font-family:var(--font);border:none;border-radius:12px;cursor:not-allowed;background:#ccc;color:#fff;letter-spacing:0.3px;transition:all 0.15s;">Pilih RPH dahulu</button>
     </div>
   </div>
 </div>
@@ -3410,9 +3467,7 @@ function padamKandungan() {
     if (el) el.value = '';
   });
 
-  // Reset hari (readonly field)
-  const hariEl = document.getElementById('inp-hari');
-  if (hariEl) hariEl.value = '';
+  // inp-hari preserved (needed for slot numbering in filename)
 
   // Reset masa select to default
   const masaSel = document.getElementById('inp-masa-select');
@@ -3462,12 +3517,14 @@ function padamKandungan() {
       syncToMobileCanvas();
     }
   }
+  updateWarnBadge();
 }
 
 // ── RPH JSON SAVE / LOAD ──────────────────────────────────
 function saveRphJson() {
   const payload = {
     _version: 1,
+    _owner: window.RPX_BUYER_FULLNAME || '',
     formValues: getFormValues(),
     skList,
     spList,
@@ -4539,16 +4596,6 @@ function generateRPH() {
   // BBM and Nilai Murni
   drawBbmNilai();
   
-  // Owner name — subtle footer watermark (full version only)
-  if (_buyer && _buyer.full) {
-    dc.save();
-    dc.font = '500 28px system-ui, Arial, sans-serif';
-    dc.fillStyle = 'rgba(0,0,0,0.18)';
-    dc.textAlign = 'right';
-    dc.fillText(_buyer.full, printCanvas.width - 40, printCanvas.height - 30);
-    dc.restore();
-  }
-
   // Copy printCanvas → display canvas (sharp on screen) and mobile
   syncDisplayCanvas();
   syncToMobileCanvas();
@@ -5218,6 +5265,16 @@ function drawStaticLabels() {
   dc.fillStyle = '#000';
   dc.textAlign = 'left';
 
+  // ── Buyer name watermark — subtle, light grey ────────────
+  if (window.RPX_BUYER_FULLNAME) {
+    dc.save();
+    dc.font = '22px ' + FONT_FAMILY;
+    dc.fillStyle = 'rgba(69,69,69,1)';
+    dc.textAlign = 'left';
+    dc.fillText('Dibuat oleh ' + window.RPX_BUYER_FULLNAME, 1997, 174);
+    dc.restore();
+  }
+
   // ── Left column row labels ────────────────────────────────────
   dc.font = 'bold ' + f + 'px ' + FONT_FAMILY;
   dc.fillText('Minggu:',          lx,   FIELDS.minggu.y);               // Statik Minggu:
@@ -5529,41 +5586,111 @@ function initAutoSave() {
 
 // ── INIT ──────────────────────────────────────────────────
 <!-- @@start JPPMPAPRPXY@@ -->
-(function() {
-  var el = document.getElementById('JPPMPAPRPXY');
-  if (el) el.textContent = atob('RGVtbw==');
-})();
-<!-- @@end JPPMPAPRPXY@@ -->
-
-// ── OWNER KEY SYSTEM ─────────────────────────────────────────────────────────
-// Each buyer gets a unique unguessable key linked to their display + full name.
-// URL: rpx.vercel.app/?key=xxxx
-// No key = demo behaviour (no name shown, no name on canvas).
+// ── BUYER KEY SYSTEM ──────────────────────────────────────
+// To add a new buyer:
+//   1. Generate a random 8-char key (e.g. X7mK9pQw)
+//   2. Encode nick and fullname with btoa() — e.g. btoa('Dila') = 'RGlsYQ=='
+//   3. Add one line to BUYERS below
+//   4. Push to GitHub → Vercel auto-deploys
 const BUYERS = {
-  "dila2026rpx":  { display: "Dila",    full: "Nur Adila Ahmad"    },
-  "rafi9kx2mNqP": { display: "Rafi",    full: "Nur Rafiqah Ismail" },
-  "taffa3pLw8vQ": { display: "Taffa",   full: "Siti Mustaffa Omar" },
+  'xFakf5da': { nick: atob('UmFmaQ=='), fullname: atob('SGF5YXR1bCBSYWZp') },
+  'QWzNEWXZ': { nick: atob('VGFmZmE='), fullname: atob('VGFmZmF6YW5pIFR1cmF5dQ==') },
+  'znpc3vhJ': { nick: atob('RGlsYQ=='), fullname: atob('RmFkaWxhaCBSdXNkaWFuc2hhaA==') },
+  'QEQNu9TS': { nick: atob('TnVydWw='), fullname: atob('TnVydWwgSXpuaSBTb2xlaGFoIFNhcGxp') },
+  'ddAaXwyU': { nick: atob('Tm9vcg=='), fullname: atob('Tm9vciBLaGFzbWlyYSBTYWxpbWlu') },
+  'JJVCcsBF': { nick: atob('TnVydWw='), fullname: atob('TnVydWwgU2l0aSBBbmlyYWggSHVqZWU=') },
+  'qVV2vbGJ': { nick: atob('TGluYWg='), fullname: atob('RmF0dGVoYSBIYXJsaW5haCBIYXJ1bg==') },
+  'NzmTdffS': { nick: atob('TWFyaWFuYWg='), fullname: atob('TWFyaWFuYWggTWFzYWhhdA==') },
+  'uzYKqSJB': { nick: atob('TWFpemE='), fullname: atob('TWFpemF0dWwgRmFybmVpemEgQXdhbmc=') },
+  'XvbcHv6E': { nick: atob('UmFobQ=='), fullname: atob('UmFobWF0ZGlsbGFoIFJhbWFu') },
+  'CjPJKskL': { nick: atob('RGF5YQ=='), fullname: atob('RGF5YW5nIE5vb3IgRWZmYSBZYWh5YQ==') },
+  '36uK3hCp': { nick: atob('QWZmYQ=='), fullname: atob('QWZmYXJhaGFpbiBXYWhpZGFoIFdhaGFi') },
+  'sVM5KTw4': { nick: atob('WmlydWw='), fullname: atob('QWcgTW9oZCBBemlydWwgQWcgQWpp') },
+  'jW8RKJL5': { nick: atob('RGc='), fullname: atob('RGcgTnVyIFNhbGluYWggQWcgSGFzc2Fu') },
+  'ATnFRwSt': { nick: atob('TnVycw=='), fullname: atob('TnVyc3lhbXNpZHJhdHVsIFNha3VyYSBCYWthcg==') },
+  'aw65vpfY': { nick: atob('U2l0aQ=='), fullname: atob('U2l0aSBadWJhaWRhaCBLYWRpcg==') },
+  'GejPHp3d': { nick: atob('U2l0aQ=='), fullname: atob('U2l0aSBJc3RpcGFuYSBOb2x0YW0=') },
+  'PqGrJDMN': { nick: atob('QXpsaQ=='), fullname: atob('QXpsaW5hIEFobWFk') },
+  'WPK3fpM6': { nick: atob('SGF6YQ=='), fullname: atob('SGF6YXdhbmkgTGl5YW5hIEppcG5laA==') },
+  'pZvHqLvV': { nick: atob('U2l0aQ=='), fullname: atob('U2l0aSBOdXJiYWl6dXJhIEp1bGlrYQ==') },
+  'DKWbx9Us': { nick: atob('TnVydWw='), fullname: atob('TnVydWwgSGlkYXJ5YW5pIERhcnNhbg==') },
+  'Z6gJv4tH': { nick: atob('QW5pcw=='), fullname: atob('QW5pc2FoIFN1bGFpbWFu') },
+  'FUzGyQYR': { nick: atob('SGFtaQ=='), fullname: atob('SGFtaWRhdHVsIExpeWFuYSBNYXpsYW5p') },
+  'qqHpR7ZX': { nick: atob('TnVyaQ=='), fullname: atob('TnVyaXpyYWh0dWxsIExlbQ==') },
+  'Snma7CX5': { nick: atob('TW9oZA=='), fullname: atob('TW9oZCBadWhyaSBKdXJp') },
+  'V9nsEQUZ': { nick: atob('U29sZQ=='), fullname: atob('U29sZWhhIE1hamVsaXRh') },
+  'GD3kpRhe': { nick: atob('TnVy'), fullname: atob('TnVyIEhhemlxYWggQWJkdWwgTGF0aWY=') },
+  'hJs69Yg7': { nick: atob('RGdrdQ=='), fullname: atob('RGdrdSBTaXRpIE5vcnphbGlhbmFoIEFnIEFsaXVtYW4=') },
+  'eWdxBJ4B': { nick: atob('Tm9yYQ=='), fullname: atob('Tm9yYXppemFoIEhqIEFzbWFo') },
+  'ZhLM9wwL': { nick: atob('UmluYQ=='), fullname: atob('UmluYSBNaXNkYXJhbmFp') },
+  'nPLn7uQn': { nick: atob('Tm9yYQ=='), fullname: atob('Tm9yYXNtaWRhIENob25nIE55dWsgWWVu') },
+  'ek4xL5QC': { nick: atob('U2l0aQ=='), fullname: atob('U2l0aSBOb29yIEhhZml6YSBUYWli') },
+  'MEYvzzQC': { nick: atob('U2FyaQ=='), fullname: atob('U2FyaW5hIEFiZHVsIEhhbWlk') },
+  'LpgDaCw9': { nick: atob('Tm9y'), fullname: atob('Tm9yIE1hcmluYSBBenJpbmEgQXNsYW4=') },
+  'ttXdyT5A': { nick: atob('TnVy'), fullname: atob('TnVyIEZhcmFoYW5pIEF6bWFu') },
+  'yaD2vX6g': { nick: atob('Tm9yc2E='), fullname: atob('Tm9yc2FoYXJpYW5pIFRhbWlu') },
+  'rGUgDQ3C': { nick: atob('SXJuYQ=='), fullname: atob('SXJuYSBBbWly') },
+  'vqFwxX2f': { nick: atob('TWFzZA=='), fullname: atob('TWFzZG93biBBZGVt') },
+  '3Kph6ZEL': { nick: atob('TnVycw=='), fullname: atob('TnVyc2hhZmlyYWggWXVzbmk=') },
+  'CHJa9TBu': { nick: atob('RGc='), fullname: atob('RGcgTnVyaGFmaXphIEthc3NpbQ==') },
+  '3ArCsPAR': { nick: atob('QW5pcw=='), fullname: atob('QW5pcyBTYWZ1cmEgU2hhaG1pbmFu') },
+  'gBnBBfv8': { nick: atob('TWFyaQ=='), fullname: atob('TWFyaWFuYSBNIE1hc2RpbA==') },
+  'XhyEYSUu': { nick: atob('QWhtYWQ='), fullname: atob('QWhtYWQgU2hhZmlxIEFuYm8=') },
+  'shXwRGXq': { nick: atob('RmF0aW4='), fullname: atob('RmF0aW4gU3lhaGlyYSBBYmR1bCBaYWludWRpbg==') },
+  'rkKxUNKd': { nick: atob('RmF0aQ=='), fullname: atob('RmF0aW1haCBBbWlsaW4=') },
+  'UNeuw2ZQ': { nick: atob('U2hhaA=='), fullname: atob('U2hhaGxkcmVuIE91dGVlciBNYXJpbnVz') },
+  'jac2jsbX': { nick: atob('RmFoaXo='), fullname: atob('TXVoYW1tYWQgRmFoaXogRGFtaXQ=') },
+  'rzVHVgvP': { nick: atob('TnVy'), fullname: atob('TnVyIEl6emF0aSBBbWlyYSBIYXNhbiBFaGFi') },
+  'XVrQbkHt': { nick: atob('SnVyaA=='), fullname: atob('SnVyaGFubmlt') },
+  'b': { nick: atob('dGVzdA=='), fullname: atob('dGVzdA==') },
+  // Add more buyers here:
+  // 'XXXXXXXX': { nick: atob('...'), fullname: atob('...') },
 };
 
-const _urlKey = new URLSearchParams(window.location.search).get('key');
-const _buyer  = BUYERS[_urlKey] || null;
+(function() {
+  const params = new URLSearchParams(window.location.search);
+  const key = params.get('key');
+  const buyer = key ? BUYERS[key] : null;
 
-// Inject display name into header span
-window.addEventListener('DOMContentLoaded', () => {
-  const span = document.getElementById('JPPMPAPRPXY');
-  if (span && _buyer) {
-    // Full name for desktop, max 5 chars for mobile (handled via data attr + CSS)
-    const shortName = _buyer.display.slice(0, 5);
-    span.setAttribute('data-full', _buyer.display + "'s");
-    span.setAttribute('data-short', shortName + "'s");
-    span.textContent = _buyer.display + "'s";
+  if (!buyer) {
+    // ── LOCKED PAGE ───────────────────────────────────────
+    document.body.innerHTML = `
+      <div style="min-height:100vh;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#002060 0%,#003580 60%,#1a5fad 100%);font-family:system-ui,-apple-system,'Segoe UI',Roboto,Arial,sans-serif;padding:24px;box-sizing:border-box">
+        <div style="background:#fff;border-radius:20px;padding:36px 32px;max-width:420px;width:100%;text-align:center;box-shadow:0 24px 60px rgba(0,0,0,0.25)">
+          <div style="font-size:48px;margin-bottom:16px">🔒</div>
+          <div style="font-size:20px;font-weight:700;color:#002060;margin-bottom:10px">URL Tidak Sah</div>
+          <p style="font-size:13px;color:#555;line-height:1.8;margin-bottom:28px">Anda memerlukan URL peribadi yang betul untuk mengakses versi ini.<br>Sila semak URL yang diberikan kepada anda semasa pembelian.</p>
+          <div style="display:flex;flex-direction:column;gap:12px">
+            <a href="https://rp-x.vercel.app" style="display:block;padding:13px;background:linear-gradient(135deg,#002060,#1a5fad);color:#fff;text-decoration:none;border-radius:12px;font-size:13px;font-weight:700;letter-spacing:0.3px">🌐 Cuba Versi Demo</a>
+            <a href="https://wa.me/60146701157?text=Salam%2C%20saya%20ingin%20membeli%20RP-X%20Standard" target="_blank" style="display:block;padding:13px;background:linear-gradient(135deg,#1ebe6e,#25d366);color:#fff;text-decoration:none;border-radius:12px;font-size:13px;font-weight:700;letter-spacing:0.3px">💬 Hubungi Kami untuk Beli</a>
+          </div>
+          <div style="margin-top:24px;font-size:11px;color:#aaa">RP-X © 2026</div>
+        </div>
+      </div>`;
+    return;
   }
-});
-// ─────────────────────────────────────────────────────────────────────────────
+
+  // ── VALID KEY — inject buyer info ─────────────────────
+  window.RPX_BUYER_NICK     = buyer.nick;
+  window.RPX_BUYER_FULLNAME = buyer.fullname;
+
+  // Header nick
+  var el = document.getElementById('JPPMPAPRPXY');
+  if (el) el.textContent = buyer.nick + '\u2019s';
+
+  // Lesen tab fullname
+  var nameEl = document.getElementById('rpx-buyer-fullname');
+  if (nameEl) nameEl.textContent = buyer.fullname;
+})();
+<!-- @@end JPPMPAPRPXY@@ -->
 
 document.addEventListener('DOMContentLoaded', () => {
   // Restore saved state immediately — never wait on image loading for this
   loadState();
+  // Always render SK/SP containers — on fresh/empty load loadState() returns
+  // early (no localStorage) so renderSkSpList() inside it never fires.
+  // Calling it here unconditionally ensures the textareas are always present.
+  renderSkSpList();
   rebuildRptFilterDropdowns();
 
   // Wait for web fonts (Plus Jakarta Sans) to load before any canvas drawing
@@ -5820,9 +5947,7 @@ function getEmptyFields() {
 function updateWarnBadge() {
   const empty = getEmptyFields();
   const badge = document.getElementById('warn-badge');
-  const countEl = document.getElementById('warn-count');
-  if (!badge || !countEl) return;
-  countEl.textContent = empty.length;
+  if (!badge) return;
   if (empty.length === 0) {
     badge.classList.add('all-ok');
     badge.innerHTML = '✓';
@@ -5871,6 +5996,209 @@ document.getElementById('pilihan-modal').addEventListener('click', e => {
   if (e.target === document.getElementById('pilihan-modal')) closePilihanModal();
 });
 
+
+// ── PRO LIBRARY SYSTEM ────────────────────────────────────────
+// Fetches index.json from Vercel (same domain — no CORS, no GitHub needed).
+// Loads selected RPH using same logic as loadRphJson.
+// Does NOT modify saveState, loadState, or localStorage directly.
+
+const PRO_LIBRARY_INDEX_URL = '/rph/index.json';
+
+let proLibraryIndex = null;
+let proLibraryFiltered = [];
+let proLibrarySelected = null;
+
+function openProLibraryModal() {
+  var modal = document.getElementById('pro-library-modal');
+  modal.style.display = 'flex';
+  proLibrarySelected = null;
+  updateProLoadBtn();
+  if (!proLibraryIndex) {
+    fetchProLibraryIndex();
+  } else {
+    proLibraryFilter();
+  }
+}
+
+function closeProLibraryModal() {
+  document.getElementById('pro-library-modal').style.display = 'none';
+}
+
+async function fetchProLibraryIndex() {
+  var status = document.getElementById('pro-library-status');
+  var list   = document.getElementById('pro-library-list');
+  status.style.display = 'block';
+  status.innerHTML = '<div style="font-size:28px;margin-bottom:10px">⏳</div>Memuatkan senarai RPH...';
+  list.innerHTML = '';
+  try {
+    var res = await fetch(PRO_LIBRARY_INDEX_URL + '?t=' + Date.now());
+    if (!res.ok) throw new Error('HTTP ' + res.status);
+    proLibraryIndex = await res.json();
+    populateProFilters();
+    proLibraryFilter();
+  } catch(e) {
+    status.innerHTML = '<div style="font-size:28px;margin-bottom:10px">⚠️</div>' +
+      '<div style="color:#e53e3e;font-weight:700;margin-bottom:6px">Gagal memuatkan senarai RPH</div>' +
+      '<div style="font-size:12px;color:var(--text-muted)">Pastikan fail /rph/index.json wujud dalam projek Vercel anda.</div>';
+    console.error('Pro Library fetch error:', e);
+  }
+}
+
+function populateProFilters() {
+  if (!proLibraryIndex || !proLibraryIndex.rph) return;
+  var weeks    = [];
+  var subjects = [];
+  proLibraryIndex.rph.forEach(function(r) {
+    var w = String(r.week);
+    var s = r.subject;
+    if (weeks.indexOf(w) === -1) weeks.push(w);
+    if (subjects.indexOf(s) === -1) subjects.push(s);
+  });
+  weeks.sort(function(a,b){ return +a - +b; });
+  subjects.sort();
+
+  var wSel = document.getElementById('pro-filter-week');
+  wSel.innerHTML = '<option value="">Semua minggu</option>';
+  weeks.forEach(function(w) { var o = document.createElement('option'); o.value = w; o.textContent = 'Minggu ' + w; wSel.appendChild(o); });
+
+  var sSel = document.getElementById('pro-filter-subject');
+  sSel.innerHTML = '<option value="">Semua subjek</option>';
+  subjects.forEach(function(s) { var o = document.createElement('option'); o.value = s; o.textContent = s; sSel.appendChild(o); });
+}
+
+function proLibraryFilter() {
+  if (!proLibraryIndex || !proLibraryIndex.rph) return;
+  var fasa    = document.getElementById('pro-filter-fasa').value;
+  var age     = document.getElementById('pro-filter-age').value;
+  var subject = document.getElementById('pro-filter-subject').value;
+  var week    = document.getElementById('pro-filter-week').value;
+
+  proLibraryFiltered = proLibraryIndex.rph.filter(function(r) {
+    if (fasa    && String(r.fasa)    !== fasa)    return false;
+    if (age     && String(r.age)     !== age)     return false;
+    if (subject && r.subject         !== subject) return false;
+    if (week    && String(r.week)    !== week)    return false;
+    return true;
+  });
+  renderProLibraryList();
+}
+
+function renderProLibraryList() {
+  var status = document.getElementById('pro-library-status');
+  var list   = document.getElementById('pro-library-list');
+  if (!proLibraryFiltered.length) {
+    status.style.display = 'block';
+    status.innerHTML = '<div style="font-size:28px;margin-bottom:10px">🔍</div>Tiada RPH dijumpai untuk pilihan ini.';
+    list.innerHTML = '';
+    return;
+  }
+  status.style.display = 'none';
+  list.innerHTML = proLibraryFiltered.map(function(r, i) {
+    var sel = proLibrarySelected && proLibrarySelected.url === r.url;
+    return '<div onclick="selectProRph(' + i + ')" style="' +
+      'padding:12px 14px;border-radius:10px;cursor:pointer;' +
+      'border:1.5px solid ' + (sel ? '#1a5fad' : 'var(--border)') + ';' +
+      'background:' + (sel ? 'rgba(26,95,173,0.07)' : '#fff') + ';' +
+      'transition:all 0.15s;">' +
+      '<div style="display:flex;align-items:center;gap:10px">' +
+        '<div style="flex:1;min-width:0">' +
+          '<div style="font-size:13px;font-weight:700;color:' + (sel ? '#002060' : 'var(--text)') + '">' + r.subject + '</div>' +
+          '<div style="font-size:11px;color:var(--text-muted);margin-top:2px">Fasa ' + r.fasa + ' · Umur ' + r.age + ' · Minggu ' + r.week + (r.topic ? ' · ' + r.topic : '') + '</div>' +
+        '</div>' +
+        '<div style="font-size:18px;' + (sel ? '' : 'opacity:0.2') + '">' + (sel ? '✅' : '○') + '</div>' +
+      '</div></div>';
+  }).join('');
+}
+
+function selectProRph(idx) {
+  proLibrarySelected = proLibraryFiltered[idx];
+  renderProLibraryList();
+  updateProLoadBtn();
+  var info = document.getElementById('pro-library-selected-info');
+  if (proLibrarySelected) {
+    info.textContent = '✓ Dipilih: ' + proLibrarySelected.subject +
+      ' (Fasa ' + proLibrarySelected.fasa +
+      ', Umur ' + proLibrarySelected.age +
+      ', Minggu ' + proLibrarySelected.week + ')';
+  } else {
+    info.textContent = '';
+  }
+}
+
+function updateProLoadBtn() {
+  var btn = document.getElementById('pro-library-load-btn');
+  if (proLibrarySelected) {
+    btn.disabled = false;
+    btn.style.background = 'linear-gradient(135deg,#002060,#003580)';
+    btn.style.cursor = 'pointer';
+    btn.textContent = '⬇️ Muat RPH Ini ke Kanvas';
+  } else {
+    btn.disabled = true;
+    btn.style.background = '#ccc';
+    btn.style.cursor = 'not-allowed';
+    btn.textContent = 'Pilih RPH dahulu';
+  }
+}
+
+async function proLibraryLoad() {
+  if (!proLibrarySelected) return;
+  var btn = document.getElementById('pro-library-load-btn');
+  btn.textContent = '⏳ Sedang memuatkan...';
+  btn.disabled = true;
+  btn.style.cursor = 'not-allowed';
+  try {
+    var res = await fetch(proLibrarySelected.url + '?t=' + Date.now());
+    if (!res.ok) throw new Error('HTTP ' + res.status);
+    var data = await res.json();
+
+    if (data.formValues) setFormValues(data.formValues);
+    if (data.skList !== undefined) {
+      skList = typeof data.skList === 'string' ? data.skList : (Array.isArray(data.skList) ? data.skList.map(function(i){return i.text;}).join('\n') : '');
+      renderSkSpList();
+    }
+    if (data.spList !== undefined) {
+      spList = typeof data.spList === 'string' ? data.spList : (Array.isArray(data.spList) ? data.spList.map(function(i){return i.text;}).join('\n') : '');
+      renderSkSpList();
+    }
+    if (data.pilihanState) {
+      Object.entries(data.pilihanState).forEach(function(entry) {
+        var k = entry[0]; var arr = entry[1];
+        if (pilihanState[k] !== undefined) pilihanState[k] = new Set(arr);
+      });
+      updatePilihanSummary();
+    }
+    if (data.pilihanCustom) {
+      pilihanCustom = Object.assign({}, pilihanCustom, data.pilihanCustom);
+    }
+    saveState();
+    closeProLibraryModal();
+
+    var toast = document.getElementById('copy-toast');
+    if (toast) {
+      var orig = toast.textContent;
+      toast.textContent = '✓ RPH Pro berjaya dimuatkan!';
+      toast.classList.add('show');
+      setTimeout(function() { toast.classList.remove('show'); toast.textContent = orig; }, 2500);
+    }
+  } catch(e) {
+    var btn2 = document.getElementById('pro-library-load-btn');
+    btn2.textContent = '⚠️ Gagal — Cuba semula';
+    btn2.disabled = false;
+    btn2.style.background = 'rgba(229,62,62,0.85)';
+    btn2.style.cursor = 'pointer';
+    console.error('Pro Library load error:', e);
+    setTimeout(function() { updateProLoadBtn(); }, 3000);
+  }
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  var modal = document.getElementById('pro-library-modal');
+  if (modal) {
+    modal.addEventListener('click', function(e) {
+      if (e.target === modal) closeProLibraryModal();
+    });
+  }
+});
 </script>
 </body>
 </html>
