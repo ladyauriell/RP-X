@@ -3556,6 +3556,18 @@ sp:`SA 3.2.3 Mengumpul objek mengikut ciri yang dikenalpasti
 // ── STATE ─────────────────────────────────────────────────
 let skList = '';
 let spList = '';
+
+// Standard/Pro now stores the original creator's name obfuscated (base64, under an
+// unrecognizable key) to deter casual tampering. The demo only ever needs to READ
+// this for the watermark, it never writes one of its own, so only decode is needed here.
+const OWNER_FIELD_KEY = '_k7f9mZqXa';
+const OWNER_FIELD_KEY_OLD = '_k7f'; // short key used briefly before the 10-char version
+function decodeOwnerName(str) {
+  try { return decodeURIComponent(escape(atob(str || ''))); } catch (e) { return ''; }
+}
+function encodeOwnerName(str) {
+  try { return btoa(unescape(encodeURIComponent(str || ''))); } catch (e) { return ''; }
+}
 let temaData = [];
 let rptData = [...EMBEDDED_RPT]; // pre-loaded from embedded data
 let jadualData = {}; // { 'Isnin': [{masa:'8:00-9:00', subject:'Bahasa Malaysia'}, ...], ... }
@@ -3888,6 +3900,11 @@ function padamKandungan() {
 function saveRphJson() {
   const payload = {
     _version: 1,
+    // Carry forward whatever owner name is currently showing on the watermark
+    // (set when an existing Standard/Pro file was imported). If nothing was
+    // imported, window.RPX_BUYER_FULLNAME is empty and this just stays blank,
+    // same as a demo-created file always behaved.
+    [OWNER_FIELD_KEY]: encodeOwnerName(window.RPX_BUYER_FULLNAME || ''),
     formValues: getFormValues(),
     skList,
     spList,
@@ -3913,8 +3930,19 @@ function loadRphJson(input) {
     try {
       const data = JSON.parse(e.target.result);
 
-      // Read _owner from Standard/Pro JSON — used for canvas watermark
-      window.RPX_BUYER_FULLNAME = (data._owner && data._owner.trim()) ? data._owner.trim() : '';
+      // Read original creator name from Standard/Pro JSON — used for canvas watermark.
+      // Checks the new obfuscated format first, then falls back through older formats
+      // (short test key, then the original plain _owner) for files exported before
+      // the obfuscation update.
+      let importedOwnerName = '';
+      if (data[OWNER_FIELD_KEY] !== undefined) {
+        importedOwnerName = decodeOwnerName(data[OWNER_FIELD_KEY]);
+      } else if (data[OWNER_FIELD_KEY_OLD] !== undefined) {
+        importedOwnerName = decodeOwnerName(data[OWNER_FIELD_KEY_OLD]);
+      } else if (data._owner !== undefined) {
+        importedOwnerName = data._owner || '';
+      }
+      window.RPX_BUYER_FULLNAME = importedOwnerName.trim();
 
       // Populate form fields
       if (data.formValues) setFormValues(data.formValues);
